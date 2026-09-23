@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>TECNICO PRO</title>
+
+<meta name="theme-color" content="#111827">
 
 <style>
 
@@ -15,18 +18,18 @@
 }
 
 :root{
-    --bg:#f1f3f6;
+    --bg:#f3f4f6;
     --card:#ffffff;
-    --dark:#101418;
-    --dark2:#181d22;
-    --orange:#ff6b00;
-    --orange2:#ff8a32;
-    --text:#17191c;
-    --muted:#6d747c;
-    --border:#e1e5e9;
-    --green:#159447;
-    --red:#d82e2e;
-    --blue:#2468d8;
+    --text:#111827;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --dark:#111827;
+    --dark2:#1f2937;
+    --accent:#ef4444;
+    --blue:#2563eb;
+    --green:#16a34a;
+    --orange:#f59e0b;
+    --purple:#7c3aed;
 }
 
 body{
@@ -36,20 +39,22 @@ body{
     min-height:100vh;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 header{
-    background:linear-gradient(135deg,#0c1013,#1b2126);
+    background:linear-gradient(135deg,#111827,#1f2937);
     color:white;
-    padding:18px 16px 24px;
+    padding:18px 20px;
     position:sticky;
     top:0;
     z-index:100;
-    box-shadow:0 4px 20px rgba(0,0,0,.25);
+    box-shadow:0 4px 20px rgba(0,0,0,.15);
 }
 
-.header-top{
-    max-width:1200px;
+.header-inner{
+    max-width:1400px;
     margin:auto;
     display:flex;
     align-items:center;
@@ -60,75 +65,62 @@ header{
 .logo{
     display:flex;
     align-items:center;
-    gap:11px;
+    gap:12px;
+    cursor:pointer;
 }
 
 .logo-icon{
-    width:43px;
-    height:43px;
+    width:45px;
+    height:45px;
     border-radius:12px;
-    background:var(--orange);
+    background:#ef4444;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:23px;
-    font-weight:900;
+    font-weight:bold;
 }
 
-.logo h1{
-    font-size:21px;
+.logo-text{
+    font-size:20px;
+    font-weight:900;
     letter-spacing:.5px;
 }
 
-.logo span{
-    display:block;
+.logo-sub{
     font-size:11px;
-    color:#aeb5bb;
+    color:#9ca3af;
     margin-top:2px;
 }
 
-.status{
-    font-size:11px;
-    background:#182c20;
-    color:#68db91;
-    border:1px solid #275338;
-    padding:7px 10px;
-    border-radius:20px;
-    white-space:nowrap;
+.menu{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
 }
 
-.search-area{
-    max-width:1200px;
-    margin:18px auto 0;
-    position:relative;
+.menu button{
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.07);
+    color:white;
+    padding:10px 13px;
+    border-radius:9px;
+    cursor:pointer;
+    font-weight:bold;
 }
 
-.search-area input{
-    width:100%;
-    height:54px;
-    border:0;
-    border-radius:15px;
-    padding:0 52px 0 18px;
-    font-size:16px;
-    outline:none;
-    background:white;
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+.menu button:hover{
+    background:rgba(255,255,255,.15);
 }
 
-.search-icon{
-    position:absolute;
-    right:18px;
-    top:15px;
-    font-size:23px;
-    color:#777;
-}
-
-/* MAIN */
+/* =========================
+   MAIN
+========================= */
 
 main{
-    max-width:1200px;
+    max-width:1400px;
     margin:auto;
-    padding:22px 16px 60px;
+    padding:25px 18px 50px;
 }
 
 .page{
@@ -139,2228 +131,3433 @@ main{
     display:block;
 }
 
-/* HOME */
+/* =========================
+   HERO
+========================= */
 
 .hero{
+    background:linear-gradient(135deg,#111827,#374151);
+    color:white;
+    border-radius:20px;
+    padding:35px 25px;
     margin-bottom:22px;
 }
 
-.hero h2{
-    font-size:28px;
-    margin-bottom:7px;
+.hero h1{
+    font-size:34px;
+    margin-bottom:10px;
 }
 
 .hero p{
+    color:#d1d5db;
+    max-width:850px;
+    line-height:1.6;
+}
+
+.search-big{
+    margin-top:25px;
+    position:relative;
+}
+
+.search-big input{
+    width:100%;
+    padding:18px 20px 18px 52px;
+    border:0;
+    border-radius:13px;
+    font-size:17px;
+    outline:none;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.search-icon{
+    position:absolute;
+    left:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:20px;
+    color:#6b7280;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.card{
+    background:white;
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+
+.card h3{
+    margin-bottom:8px;
+}
+
+.card p{
     color:var(--muted);
     line-height:1.5;
 }
 
-.section-title{
-    font-size:18px;
-    margin:25px 0 12px;
+.stat{
+    font-size:31px;
+    font-weight:900;
+    margin-bottom:5px;
 }
 
-/* BRANDS */
-
-.brands{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:14px;
+.stat-label{
+    color:var(--muted);
+    font-size:13px;
 }
 
-.brand{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:20px;
+/* =========================
+   BRAND CARDS
+========================= */
+
+.brand-card{
+    min-height:150px;
     cursor:pointer;
     transition:.2s;
-    min-height:145px;
+    position:relative;
+    overflow:hidden;
 }
 
-.brand:hover{
+.brand-card:hover{
     transform:translateY(-3px);
-    box-shadow:0 8px 25px rgba(0,0,0,.09);
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
 .brand-logo{
-    font-size:27px;
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
     font-weight:900;
-    margin-bottom:10px;
+    font-size:17px;
+    margin-bottom:15px;
 }
 
-.brand p{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.4;
+.unical{
+    background:#dc2626;
 }
 
-.brand.unical{
-    border-top:5px solid #e52d2d;
+.daikin{
+    background:#2563eb;
 }
 
-.brand.daikin{
-    border-top:5px solid #1785d1;
+.wolf{
+    background:#374151;
 }
 
-.brand.wolf{
-    border-top:5px solid #d18a16;
+.brand-card small{
+    color:#6b7280;
 }
 
-/* QUICK */
-
-.quick-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
-
-.quick{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:15px;
-    padding:17px;
-    cursor:pointer;
-}
-
-.quick-icon{
-    font-size:25px;
-    margin-bottom:8px;
-}
-
-.quick strong{
-    display:block;
-    font-size:14px;
-}
-
-.quick span{
-    color:var(--muted);
-    font-size:11px;
-}
-
-/* FILTERS */
+/* =========================
+   FILTERS
+========================= */
 
 .toolbar{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin:16px 0;
-}
-
-select{
     background:white;
     border:1px solid var(--border);
-    border-radius:10px;
-    padding:11px 13px;
+    border-radius:16px;
+    padding:15px;
+    margin-bottom:18px;
+}
+
+.filters{
+    display:grid;
+    grid-template-columns:2fr repeat(5,1fr);
+    gap:10px;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:9px;
+    background:white;
     font-size:14px;
 }
 
-/* MODEL GRID */
+input:focus,
+select:focus{
+    outline:2px solid rgba(37,99,235,.15);
+    border-color:#2563eb;
+}
 
-.models{
+/* =========================
+   MODEL GRID
+========================= */
+
+.models-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:14px;
+    gap:15px;
 }
 
 .model-card{
     background:white;
     border:1px solid var(--border);
-    border-radius:17px;
+    border-radius:16px;
     padding:18px;
     cursor:pointer;
     transition:.2s;
 }
 
 .model-card:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.model-brand{
-    font-size:11px;
-    text-transform:uppercase;
-    font-weight:bold;
-    color:var(--orange);
-    margin-bottom:7px;
-}
-
-.model-card h3{
-    font-size:18px;
-    margin-bottom:6px;
-}
-
-.model-type{
-    color:var(--muted);
-    font-size:13px;
-    margin-bottom:13px;
-}
-
-.badges{
+.model-top{
     display:flex;
-    flex-wrap:wrap;
-    gap:5px;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.model-code{
+    font-size:19px;
+    font-weight:900;
 }
 
 .badge{
-    font-size:10px;
-    padding:5px 7px;
-    border-radius:6px;
-    background:#eef0f2;
-    color:#4b5156;
-}
-
-.badge.current{
-    background:#e6f6eb;
-    color:#178342;
+    display:inline-flex;
+    align-items:center;
+    padding:5px 8px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:bold;
+    background:#eef2ff;
+    color:#3730a3;
 }
 
 .badge.archive{
-    background:#f0f0f0;
-    color:#707070;
+    background:#f3f4f6;
+    color:#4b5563;
 }
 
-/* DETAIL */
+.badge.current{
+    background:#dcfce7;
+    color:#166534;
+}
 
-.detail-head{
-    background:linear-gradient(135deg,#101418,#252c32);
-    color:white;
-    border-radius:20px;
-    padding:22px;
+.model-family{
+    color:#6b7280;
+    margin-bottom:13px;
+}
+
+.model-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:7px;
+    font-size:13px;
+}
+
+.info-item{
+    background:#f9fafb;
+    padding:8px;
+    border-radius:8px;
+}
+
+.info-item strong{
+    display:block;
+    margin-bottom:2px;
+}
+
+/* =========================
+   DETAIL
+========================= */
+
+.back{
     margin-bottom:15px;
 }
 
-.back{
+.back button{
     border:0;
-    background:#ffffff18;
-    color:white;
-    padding:8px 12px;
+    background:white;
+    border:1px solid var(--border);
+    padding:10px 15px;
     border-radius:9px;
     cursor:pointer;
+    font-weight:bold;
+}
+
+.detail-head{
+    background:linear-gradient(135deg,#111827,#374151);
+    color:white;
+    border-radius:18px;
+    padding:25px;
     margin-bottom:18px;
 }
 
-.detail-brand{
-    color:#ff9448;
-    text-transform:uppercase;
-    font-size:11px;
-    font-weight:bold;
-}
-
-.detail-head h2{
-    font-size:28px;
-    margin:5px 0;
+.detail-head h1{
+    font-size:32px;
+    margin:8px 0;
 }
 
 .detail-head p{
-    color:#b9c0c5;
+    color:#d1d5db;
 }
 
-.detail-grid{
+.detail-layout{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
+    grid-template-columns:2fr 1fr;
+    gap:18px;
 }
 
-.panel{
+.section{
     background:white;
     border:1px solid var(--border);
-    border-radius:17px;
-    padding:18px;
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:18px;
 }
 
-.panel h3{
-    margin-bottom:14px;
-    font-size:17px;
+.section h2{
+    margin-bottom:15px;
+    font-size:20px;
 }
 
-.spec{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    padding:9px 0;
-    border-bottom:1px solid #eee;
-    font-size:13px;
+.data-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
 }
 
-.spec:last-child{
-    border-bottom:0;
+.data-box{
+    background:#f9fafb;
+    padding:13px;
+    border-radius:10px;
 }
 
-.spec span:first-child{
-    color:var(--muted);
+.data-box span{
+    display:block;
+    font-size:11px;
+    color:#6b7280;
+    margin-bottom:5px;
 }
 
-.spec span:last-child{
-    font-weight:bold;
-    text-align:right;
+.data-box strong{
+    font-size:14px;
 }
 
-/* DOCUMENTS */
+/* =========================
+   DOCUMENTS
+========================= */
 
 .documents{
     display:grid;
-    gap:9px;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
 }
 
-.document{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:10px;
-    padding:12px;
+.doc{
+    display:block;
+    text-decoration:none;
+    color:var(--text);
     border:1px solid var(--border);
     border-radius:11px;
+    padding:14px;
+    background:#fafafa;
 }
 
-.document-info{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.doc:hover{
+    background:#f3f4f6;
 }
 
-.document-icon{
-    width:35px;
-    height:35px;
-    border-radius:8px;
-    background:#f1f3f5;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+.doc-icon{
+    font-size:24px;
+    margin-bottom:7px;
 }
 
-.document small{
+.doc strong{
     display:block;
-    color:var(--muted);
-    margin-top:2px;
 }
 
-.open-btn{
-    background:var(--dark);
-    color:white;
-    text-decoration:none;
-    border:0;
-    border-radius:8px;
-    padding:8px 10px;
-    font-size:11px;
+.doc span{
+    color:#6b7280;
+    font-size:12px;
 }
 
-/* ERROR */
+/* =========================
+   ERRORS
+========================= */
 
 .error-search{
-    background:white;
-    padding:18px;
-    border-radius:16px;
-    border:1px solid var(--border);
-}
-
-.error-search input{
-    width:100%;
-    padding:13px;
-    border:1px solid var(--border);
-    border-radius:10px;
-    font-size:15px;
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
 }
 
 .error-list{
-    margin-top:15px;
-    display:grid;
+    display:flex;
+    flex-direction:column;
     gap:10px;
 }
 
-.error-item{
+.error-card{
     background:white;
     border:1px solid var(--border);
     border-radius:13px;
-    padding:14px;
+    padding:16px;
 }
 
 .error-code{
-    color:var(--red);
+    font-size:18px;
     font-weight:900;
-    font-size:17px;
+    color:#dc2626;
 }
 
-.error-title{
-    font-weight:bold;
-    margin-top:4px;
+.error-model{
+    font-size:12px;
+    color:#6b7280;
+    margin:3px 0 8px;
 }
 
 .error-description{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:5px;
-    line-height:1.45;
+    line-height:1.5;
 }
 
-/* CATEGORY */
+/* =========================
+   CATEGORY
+========================= */
 
 .category-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:13px;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
 }
 
 .category{
     background:white;
     border:1px solid var(--border);
     border-radius:15px;
-    padding:18px;
+    padding:20px;
     cursor:pointer;
 }
 
-.category b{
-    display:block;
-    margin-bottom:5px;
+.category:hover{
+    border-color:#9ca3af;
 }
 
-.category span{
-    color:var(--muted);
-    font-size:12px;
+.category-icon{
+    font-size:28px;
+    margin-bottom:10px;
 }
 
-/* EMPTY */
+/* =========================
+   NOTES
+========================= */
+
+.note{
+    background:#fffbeb;
+    border:1px solid #fde68a;
+    color:#92400e;
+    border-radius:12px;
+    padding:14px;
+    line-height:1.5;
+}
+
+/* =========================
+   EMPTY
+========================= */
 
 .empty{
     text-align:center;
     background:white;
-    border:1px dashed #ccd1d5;
-    padding:35px 20px;
+    border:1px solid var(--border);
     border-radius:16px;
-    color:var(--muted);
+    padding:45px 20px;
+    color:#6b7280;
 }
 
-/* FOOTER */
+.empty-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     text-align:center;
+    color:#6b7280;
+    font-size:12px;
     padding:25px;
-    color:#8b9298;
-    font-size:11px;
 }
 
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 
-@media(max-width:800px){
+@media(max-width:1100px){
 
-    .brands{
-        grid-template-columns:1fr;
+    .grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .quick-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .models{
-        grid-template-columns:1fr;
-    }
-
-    .detail-grid{
-        grid-template-columns:1fr;
+    .models-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .category-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .hero h2{
-        font-size:24px;
+    .filters{
+        grid-template-columns:1fr 1fr 1fr;
     }
 
 }
 
-@media(max-width:480px){
+@media(max-width:700px){
 
-    .quick-grid{
-        grid-template-columns:1fr 1fr;
+    header{
+        padding:12px;
     }
 
-    .category-grid{
-        grid-template-columns:1fr;
+    .header-inner{
+        align-items:flex-start;
     }
 
-    .status{
+    .logo-text{
+        font-size:17px;
+    }
+
+    .logo-sub{
         display:none;
+    }
+
+    .menu{
+        justify-content:flex-end;
+    }
+
+    .menu button{
+        padding:8px 9px;
+        font-size:12px;
+    }
+
+    main{
+        padding:15px 10px 40px;
+    }
+
+    .hero{
+        padding:25px 18px;
+        border-radius:15px;
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .grid,
+    .models-grid,
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .filters{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .filters input{
+        grid-column:1/-1;
+    }
+
+    .detail-layout{
+        grid-template-columns:1fr;
+    }
+
+    .data-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .documents{
+        grid-template-columns:1fr;
+    }
+
+    .detail-head h1{
+        font-size:25px;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-    <div class="header-top">
+<div class="header-inner">
 
-        <div class="logo">
+<div class="logo" onclick="showPage('homePage')">
 
-            <div class="logo-icon">⚙</div>
+<div class="logo-icon">
+T
+</div>
 
-            <div>
-                <h1>TECNICO PRO</h1>
-                <span>Archivio tecnico professionale</span>
-            </div>
+<div>
+<div class="logo-text">
+TECNICO PRO
+</div>
 
-        </div>
+<div class="logo-sub">
+Archivio tecnico HVAC & Termoidraulica
+</div>
+</div>
 
-        <div class="status">
-            ● ARCHIVIO ONLINE
-        </div>
+</div>
 
-    </div>
+<div class="menu">
 
-    <div class="search-area">
+<button onclick="showPage('homePage')">
+Home
+</button>
 
-        <input
-            id="globalSearch"
-            type="search"
-            placeholder="Cerca modello, codice errore, marca, componente..."
-            oninput="globalSearch()"
-        >
+<button onclick="showPage('modelsPage')">
+Archivio
+</button>
 
-        <div class="search-icon">⌕</div>
+<button onclick="showPage('errorsPage')">
+Errori
+</button>
 
-    </div>
+<button onclick="showPage('categoriesPage')">
+Categorie
+</button>
+
+</div>
+
+</div>
 
 </header>
 
 
 <main>
 
-<!-- ================= HOME ================= -->
+<!-- =========================
+HOME
+========================= -->
 
 <section id="homePage" class="page active">
 
-    <div class="hero">
+<div class="hero">
 
-        <h2>Archivio tecnico</h2>
+<h1>
+Archivio tecnico professionale
+</h1>
 
-        <p>
-            Trova rapidamente modelli, codici errore,
-            manuali, dati tecnici, schemi e documentazione
-            per caldaie, pompe di calore e sistemi termici.
-        </p>
+<p>
+Trova rapidamente modelli, codici errore, manuali,
+dati tecnici, refrigerante, tipologia di macchina,
+documentazione e informazioni utili per diagnosi,
+installazione e manutenzione.
+</p>
 
-    </div>
+<div class="search-big">
 
+<span class="search-icon">
+⌕
+</span>
 
-    <h3 class="section-title">Marche</h3>
+<input
+id="globalSearch"
+type="text"
+placeholder="Cerca modello, famiglia, errore, refrigerante..."
+oninput="globalSearch()"
+>
 
-    <div class="brands">
+</div>
 
-        <div class="brand unical" onclick="openBrand('Unical')">
-
-            <div class="brand-logo">UNICAL</div>
-
-            <p>
-                Caldaie domestiche e professionali,
-                pompe di calore, sistemi ibridi,
-                biomassa e sistemi industriali.
-            </p>
-
-        </div>
-
-
-        <div class="brand daikin" onclick="openBrand('Daikin')">
-
-            <div class="brand-logo">DAIKIN</div>
-
-            <p>
-                Altherma, pompe di calore,
-                sistemi ibridi, caldaie a condensazione,
-                ACS e sistemi integrati.
-            </p>
-
-        </div>
+</div>
 
 
-        <div class="brand wolf" onclick="openBrand('WOLF')">
+<div class="grid" style="margin-bottom:22px;">
 
-            <div class="brand-logo">WOLF</div>
+<div class="card">
 
-            <p>
-                Caldaie murali, moduli termici,
-                caldaie a basamento, pompe di calore
-                e sistemi di riscaldamento.
-            </p>
+<div class="stat" id="totalModels">
+0
+</div>
 
-        </div>
+<div class="stat-label">
+Schede archivio
+</div>
 
-    </div>
+</div>
+
+<div class="card">
+
+<div class="stat" id="totalBrands">
+3
+</div>
+
+<div class="stat-label">
+Marche
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="stat" id="totalErrors">
+0
+</div>
+
+<div class="stat-label">
+Codici errore verificati
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="stat">
+2015–2026
+</div>
+
+<div class="stat-label">
+Periodo archivio climatizzazione
+</div>
+
+</div>
+
+</div>
 
 
-    <h3 class="section-title">Accesso rapido</h3>
+<h2 style="margin-bottom:12px;">
+Marche
+</h2>
 
-    <div class="quick-grid">
+<div class="grid" style="margin-bottom:25px;">
 
-        <div class="quick" onclick="openErrors()">
-            <div class="quick-icon">⚠️</div>
-            <strong>Codici errore</strong>
-            <span>Ricerca guasti</span>
-        </div>
+<div
+class="card brand-card"
+onclick="filterBrand('Unical')"
+>
 
-        <div class="quick" onclick="openAllModels()">
-            <div class="quick-icon">🔥</div>
-            <strong>Caldaie</strong>
-            <span>Tutti i modelli presenti</span>
-        </div>
+<div class="brand-logo unical">
+U
+</div>
 
-        <div class="quick" onclick="filterType('Pompa di calore')">
-            <div class="quick-icon">❄️</div>
-            <strong>Pompe di calore</strong>
-            <span>Aria-acqua e sistemi</span>
-        </div>
+<h3>
+Unical
+</h3>
 
-        <div class="quick" onclick="openCategories()">
-            <div class="quick-icon">📚</div>
-            <strong>Categorie</strong>
-            <span>Archivio tecnico</span>
-        </div>
+<p>
+Climatizzazione, pompe di calore,
+sistemi termici e documentazione tecnica.
+</p>
 
-    </div>
+</div>
 
 
-    <h3 class="section-title">Cosa troverai nella scheda macchina</h3>
+<div
+class="card brand-card"
+onclick="filterBrand('Daikin')"
+>
 
-    <div class="category-grid">
+<div class="brand-logo daikin">
+D
+</div>
 
-        <div class="category">
-            <b>📖 Manuali</b>
-            <span>Utente, installazione e documentazione tecnica.</span>
-        </div>
+<h3>
+Daikin
+</h3>
 
-        <div class="category">
-            <b>⚠️ Errori</b>
-            <span>Codici, descrizione e percorso diagnostico.</span>
-        </div>
+<p>
+Residenziale, monosplit, multisplit,
+Sky Air, VRV e sistemi commerciali.
+</p>
 
-        <div class="category">
-            <b>📊 Dati tecnici</b>
-            <span>Potenza, rendimenti, dimensioni e caratteristiche.</span>
-        </div>
+</div>
 
-        <div class="category">
-            <b>⚡ Schemi</b>
-            <span>Schemi elettrici e collegamenti.</span>
-        </div>
 
-        <div class="category">
-            <b>🔧 Manutenzione</b>
-            <span>Operazioni e controlli periodici.</span>
-        </div>
+<div
+class="card brand-card"
+onclick="filterBrand('WOLF')"
+>
 
-        <div class="category">
-            <b>🧩 Componenti</b>
-            <span>Componenti, accessori e ricambi.</span>
-        </div>
+<div class="brand-logo wolf">
+W
+</div>
 
-    </div>
+<h3>
+WOLF
+</h3>
+
+<p>
+Caldaie, pompe di calore,
+ventilazione e sistemi HVAC.
+</p>
+
+</div>
+
+</div>
+
+
+<h2 style="margin-bottom:12px;">
+Cerca per categoria
+</h2>
+
+<div class="category-grid">
+
+<div class="category"
+onclick="filterCategory('Climatizzatore')">
+
+<div class="category-icon">
+❄️
+</div>
+
+<h3>
+Climatizzatori
+</h3>
+
+<p>
+Split, multisplit e sistemi commerciali.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Pompa di calore')">
+
+<div class="category-icon">
+♨️
+</div>
+
+<h3>
+Pompe di calore
+</h3>
+
+<p>
+Aria-aria e aria-acqua.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Caldaia')">
+
+<div class="category-icon">
+🔥
+</div>
+
+<h3>
+Caldaie
+</h3>
+
+<p>
+Caldaie murali e sistemi termici.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Ventilazione')">
+
+<div class="category-icon">
+💨
+</div>
+
+<h3>
+Ventilazione
+</h3>
+
+<p>
+VMC, UTA e trattamento aria.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('VRV')">
+
+<div class="category-icon">
+🏢
+</div>
+
+<h3>
+VRV / VRF
+</h3>
+
+<p>
+Sistemi commerciali e professionali.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Cassette')">
+
+<div class="category-icon">
+⬛
+</div>
+
+<h3>
+Cassette
+</h3>
+
+<p>
+Unità a cassette da controsoffitto.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Canalizzato')">
+
+<div class="category-icon">
+🔧
+</div>
+
+<h3>
+Canalizzati
+</h3>
+
+<p>
+Unità canalizzabili e alta prevalenza.
+</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Caldaia')">
+
+<div class="category-icon">
+🛠️
+</div>
+
+<h3>
+Termoidraulica
+</h3>
+
+<p>
+Diagnosi e documentazione tecnica.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ================= MODELLI ================= -->
+<!-- =========================
+MODELS
+========================= -->
 
 <section id="modelsPage" class="page">
 
-    <button class="back" onclick="showPage('homePage')">
-        ← Home
-    </button>
+<div class="back">
 
-    <h2 id="modelsTitle">Modelli</h2>
+<button onclick="showPage('homePage')">
+← Torna alla home
+</button>
 
-    <div class="toolbar">
+</div>
 
-        <select id="brandFilter" onchange="renderModels()">
+<h1 style="margin-bottom:7px;">
+Archivio prodotti
+</h1>
 
-            <option value="">Tutte le marche</option>
-            <option value="Unical">Unical</option>
-            <option value="Daikin">Daikin</option>
-            <option value="WOLF">WOLF</option>
-
-        </select>
+<p style="color:#6b7280;margin-bottom:18px;">
+Ricerca per marca, modello, famiglia, anno,
+categoria o refrigerante.
+</p>
 
 
-        <select id="typeFilter" onchange="renderModels()">
+<div class="toolbar">
 
-            <option value="">Tutti i tipi</option>
-            <option value="Caldaia">Caldaie</option>
-            <option value="Pompa di calore">Pompe di calore</option>
-            <option value="Ibrido">Sistemi ibridi</option>
-            <option value="Biomassa">Biomassa</option>
-            <option value="Professionale">Professionale</option>
-            <option value="ACS">ACS</option>
+<div class="filters">
 
-        </select>
+<input
+id="modelSearch"
+placeholder="Cerca modello..."
+oninput="renderModels()"
+>
 
-    </div>
+<select id="brandFilter"
+onchange="renderModels()">
 
-    <div id="modelsList" class="models"></div>
+<option value="">
+Tutte le marche
+</option>
+
+<option>
+Unical
+</option>
+
+<option>
+Daikin
+</option>
+
+<option>
+WOLF
+</option>
+
+</select>
+
+
+<select id="categoryFilter"
+onchange="renderModels()">
+
+<option value="">
+Tutte le categorie
+</option>
+
+<option>
+Climatizzatore
+</option>
+
+<option>
+Pompa di calore
+</option>
+
+<option>
+Caldaia
+</option>
+
+<option>
+Ventilazione
+</option>
+
+<option>
+VRV
+</option>
+
+<option>
+Cassette
+</option>
+
+<option>
+Canalizzato
+</option>
+
+</select>
+
+
+<select id="yearFilter"
+onchange="renderModels()">
+
+<option value="">
+Tutti gli anni
+</option>
+
+<option>2015</option>
+<option>2016</option>
+<option>2017</option>
+<option>2018</option>
+<option>2019</option>
+<option>2020</option>
+<option>2021</option>
+<option>2022</option>
+<option>2023</option>
+<option>2024</option>
+<option>2025</option>
+<option>2026</option>
+
+</select>
+
+
+<select id="statusFilter"
+onchange="renderModels()">
+
+<option value="">
+Attuali + archiviati
+</option>
+
+<option value="current">
+Attuali
+</option>
+
+<option value="archive">
+Archiviati
+</option>
+
+</select>
+
+
+<select id="refrigerantFilter"
+onchange="renderModels()">
+
+<option value="">
+Tutti i refrigeranti
+</option>
+
+<option>R32</option>
+<option>R410A</option>
+<option>R407C</option>
+<option>R290</option>
+<option>R454C</option>
+<option>R134a</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div
+id="resultsCount"
+style="margin-bottom:12px;color:#6b7280;font-size:13px;">
+</div>
+
+
+<div
+id="modelsGrid"
+class="models-grid">
+</div>
 
 </section>
 
 
-<!-- ================= DETTAGLIO ================= -->
+<!-- =========================
+DETAIL
+========================= -->
 
 <section id="detailPage" class="page">
 
-    <div id="detailContent"></div>
+<div class="back">
+
+<button onclick="showPage('modelsPage')">
+← Torna all'archivio
+</button>
+
+</div>
+
+<div id="detailContent">
+</div>
 
 </section>
 
 
-<!-- ================= ERRORI ================= -->
+<!-- =========================
+ERRORS
+========================= -->
 
 <section id="errorsPage" class="page">
 
-    <button class="back" onclick="showPage('homePage')">
-        ← Home
-    </button>
+<div class="back">
 
-    <h2>Codici errore</h2>
+<button onclick="showPage('homePage')">
+← Torna alla home
+</button>
 
-    <p style="color:#6d747c;margin-top:7px">
-        Cerca un codice per marca o per descrizione.
-    </p>
+</div>
 
-    <div class="error-search" style="margin-top:18px">
+<h1 style="margin-bottom:7px;">
+Ricerca codici errore
+</h1>
 
-        <input
-            id="errorSearch"
-            placeholder="Es. E01, F4, HJ..."
-            oninput="renderErrors()"
-        >
+<p style="color:#6b7280;margin-bottom:18px;">
+Cerca un codice errore o una descrizione.
+</p>
 
-    </div>
+<div class="toolbar">
 
-    <div id="errorList" class="error-list"></div>
+<div class="error-search">
+
+<input
+id="errorSearch"
+placeholder="Esempio: U4, E7, comunicazione..."
+oninput="renderErrors()"
+>
+
+</div>
+
+</div>
+
+<div
+id="errorList"
+class="error-list">
+</div>
 
 </section>
 
 
-<!-- ================= CATEGORIE ================= -->
+<!-- =========================
+CATEGORIES
+========================= -->
 
 <section id="categoriesPage" class="page">
 
-    <button class="back" onclick="showPage('homePage')">
-        ← Home
-    </button>
+<div class="back">
 
-    <h2>Categorie tecniche</h2>
+<button onclick="showPage('homePage')">
+← Torna alla home
+</button>
 
-    <div class="category-grid" style="margin-top:18px">
+</div>
 
-        <div class="category" onclick="filterType('Caldaia')">
-            <b>🔥 Caldaie</b>
-            <span>Murali, basamento e condensazione.</span>
-        </div>
+<h1 style="margin-bottom:18px;">
+Categorie tecniche
+</h1>
 
-        <div class="category" onclick="filterType('Pompa di calore')">
-            <b>❄️ Pompe di calore</b>
-            <span>Aria-acqua e sistemi idronici.</span>
-        </div>
+<div class="category-grid">
 
-        <div class="category" onclick="filterType('Ibrido')">
-            <b>🔄 Sistemi ibridi</b>
-            <span>Pompa di calore + caldaia.</span>
-        </div>
+<div class="category"
+onclick="filterCategory('Climatizzatore')">
 
-        <div class="category" onclick="filterType('Biomassa')">
-            <b>🔥 Biomassa</b>
-            <span>Legna, pellet e bicombustibili.</span>
-        </div>
+<div class="category-icon">❄️</div>
 
-        <div class="category" onclick="filterType('Professionale')">
-            <b>🏭 Professionale</b>
-            <span>Generatori e centrali termiche.</span>
-        </div>
+<h3>Climatizzatori</h3>
 
-        <div class="category" onclick="filterType('ACS')">
-            <b>🚿 ACS</b>
-            <span>Produzione acqua calda sanitaria.</span>
-        </div>
+<p>Monosplit, multisplit e sistemi aria-aria.</p>
 
-    </div>
+</div>
+
+
+<div class="category"
+onclick="filterCategory('VRV')">
+
+<div class="category-icon">🏢</div>
+
+<h3>VRV / VRF</h3>
+
+<p>Sistemi professionali commerciali.</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Cassette')">
+
+<div class="category-icon">⬛</div>
+
+<h3>Cassette</h3>
+
+<p>Unità a cassette.</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Canalizzato')">
+
+<div class="category-icon">🔧</div>
+
+<h3>Canalizzati</h3>
+
+<p>Unità canalizzabili.</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Pompa di calore')">
+
+<div class="category-icon">♨️</div>
+
+<h3>Pompe di calore</h3>
+
+<p>Aria-aria e aria-acqua.</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Caldaia')">
+
+<div class="category-icon">🔥</div>
+
+<h3>Caldaie</h3>
+
+<p>Caldaie e generatori termici.</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Ventilazione')">
+
+<div class="category-icon">💨</div>
+
+<h3>Ventilazione</h3>
+
+<p>VMC e trattamento aria.</p>
+
+</div>
+
+
+<div class="category"
+onclick="filterCategory('Termoidraulica')">
+
+<div class="category-icon">🛠️</div>
+
+<h3>Diagnosi</h3>
+
+<p>Strumenti per il tecnico.</p>
+
+</div>
+
+</div>
 
 </section>
-
 
 </main>
 
 
 <footer>
 
-    TECNICO PRO · Archivio tecnico professionale<br>
-    Documentazione collegata alle fonti ufficiali dei produttori
+TECNICO PRO © 2026 —
+Archivio tecnico per professionisti
 
 </footer>
 
 
 <script>
 
-/* =========================================================
-   DATABASE MODELLI
-   ========================================================= */
+/* ============================================================
+   DATABASE PRODOTTI
 
-const MODELS = [
+   Struttura predisposta per essere ampliata senza modificare
+   il resto dell'applicazione.
+============================================================ */
 
-/* ================= UNICAL ================= */
+const PRODUCTS = [
+
+/* ============================================================
+   DAIKIN RESIDENZIALE
+============================================================ */
 
 {
-    id:"unical-kon1",
-    brand:"Unical",
-    name:"KON1",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"24 / 28 / 35 kW",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2072/kon1",
-    documents:[
-        {
-            name:"Manuale utente",
-            type:"Manuale",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2072/kon1"
-        },
-        {
-            name:"Manuale installazione",
-            type:"Manuale tecnico",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2072/kon1"
-        }
-    ],
-    errors:[
-        {
-            code:"E01",
-            title:"Mancata accensione",
-            description:"Consultare la documentazione tecnica specifica del modello per la procedura di diagnosi."
-        }
-    ]
+brand:"Daikin",
+family:"Emura",
+model:"FTXJ-MS / RXJ-M",
+category:"Climatizzatore",
+type:"Parete",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Emura","Catalogo ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+],
+notes:"Serie residenziale Daikin Emura. Verificare sempre l'abbinamento interno/esterno specifico."
 },
 
 {
-    id:"unical-kone",
-    brand:"Unical",
-    name:"KONe",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"Gamma murale",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/776/kone",
-    documents:[
-        {
-            name:"Manuale utente",
-            type:"Manuale",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/776/kone"
-        },
-        {
-            name:"Manuale installazione",
-            type:"Manuale tecnico",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/776/kone"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Stylish",
+model:"FTXA-AW / FTXA-BW / FTXA-BT",
+category:"Climatizzatore",
+type:"Parete",
+years:"2019-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Stylish","Catalogo ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-x",
-    brand:"Unical",
-    name:"X",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"Gamma murale",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2846/x",
-    documents:[
-        {
-            name:"Documentazione ufficiale",
-            type:"Manuali e dati tecnici",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2846/x"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Perfera",
+model:"FTXM-M / RXM-M",
+category:"Climatizzatore",
+type:"Parete",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Residenziale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-cor",
-    brand:"Unical",
-    name:"CoR",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"24 kW",
-    fuel:"Gas",
-    description:"Caldaia murale a gas a condensazione Low NOx.",
-    source:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2577/cor",
-    documents:[
-        {
-            name:"Manuale utente",
-            type:"Manuale",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2577/cor"
-        },
-        {
-            name:"Manuale installazione",
-            type:"Manuale tecnico",
-            url:"https://www.unicalag.it/prodotti/caldaie-domestiche-50/condensazione-gas/2577/cor"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Perfera",
+model:"FTXM-N / RXM-N",
+category:"Climatizzatore",
+type:"Parete",
+years:"2018-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–7,1 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Residenziale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-kplus",
-    brand:"Unical",
-    name:"K+",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"Gamma murale",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/domestico-50/condensazione-gas/2392/k",
-    documents:[
-        {
-            name:"Documentazione ufficiale",
-            type:"Manuali e dati tecnici",
-            url:"https://www.unicalag.it/prodotti/domestico-50/condensazione-gas/2392/k"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Comfora",
+model:"FTXP-K / RXP-K",
+category:"Climatizzatore",
+type:"Parete",
+years:"2015-2022",
+year:2022,
+status:"archive",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Ricerca prodotto","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"unical-kon-b",
-    brand:"Unical",
-    name:"KON B",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"archive",
-    power:"Gamma murale",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/domestico-50/condensazione-gas/1275/kon-b",
-    documents:[
-        {
-            name:"Documentazione ufficiale",
-            type:"Manuali e dati tecnici",
-            url:"https://www.unicalag.it/prodotti/domestico-50/condensazione-gas/1275/kon-b"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Comfora",
+model:"FTXP-M / RXP-M",
+category:"Climatizzatore",
+type:"Parete",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–7,1 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Cataloghi","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-konm",
-    brand:"Unical",
-    name:"KONm INC",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"archive",
-    power:"Gamma murale",
-    fuel:"Gas",
-    description:"Gamma murale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/domestico-50/condensazione-gas/konm/1517/konm-inc",
-    documents:[
-        {
-            name:"Documentazione ufficiale",
-            type:"Manuali e dati tecnici",
-            url:"https://www.unicalag.it/prodotti/domestico-50/condensazione-gas/konm/1517/konm-inc"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Sensira",
+model:"FTXF-A / RXF-A",
+category:"Climatizzatore",
+type:"Parete",
+years:"2018-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–7,1 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Sensira","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-modulex",
-    brand:"Unical",
-    name:"MODULEX EXT 100-1500",
-    type:"Professionale",
-    category:"Condensazione Alluminio",
-    status:"current",
-    power:"100 - 1500 kW",
-    fuel:"Gas",
-    description:"Caldaia professionale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/caldaie-professionali-300/condensazione-alluminio/347/modulex-ext-100-1500",
-    documents:[
-        {
-            name:"Catalogo tecnico",
-            type:"Dati tecnici",
-            url:"https://www.unicalag.it/prodotti/caldaie-professionali-300/condensazione-alluminio/347/modulex-ext-100-1500"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Sensira",
+model:"FTXF-B / RXF-B",
+category:"Climatizzatore",
+type:"Parete",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–7,1 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Sensira","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-alkon50",
-    brand:"Unical",
-    name:"ALKON 50 C",
-    type:"Professionale",
-    category:"Condensazione Alluminio",
-    status:"current",
-    power:"50 - 70 kW",
-    fuel:"Gas",
-    description:"Generatore professionale a condensazione.",
-    source:"https://www.unicalag.it/prodotti/caldaie-professionali-300/condensazione-alluminio/306/alkon-50-c",
-    documents:[
-        {
-            name:"Documentazione ufficiale",
-            type:"Manuali e dati tecnici",
-            url:"https://www.unicalag.it/prodotti/caldaie-professionali-300/condensazione-alluminio/306/alkon-50-c"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Ururu Sarara",
+model:"FTXZ-N / RXZ-N",
+category:"Climatizzatore",
+type:"Parete",
+years:"2015-2020",
+year:2020,
+status:"archive",
+refrigerant:"R32",
+capacity:"2,5–5,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Ricerca prodotto","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"unical-xck",
-    brand:"Unical",
-    name:"XC-K 3",
-    type:"Professionale",
-    category:"Condensazione INOX",
-    status:"current",
-    power:"116 - 3000 kW",
-    fuel:"Gas",
-    description:"Caldaia professionale a condensazione a basso NOx.",
-    source:"https://www.unicalag.it/prodotti/caldaie-professionali-300/condensazione-inox/caldaie/2840/xc-k-3-116-3000",
-    documents:[
-        {
-            name:"Libretto installatore",
-            type:"Manuale tecnico",
-            url:"https://www.unicalag.it/prodotti/caldaie-professionali-300/condensazione-inox/caldaie/2840/xc-k-3-116-3000"
-        }
-    ],
-    errors:[]
-},
-
-/* BIOMASSA */
-
-{
-    id:"unical-comple",
-    brand:"Unical",
-    name:"COMPLE",
-    type:"Biomassa",
-    category:"Pellet",
-    status:"current",
-    power:"20 / 24 / 34 kW",
-    fuel:"Pellet",
-    description:"Caldaia a pellet ad alto contenuto d'acqua.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo biomassa",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Floor",
+model:"FVXM-F / RXM",
+category:"Climatizzatore",
+type:"Pavimento",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Cataloghi","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-globa25",
-    brand:"Unical",
-    name:"GLOBA 25",
-    type:"Biomassa",
-    category:"Pellet",
-    status:"current",
-    power:"25 kW",
-    fuel:"Pellet",
-    description:"Caldaia a pellet.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo ufficiale",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Floor",
+model:"FVXG-K / RXG",
+category:"Climatizzatore",
+type:"Pavimento",
+years:"2015-2021",
+year:2021,
+status:"archive",
+refrigerant:"R410A",
+capacity:"2,5–5,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Ricerca prodotto","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"unical-puntoit",
-    brand:"Unical",
-    name:"PUNTO IT CT 2S",
-    type:"Biomassa",
-    category:"Pellet",
-    status:"current",
-    power:"15 - 33 kW",
-    fuel:"Pellet",
-    description:"Caldaia a pellet.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo ufficiale",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Siesta",
+model:"ATXF-A / ARXF-A",
+category:"Climatizzatore",
+type:"Parete",
+years:"2018-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–7,1 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Catalogo Siesta","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
 {
-    id:"unical-pellexia",
-    brand:"Unical",
-    name:"PELLEXIA",
-    type:"Biomassa",
-    category:"Pellet",
-    status:"current",
-    power:"5 - 34 / 116 - 160 kW",
-    fuel:"Pellet",
-    description:"Gamma di caldaie a pellet.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo ufficiale",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Old Residential",
+model:"FTXS-K / RXS-K",
+category:"Climatizzatore",
+type:"Parete",
+years:"2015-2019",
+year:2019,
+status:"archive",
+refrigerant:"R410A",
+capacity:"2,0–6,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Archivio prodotti","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"unical-lamix",
-    brand:"Unical",
-    name:"LAmix +34 2S",
-    type:"Biomassa",
-    category:"Bicombustibile",
-    status:"current",
-    power:"34 kW",
-    fuel:"Legna + pellet",
-    description:"Caldaia bicombustibile.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo ufficiale",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Old Residential",
+model:"FTXS-G / RXS-G",
+category:"Climatizzatore",
+type:"Parete",
+years:"2015-2018",
+year:2018,
+status:"archive",
+refrigerant:"R410A",
+capacity:"2,0–6,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Archivio prodotti","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"unical-lawood",
-    brand:"Unical",
-    name:"LAwood 34L 2S",
-    type:"Biomassa",
-    category:"Legna",
-    status:"current",
-    power:"34 kW",
-    fuel:"Legna",
-    description:"Caldaia a legna.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo ufficiale",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Old Residential",
+model:"FTX-GV / RX-GV",
+category:"Climatizzatore",
+type:"Parete",
+years:"2015-2018",
+year:2018,
+status:"archive",
+refrigerant:"R410A",
+capacity:"2,0–6,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Archivio prodotti","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
+},
+
+/* ============================================================
+   DAIKIN MULTISPLIT
+============================================================ */
+
+{
+brand:"Daikin",
+family:"Multi",
+model:"2MXM / 3MXM / 4MXM / 5MXM",
+category:"Climatizzatore",
+type:"Multisplit",
+years:"2018-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Multi",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Tabelle di combinazione","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+],
+notes:"Per il multisplit verificare sempre la tabella di combinazione ufficiale."
 },
 
 {
-    id:"unical-firex",
-    brand:"Unical",
-    name:"FIREX 2S",
-    type:"Biomassa",
-    category:"Legna",
-    status:"current",
-    power:"Gamma legna",
-    fuel:"Legna",
-    description:"Caldaia a legna.",
-    source:"https://www.unicalag.it/catalogo-prodotti",
-    documents:[
-        {
-            name:"Catalogo ufficiale",
-            type:"Catalogo",
-            url:"https://www.unicalag.it/catalogo-prodotti"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Multi+",
+model:"Multi+",
+category:"Climatizzatore",
+type:"Multisplit",
+years:"2022-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Multi",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Leaflet Multi+","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
 },
 
-/* ================= DAIKIN ================= */
+/* ============================================================
+   DAIKIN SKY AIR
+============================================================ */
 
 {
-    id:"daikin-altherma4h",
-    brand:"Daikin",
-    name:"Altherma 4 H",
-    type:"Pompa di calore",
-    category:"Aria-acqua",
-    status:"current",
-    power:"Alta temperatura",
-    fuel:"Elettrica",
-    description:"Pompa di calore aria-acqua per riscaldamento e ACS.",
-    source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-    documents:[
-        {
-            name:"Catalogo Altherma 4 H",
-            type:"Catalogo tecnico",
-            url:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Sky Air",
+model:"RZAG-A",
+category:"Climatizzatore",
+type:"Sky Air",
+years:"2018-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"3,5–14 kW",
+source:"https://www.daikin.it/it_IT/sistemi-climatizzazione-aziende/sky-air/daikin-sky-air-serie-a.html",
+docs:[
+["Sky Air R32","Catalogo ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-altherma3hht",
-    brand:"Daikin",
-    name:"Altherma 3 H HT",
-    type:"Pompa di calore",
-    category:"Aria-acqua",
-    status:"current",
-    power:"Alta temperatura",
-    fuel:"Elettrica",
-    description:"Sistema aria-acqua ad alta temperatura.",
-    source:"https://www.daikin.it/",
-    documents:[
-        {
-            name:"Documentazione Daikin",
-            type:"Documentazione",
-            url:"https://www.daikin.it/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Sky Air",
+model:"RZASG-MY",
+category:"Climatizzatore",
+type:"Sky Air",
+years:"2019-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"3,5–14 kW",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Sky Air R32","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-altherma3r",
-    brand:"Daikin",
-    name:"Altherma 3 R",
-    type:"Pompa di calore",
-    category:"Aria-acqua",
-    status:"current",
-    power:"Media / bassa temperatura",
-    fuel:"Elettrica",
-    description:"Sistema split aria-acqua.",
-    source:"https://www.daikin.it/",
-    documents:[
-        {
-            name:"Documentazione Daikin",
-            type:"Documentazione",
-            url:"https://www.daikin.it/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Sky Air",
+model:"RZFC-D",
+category:"Climatizzatore",
+type:"Sky Air",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Sky Air","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
+},
+
+/* ============================================================
+   DAIKIN VRV
+============================================================ */
+
+{
+brand:"Daikin",
+family:"VRV",
+model:"VRV IV",
+category:"VRV",
+type:"VRV",
+years:"2015-2020",
+year:2020,
+status:"archive",
+refrigerant:"R410A",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Archivio Daikin","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"daikin-altherma3m",
-    brand:"Daikin",
-    name:"Altherma 3 M",
-    type:"Pompa di calore",
-    category:"Monoblocco",
-    status:"current",
-    power:"Gamma residenziale",
-    fuel:"Elettrica",
-    description:"Pompa di calore aria-acqua monoblocco.",
-    source:"https://www.daikin.it/",
-    documents:[
-        {
-            name:"Documentazione Daikin",
-            type:"Documentazione",
-            url:"https://www.daikin.it/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"VRV",
+model:"VRV 5",
+category:"VRV",
+type:"VRV",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo VRV","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-hhybrid",
-    brand:"Daikin",
-    name:"Altherma H Hybrid",
-    type:"Ibrido",
-    category:"Sistema ibrido",
-    status:"current",
-    power:"Sistema ibrido",
-    fuel:"Pompa di calore + gas",
-    description:"Sistema ibrido con pompa di calore e caldaia.",
-    source:"https://www.daikin.it/",
-    documents:[
-        {
-            name:"Documentazione Daikin",
-            type:"Documentazione",
-            url:"https://www.daikin.it/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Mini VRV",
+model:"Mini VRV 5",
+category:"VRV",
+type:"VRV",
+years:"2022-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Mini VRV 5","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-rhybrid",
-    brand:"Daikin",
-    name:"Altherma R Hybrid",
-    type:"Ibrido",
-    category:"Sistema ibrido",
-    status:"current",
-    power:"Sistema ibrido",
-    fuel:"Pompa di calore + gas",
-    description:"Sistema ibrido.",
-    source:"https://www.daikin.it/",
-    documents:[
-        {
-            name:"Documentazione Daikin",
-            type:"Documentazione",
-            url:"https://www.daikin.it/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"VRV 5",
+model:"VRV 5 HR",
+category:"VRV",
+type:"VRV",
+years:"2021-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["VRV 5 HR","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-multihybrid",
-    brand:"Daikin",
-    name:"MultiHybrid",
-    type:"Ibrido",
-    category:"Sistema ibrido",
-    status:"current",
-    power:"Sistema ibrido",
-    fuel:"Pompa di calore + gas",
-    description:"Sistema ibrido Daikin.",
-    source:"https://www.daikin.it/",
-    documents:[
-        {
-            name:"Documentazione Daikin",
-            type:"Documentazione",
-            url:"https://www.daikin.it/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"VRV 5",
+model:"VRV 5 HP",
+category:"VRV",
+type:"VRV",
+years:"2021-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["VRV 5 HP","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
+},
+
+/* ============================================================
+   DAIKIN CASSETTE
+============================================================ */
+
+{
+brand:"Daikin",
+family:"Cassette",
+model:"FCAG-A",
+category:"Cassette",
+type:"Cassetta",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32/R410A",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-sensei",
-    brand:"Daikin",
-    name:"Daikin Sensei",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"Gamma caldaie",
-    fuel:"Gas",
-    description:"Caldaia a condensazione Daikin.",
-    source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-    documents:[
-        {
-            name:"Gamma Riscaldamento",
-            type:"Catalogo",
-            url:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Cassette",
+model:"FCAHG-H",
+category:"Cassette",
+type:"Cassetta",
+years:"2023-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"daikin-cgas",
-    brand:"Daikin",
-    name:"Altherma 3 C Gas",
-    type:"Caldaia",
-    category:"Condensazione Gas",
-    status:"current",
-    power:"Gamma caldaie",
-    fuel:"Gas",
-    description:"Caldaia a condensazione.",
-    source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-    documents:[
-        {
-            name:"Gamma Riscaldamento",
-            type:"Catalogo",
-            url:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Cassette",
+model:"FFQ-C",
+category:"Cassette",
+type:"Cassetta",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32/R410A",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
-/* ================= WOLF ================= */
+/* ============================================================
+   DAIKIN CANALIZZATI
+============================================================ */
 
 {
-    id:"wolf-fgb",
-    brand:"WOLF",
-    name:"FGB",
-    type:"Caldaia",
-    category:"Caldaia murale",
-    status:"current",
-    power:"24 / 28 / 35 kW",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione FGB",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Duct",
+model:"FDXM-F",
+category:"Canalizzato",
+type:"Canalizzato",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Residenziale",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Ricerca prodotto","Documentazione ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"wolf-fgbk",
-    brand:"WOLF",
-    name:"FGB-K",
-    type:"Caldaia",
-    category:"Caldaia murale",
-    status:"current",
-    power:"24 / 28 / 35 kW",
-    fuel:"Gas",
-    description:"Versione combinata della gamma FGB.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione FGB-K",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Duct",
+model:"FDXS-F",
+category:"Canalizzato",
+type:"Canalizzato",
+years:"2015-2021",
+year:2021,
+status:"archive",
+refrigerant:"R410A",
+capacity:"Residenziale",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
+docs:[
+["Archivio prodotti","Documentazione ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
+]
 },
 
 {
-    id:"wolf-cgb2",
-    brand:"WOLF",
-    name:"CGB-2",
-    type:"Caldaia",
-    category:"Caldaia murale",
-    status:"current",
-    power:"14 / 20 / 24 kW",
-    fuel:"Gas",
-    description:"Caldaia murale a condensazione.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGB-2",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Duct",
+model:"FBA-A",
+category:"Canalizzato",
+type:"Canalizzato",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32/R410A",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"wolf-cgb2k",
-    brand:"WOLF",
-    name:"CGB-2K",
-    type:"Caldaia",
-    category:"Caldaia murale",
-    status:"current",
-    power:"20 / 24 kW",
-    fuel:"Gas",
-    description:"Caldaia combinata a condensazione.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGB-2K",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Duct",
+model:"FDA-A",
+category:"Canalizzato",
+type:"Canalizzato",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32/R410A",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
+},
+
+/* ============================================================
+   DAIKIN PAVIMENTO / SOFFITTO
+============================================================ */
+
+{
+brand:"Daikin",
+family:"Floor Ceiling",
+model:"FVA-A",
+category:"Climatizzatore",
+type:"Pavimento/Soffitto",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"R32/R410A",
+capacity:"Commerciale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
+docs:[
+["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
+]
 },
 
 {
-    id:"wolf-cgs2l",
-    brand:"WOLF",
-    name:"CGS-2L",
-    type:"Caldaia",
-    category:"Modulo termico",
-    status:"current",
-    power:"14 / 20 / 24 kW",
-    fuel:"Gas",
-    description:"Sistema con accumulo stratificato.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGS-2L",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Daikin",
+family:"Floor",
+model:"FVXM-F",
+category:"Climatizzatore",
+type:"Pavimento",
+years:"2019-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Residenziale",
+source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
+docs:[
+["Cataloghi Residenziali","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
+]
+},
+
+/* ============================================================
+   UNICAL
+============================================================ */
+
+{
+brand:"Unical",
+family:"airCRISTAL",
+model:"airCRISTAL",
+category:"Climatizzatore",
+type:"Parete",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Residenziale",
+source:"https://www.unical.eu/",
+docs:[
+["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
+],
+notes:"Gamma climatizzazione Unical. Consultare sempre la documentazione specifica della versione."
 },
 
 {
-    id:"wolf-cgs2r",
-    brand:"WOLF",
-    name:"CGS-2R",
-    type:"Caldaia",
-    category:"Modulo termico",
-    status:"current",
-    power:"14 / 20 / 24 kW",
-    fuel:"Gas",
-    description:"Sistema con accumulo.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGS-2R",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"YA3",
+model:"YA3",
+category:"Climatizzatore",
+type:"Parete",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Residenziale",
+source:"https://www.unical.eu/",
+docs:[
+["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
+]
 },
 
 {
-    id:"wolf-cgw2",
-    brand:"WOLF",
-    name:"CGW-2",
-    type:"Caldaia",
-    category:"Modulo termico",
-    status:"current",
-    power:"14 / 20 / 24 kW",
-    fuel:"Gas",
-    description:"Sistema murale con accumulo.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGW-2",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"FLOWY",
+model:"FLOWY",
+category:"Climatizzatore",
+type:"Parete",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Residenziale",
+source:"https://www.unical.eu/",
+docs:[
+["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
+]
 },
 
 {
-    id:"wolf-csz2r",
-    brand:"WOLF",
-    name:"CSZ-2R",
-    type:"Caldaia",
-    category:"Modulo termico",
-    status:"current",
-    power:"14 / 20 / 24 kW",
-    fuel:"Gas",
-    description:"Sistema con accumulo.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CSZ-2R",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"XMX HE / KMX HE",
+model:"XMX HE / KMX HE",
+category:"Climatizzatore",
+type:"Multisplit",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2–5 unità interne",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+],
+notes:"Unità esterne multisplit inverter. Verificare sempre le tabelle di combinazione."
 },
 
 {
-    id:"wolf-cgb38",
-    brand:"WOLF",
-    name:"CGB-2 38/55",
-    type:"Caldaia",
-    category:"Alta potenza",
-    status:"current",
-    power:"38 / 55 kW",
-    fuel:"Gas",
-    description:"Caldaia a condensazione ad alta potenza.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGB-2 38/55",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"PS11",
+model:"PS11",
+category:"Climatizzatore",
+type:"Pavimento/Soffitto",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
+]
 },
 
 {
-    id:"wolf-cgb75",
-    brand:"WOLF",
-    name:"CGB-2 75/100",
-    type:"Caldaia",
-    category:"Alta potenza",
-    status:"current",
-    power:"75 / 100 kW",
-    fuel:"Gas",
-    description:"Caldaia a condensazione ad alta potenza.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGB-2 75/100",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"CN09",
+model:"CN09",
+category:"Canalizzato",
+type:"Canalizzato",
+years:"2015-2020",
+year:2020,
+status:"archive",
+refrigerant:"R410A",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
+]
 },
 
 {
-    id:"wolf-cgu2",
-    brand:"WOLF",
-    name:"CGU-2",
-    type:"Caldaia",
-    category:"Convenzionale",
-    status:"current",
-    power:"Gamma professionale",
-    fuel:"Gas",
-    description:"Caldaia convenzionale.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione CGU-2",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"TRIAL QUADRAL",
+model:"TRIAL QUADRAL",
+category:"Climatizzatore",
+type:"Multisplit",
+years:"2015-2018",
+year:2018,
+status:"archive",
+refrigerant:"R407C",
+capacity:"Multisplit",
+source:"https://www.unical.eu/",
+docs:[
+["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
+],
+notes:"Vecchia generazione multisplit. Verificare la documentazione specifica della macchina."
 },
 
 {
-    id:"wolf-mgk2",
-    brand:"WOLF",
-    name:"MGK-2",
-    type:"Professionale",
-    category:"Caldaia a basamento",
-    status:"current",
-    power:"130 - 300 kW",
-    fuel:"Gas",
-    description:"Caldaia a condensazione a basamento.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione MGK-2",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"CL",
+model:"CL02 30H",
+category:"Climatizzatore",
+type:"Colonna",
+years:"2015-2018",
+year:2018,
+status:"archive",
+refrigerant:"R407C",
+capacity:"Colonna",
+source:"https://www.unical.eu/",
+docs:[
+["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
+]
 },
 
 {
-    id:"wolf-mgk2large",
-    brand:"WOLF",
-    name:"MGK-2 390/1000",
-    type:"Professionale",
-    category:"Caldaia a basamento",
-    status:"current",
-    power:"390 - 1000 kW",
-    fuel:"Gas",
-    description:"Caldaia a condensazione di grande potenza.",
-    source:"https://www.wolf.eu/",
-    documents:[
-        {
-            name:"Documentazione MGK-2",
-            type:"Documentazione tecnica",
-            url:"https://www.wolf.eu/"
-        }
-    ],
-    errors:[]
+brand:"Unical",
+family:"CL",
+model:"CL02 50H",
+category:"Climatizzatore",
+type:"Colonna",
+years:"2015-2018",
+year:2018,
+status:"archive",
+refrigerant:"R407C",
+capacity:"Colonna",
+source:"https://www.unical.eu/",
+docs:[
+["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Cassette",
+model:"KMCS 13H",
+category:"Cassette",
+type:"Cassetta",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Cassette",
+model:"CS11 18H",
+category:"Cassette",
+type:"Cassetta",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Cassette",
+model:"CS11 24H",
+category:"Cassette",
+type:"Cassetta",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Cassette",
+model:"CS11 30H",
+category:"Cassette",
+type:"Cassetta",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Cassette",
+model:"CS11 36H",
+category:"Cassette",
+type:"Cassetta",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Cassette",
+model:"CS11 48H",
+category:"Cassette",
+type:"Cassetta",
+years:"2024-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"Commerciale",
+source:"https://www.unical.eu/",
+docs:[
+["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+/* ============================================================
+   UNICAL CALDAIE
+============================================================ */
+
+{
+brand:"Unical",
+family:"Caldaie",
+model:"Serie murali domestiche",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"Variabile",
+source:"https://www.unical.eu/",
+docs:[
+["Catalogo prodotti","Documentazione ufficiale","https://www.unical.eu/"]
+],
+notes:"Archivio generale caldaie Unical. La scheda modello specifica va selezionata in base al codice completo."
+},
+
+{
+brand:"Unical",
+family:"Biomassa",
+model:"COMPLE / COMPLE R",
+category:"Caldaia",
+type:"Pellet",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"20–34 kW",
+source:"https://www.unical.eu/",
+docs:[
+["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Biomassa",
+model:"GLOBA 25",
+category:"Caldaia",
+type:"Pellet",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"25 kW",
+source:"https://www.unical.eu/",
+docs:[
+["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Biomassa",
+model:"PELLEXIA 5-34",
+category:"Caldaia",
+type:"Pellet",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"5–34 kW",
+source:"https://www.unical.eu/",
+docs:[
+["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+{
+brand:"Unical",
+family:"Biomassa",
+model:"PELLEXIA 116-160",
+category:"Caldaia",
+type:"Pellet",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"116–160 kW",
+source:"https://www.unical.eu/",
+docs:[
+["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
+]
+},
+
+/* ============================================================
+   WOLF CALDAIE
+============================================================ */
+
+{
+brand:"WOLF",
+family:"FGB",
+model:"FGB 24",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"24 kW",
+source:"https://www.wolf.eu/",
+docs:[
+["Documentazione WOLF","Fonte ufficiale","https://www.wolf.eu/"]
+]
+},
+
+{
+brand:"WOLF",
+family:"FGB",
+model:"FGB-K 24",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"24 kW",
+source:"https://www.wolf.eu/",
+docs:[
+["Documentazione WOLF","Fonte ufficiale","https://www.wolf.eu/"]
+]
+},
+
+{
+brand:"WOLF",
+family:"FGB",
+model:"FGB 28",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"28 kW",
+source:"https://www.wolf.eu/",
+docs:[
+["Documentazione WOLF","Fonte ufficiale","https://www.wolf.eu/"]
+]
+},
+
+{
+brand:"WOLF",
+family:"FGB",
+model:"FGB-K 28",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"28 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"FGB",
+model:"FGB 35",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"35 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"FGB",
+model:"FGB-K 35",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"35 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2",
+model:"CGB-2/14",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"14 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2",
+model:"CGB-2/20",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"20 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2",
+model:"CGB-2/24",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"24 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2K",
+model:"CGB-2K/20",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"20 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2K",
+model:"CGB-2K/24",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"24 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2",
+model:"CGB-2/38",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"38 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGB-2",
+model:"CGB-2/55",
+category:"Caldaia",
+type:"Murale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"55 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGS-2L",
+model:"CGS-2L 14/120L",
+category:"Caldaia",
+type:"Sistema",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"14 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGS-2L",
+model:"CGS-2L 20/160L",
+category:"Caldaia",
+type:"Sistema",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"20 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"CGS-2L",
+model:"CGS-2L 24/200L",
+category:"Caldaia",
+type:"Sistema",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"24 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"MGK-2",
+model:"MGK-2 130-300",
+category:"Caldaia",
+type:"Professionale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"130–300 kW",
+source:"https://www.wolf.eu/"
+},
+
+{
+brand:"WOLF",
+family:"MGK-2",
+model:"MGK-2 390-1000",
+category:"Caldaia",
+type:"Professionale",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"390–1000 kW",
+source:"https://www.wolf.eu/"
+},
+
+/* ============================================================
+   WOLF POMPE DI CALORE
+============================================================ */
+
+{
+brand:"WOLF",
+family:"Pompe di calore",
+model:"CHA",
+category:"Pompa di calore",
+type:"Aria-acqua",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R290",
+capacity:"Variabile",
+source:"https://www.wolf.eu/",
+docs:[
+["Pompe di calore","Documentazione WOLF","https://www.wolf.eu/"]
+]
+},
+
+{
+brand:"WOLF",
+family:"Pompe di calore",
+model:"BWL-1S",
+category:"Pompa di calore",
+type:"Aria-acqua",
+years:"2015-2022",
+year:2022,
+status:"archive",
+refrigerant:"R410A",
+capacity:"Variabile",
+source:"https://www.wolf.eu/",
+docs:[
+["Archivio WOLF","Documentazione ufficiale","https://www.wolf.eu/"]
+]
+},
+
+{
+brand:"WOLF",
+family:"Ventilazione",
+model:"CWL",
+category:"Ventilazione",
+type:"VMC",
+years:"2015-2026",
+year:2026,
+status:"current",
+refrigerant:"N/A",
+capacity:"Variabile",
+source:"https://www.wolf.eu/",
+docs:[
+["Ventilazione","Documentazione WOLF","https://www.wolf.eu/"]
+]
 }
 
 ];
 
 
-/* =========================================================
-   DATABASE ERRORI
-   ========================================================= */
+/* ============================================================
+   CODICI ERRORE
+
+   SOLO CODICI DA INSERIRE DOPO VERIFICA DEL MANUALE SPECIFICO.
+============================================================ */
 
 const ERRORS = [
 
-    {
-        brand:"Unical",
-        model:"KON1",
-        code:"E01",
-        title:"Mancata accensione",
-        description:"Verificare alimentazione gas, accensione, rilevazione fiamma e condizioni indicate dal manuale specifico."
-    },
+{
+brand:"Daikin",
+model:"Serie Daikin",
+code:"U4",
+title:"Errore di comunicazione tra unità interne ed esterne",
+description:"Verificare alimentazione, collegamenti di comunicazione, cablaggio e schede elettroniche. La diagnosi esatta dipende dalla serie e dal modello.",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
 
-    {
-        brand:"Unical",
-        model:"KONe",
-        code:"E01",
-        title:"Mancata accensione",
-        description:"Seguire la procedura di diagnosi prevista dalla documentazione ufficiale del modello."
-    },
+{
+brand:"Daikin",
+model:"Serie Daikin",
+code:"A1",
+title:"Anomalia scheda elettronica unità interna",
+description:"Il significato e la procedura di diagnosi devono essere verificati sul manuale di servizio della specifica serie.",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
 
-    {
-        brand:"Daikin",
-        model:"Altherma",
-        code:"U4",
-        title:"Problema di comunicazione",
-        description:"Verificare comunicazione tra le unità e collegamenti secondo il modello specifico."
-    },
+{
+brand:"Daikin",
+model:"Serie Daikin",
+code:"A5",
+title:"Protezione alta/bassa temperatura scambiatore",
+description:"Verificare condizioni operative, filtri, scambiatore, sonde e flusso d'aria secondo il manuale specifico.",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
 
-    {
-        brand:"WOLF",
-        model:"CGB-2",
-        code:"F1",
-        title:"Guasto da verificare",
-        description:"Consultare il manuale tecnico CGB-2 per la procedura diagnostica specifica."
-    }
+{
+brand:"Daikin",
+model:"Serie Daikin",
+code:"E7",
+title:"Anomalia motore ventilatore unità esterna",
+description:"Controllare ventilatore, motore, alimentazione e scheda elettronica secondo la procedura del modello.",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
+
+{
+brand:"Daikin",
+model:"Serie Daikin",
+code:"F3",
+title:"Protezione temperatura tubo di mandata",
+description:"Verificare circuito frigorifero, condizioni di funzionamento, scambio termico e sensori secondo manuale.",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
+
+{
+brand:"Unical",
+model:"Climatizzazione",
+code:"AUTO-DIAGNOSI",
+title:"Sistema di autodiagnosi",
+description:"Diverse serie Unical dispongono di autodiagnosi. Il codice visualizzato deve essere verificato sul manuale della macchina.",
+source:"https://www.unical.eu/"
+}
 
 ];
 
 
-/* =========================================================
+/* ============================================================
    NAVIGAZIONE
-   ========================================================= */
+============================================================ */
 
 function showPage(id){
 
-    document.querySelectorAll(".page").forEach(page=>{
-        page.classList.remove("active");
-    });
+document.querySelectorAll(".page")
+.forEach(page=>{
+page.classList.remove("active");
+});
 
-    document.getElementById(id).classList.add("active");
+document.getElementById(id)
+.classList.add("active");
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+if(id==="modelsPage"){
+renderModels();
+}
+
+if(id==="errorsPage"){
+renderErrors();
+}
 
 }
 
 
-/* =========================================================
-   MARCA
-   ========================================================= */
+/* ============================================================
+   FILTRI
+============================================================ */
 
-function openBrand(brand){
+function filterBrand(brand){
 
-    document.getElementById("brandFilter").value=brand;
-    document.getElementById("typeFilter").value="";
+document.getElementById("brandFilter").value=brand;
 
-    document.getElementById("modelsTitle").textContent=
-        "Modelli " + brand;
+showPage("modelsPage");
 
-    renderModels();
-
-    showPage("modelsPage");
+renderModels();
 
 }
 
 
-/* =========================================================
-   TUTTI MODELLI
-   ========================================================= */
+function filterCategory(category){
 
-function openAllModels(){
+document.getElementById("categoryFilter").value=category;
 
-    document.getElementById("brandFilter").value="";
-    document.getElementById("typeFilter").value="";
-    document.getElementById("modelsTitle").textContent="Tutti i modelli";
+showPage("modelsPage");
 
-    renderModels();
-
-    showPage("modelsPage");
+renderModels();
 
 }
 
 
-/* =========================================================
-   FILTRO TIPO
-   ========================================================= */
-
-function filterType(type){
-
-    document.getElementById("brandFilter").value="";
-    document.getElementById("typeFilter").value=type;
-
-    document.getElementById("modelsTitle").textContent=type;
-
-    renderModels();
-
-    showPage("modelsPage");
-
-}
-
-
-/* =========================================================
+/* ============================================================
    RENDER MODELLI
-   ========================================================= */
+============================================================ */
 
 function renderModels(){
 
-    const brand=
-        document.getElementById("brandFilter").value;
+const search=
+(document.getElementById("modelSearch")?.value || "")
+.toLowerCase()
+.trim();
 
-    const type=
-        document.getElementById("typeFilter").value;
+const brand=
+document.getElementById("brandFilter")?.value || "";
 
-    const search=
-        document.getElementById("globalSearch").value
-        .trim()
-        .toLowerCase();
+const category=
+document.getElementById("categoryFilter")?.value || "";
 
-    let list=MODELS.filter(model=>{
+const year=
+document.getElementById("yearFilter")?.value || "";
 
-        const okBrand=
-            !brand || model.brand===brand;
+const status=
+document.getElementById("statusFilter")?.value || "";
 
-        const okType=
-            !type || model.type===type;
+const refrigerant=
+document.getElementById("refrigerantFilter")?.value || "";
 
-        const text=(
-            model.brand+" "+
-            model.name+" "+
-            model.category+" "+
-            model.description
-        ).toLowerCase();
 
-        const okSearch=
-            !search || text.includes(search);
+const filtered=PRODUCTS.filter(p=>{
 
-        return okBrand && okType && okSearch;
+const text=`
 
-    });
+${p.brand}
+${p.family}
+${p.model}
+${p.category}
+${p.type}
+${p.years}
+${p.refrigerant}
 
-    const container=
-        document.getElementById("modelsList");
+`.toLowerCase();
 
-    if(!list.length){
+if(search && !text.includes(search))
+return false;
 
-        container.innerHTML=`
-            <div class="empty">
-                Nessun modello trovato.
-            </div>
-        `;
+if(brand && p.brand!==brand)
+return false;
 
-        return;
-    }
+if(category && p.category!==category)
+return false;
 
-    container.innerHTML=list.map(model=>`
+if(year){
 
-        <div
-            class="model-card"
-            onclick="openModel('${model.id}')"
-        >
+const y=parseInt(year);
 
-            <div class="model-brand">
-                ${model.brand}
-            </div>
+const range=p.years.split("-");
 
-            <h3>${model.name}</h3>
+const start=parseInt(range[0]);
+const end=parseInt(range[1] || range[0]);
 
-            <div class="model-type">
-                ${model.type} · ${model.category}
-            </div>
+if(y<start || y>end)
+return false;
 
-            <div class="badges">
+}
 
-                <span class="badge">
-                    ${model.power}
-                </span>
+if(status && p.status!==status)
+return false;
 
-                <span class="badge">
-                    ${model.fuel}
-                </span>
+if(refrigerant &&
+!p.refrigerant.includes(refrigerant))
+return false;
 
-                <span class="badge ${model.status}">
-                    ${model.status==="current"
-                        ?"ATTUALE"
-                        :"ARCHIVIO"}
-                </span>
+return true;
 
-            </div>
+});
 
-        </div>
 
-    `).join("");
+document.getElementById("resultsCount").textContent=
+filtered.length+
+(filtered.length===1
+?" risultato"
+:" risultati");
+
+
+const grid=document.getElementById("modelsGrid");
+
+if(filtered.length===0){
+
+grid.innerHTML=`
+
+<div class="empty"
+style="grid-column:1/-1;">
+
+<div class="empty-icon">
+🔎
+</div>
+
+<h3>
+Nessun prodotto trovato
+</h3>
+
+<p>
+Prova a modificare i filtri oppure cerca
+il codice completo del modello.
+</p>
+
+</div>
+
+`;
+
+return;
 
 }
 
 
-/* =========================================================
-   DETTAGLIO MODELLO
-   ========================================================= */
+grid.innerHTML=filtered
+.map((p,index)=>{
 
-function openModel(id){
+const originalIndex=
+PRODUCTS.indexOf(p);
 
-    const model=
-        MODELS.find(m=>m.id===id);
+return `
 
-    if(!model)return;
+<div
+class="model-card"
+onclick="openProduct(${originalIndex})">
 
-    const errors=
-        ERRORS.filter(e=>
-            e.brand===model.brand &&
-            (
-                e.model===model.name ||
-                e.model==="Altherma" &&
-                model.brand==="Daikin"
-            )
-        );
+<div class="model-top">
 
-    document.getElementById("detailContent").innerHTML=`
+<div>
 
-        <div class="detail-head">
+<div class="model-code">
+${escapeHtml(p.model)}
+</div>
 
-            <button
-                class="back"
-                onclick="showPage('modelsPage')"
-            >
-                ← Modelli
-            </button>
+<div class="model-family">
+${escapeHtml(p.brand)} ·
+${escapeHtml(p.family)}
+</div>
 
-            <div class="detail-brand">
-                ${model.brand}
-            </div>
+</div>
 
-            <h2>${model.name}</h2>
+<span class="badge ${p.status}">
+${p.status==="current"
+?"ATTUALE"
+:"ARCHIVIATO"}
+</span>
 
-            <p>
-                ${model.description}
-            </p>
+</div>
 
-        </div>
 
+<div class="model-info">
 
-        <div class="detail-grid">
+<div class="info-item">
 
-            <div class="panel">
+<strong>
+Categoria
+</strong>
 
-                <h3>📊 Dati tecnici</h3>
+${escapeHtml(p.category)}
 
-                <div class="spec">
-                    <span>Marca</span>
-                    <span>${model.brand}</span>
-                </div>
+</div>
 
-                <div class="spec">
-                    <span>Modello</span>
-                    <span>${model.name}</span>
-                </div>
 
-                <div class="spec">
-                    <span>Categoria</span>
-                    <span>${model.category}</span>
-                </div>
+<div class="info-item">
 
-                <div class="spec">
-                    <span>Tipo</span>
-                    <span>${model.type}</span>
-                </div>
+<strong>
+Tipo
+</strong>
 
-                <div class="spec">
-                    <span>Potenza</span>
-                    <span>${model.power}</span>
-                </div>
+${escapeHtml(p.type)}
 
-                <div class="spec">
-                    <span>Alimentazione</span>
-                    <span>${model.fuel}</span>
-                </div>
+</div>
 
-                <div class="spec">
-                    <span>Stato</span>
-                    <span>
-                        ${model.status==="current"
-                            ?"Modello attuale"
-                            :"Modello archivio"}
-                    </span>
-                </div>
 
-            </div>
+<div class="info-item">
 
+<strong>
+Periodo
+</strong>
 
-            <div class="panel">
+${escapeHtml(p.years)}
 
-                <h3>📖 Documentazione</h3>
+</div>
 
-                <div class="documents">
 
-                    ${model.documents.map(doc=>`
+<div class="info-item">
 
-                        <div class="document">
+<strong>
+Refrigerante
+</strong>
 
-                            <div class="document-info">
+${escapeHtml(p.refrigerant)}
 
-                                <div class="document-icon">
-                                    📄
-                                </div>
+</div>
 
-                                <div>
+</div>
 
-                                    <strong>
-                                        ${doc.name}
-                                    </strong>
+</div>
 
-                                    <small>
-                                        ${doc.type}
-                                    </small>
+`;
 
-                                </div>
-
-                            </div>
-
-                            <a
-                                class="open-btn"
-                                href="${doc.url}"
-                                target="_blank"
-                            >
-                                APRI
-                            </a>
-
-                        </div>
-
-                    `).join("")}
-
-                </div>
-
-            </div>
-
-
-            <div class="panel">
-
-                <h3>⚠️ Codici errore</h3>
-
-                ${
-                    errors.length
-                    ?
-                    `<div class="error-list">
-
-                        ${errors.map(e=>`
-
-                            <div class="error-item">
-
-                                <div class="error-code">
-                                    ${e.code}
-                                </div>
-
-                                <div class="error-title">
-                                    ${e.title}
-                                </div>
-
-                                <div class="error-description">
-                                    ${e.description}
-                                </div>
-
-                            </div>
-
-                        `).join("")}
-
-                    </div>`
-                    :
-                    `
-                    <div class="empty">
-                        Nessun codice errore inserito
-                        per questa macchina.
-                        <br><br>
-                        La sezione verrà popolata
-                        con la documentazione tecnica
-                        specifica del modello.
-                    </div>
-                    `
-                }
-
-            </div>
-
-
-            <div class="panel">
-
-                <h3>🛠️ Diagnosi tecnica</h3>
-
-                <div class="spec">
-                    <span>Manuale installazione</span>
-                    <span>Disponibile</span>
-                </div>
-
-                <div class="spec">
-                    <span>Schema elettrico</span>
-                    <span>Da documentazione</span>
-                </div>
-
-                <div class="spec">
-                    <span>Parametri tecnico</span>
-                    <span>Da documentazione</span>
-                </div>
-
-                <div class="spec">
-                    <span>Ricambi</span>
-                    <span>Da documentazione</span>
-                </div>
-
-                <div class="spec">
-                    <span>Manutenzione</span>
-                    <span>Da documentazione</span>
-                </div>
-
-            </div>
-
-
-            <div class="panel">
-
-                <h3>🔗 Fonte ufficiale</h3>
-
-                <p style="
-                    color:#6d747c;
-                    font-size:13px;
-                    line-height:1.5;
-                    margin-bottom:14px;
-                ">
-                    La scheda utilizza la documentazione
-                    del produttore come riferimento.
-                </p>
-
-                <a
-                    href="${model.source}"
-                    target="_blank"
-                    class="open-btn"
-                    style="display:inline-block"
-                >
-                    APRI SITO PRODUTTORE
-                </a>
-
-            </div>
-
-        </div>
-
-    `;
-
-    showPage("detailPage");
+})
+.join("");
 
 }
 
 
-/* =========================================================
+/* ============================================================
+   DETTAGLIO
+============================================================ */
+
+function openProduct(index){
+
+const p=PRODUCTS[index];
+
+if(!p)
+return;
+
+const docs=p.docs || [];
+
+document.getElementById("detailContent").innerHTML=`
+
+<div class="detail-head">
+
+<span class="badge ${p.status}">
+${p.status==="current"
+?"PRODOTTO ATTUALE"
+:"PRODOTTO ARCHIVIATO"}
+</span>
+
+<h1>
+${escapeHtml(p.model)}
+</h1>
+
+<p>
+${escapeHtml(p.brand)}
+ ·
+${escapeHtml(p.family)}
+ ·
+${escapeHtml(p.type)}
+</p>
+
+</div>
+
+
+<div class="detail-layout">
+
+<div>
+
+<div class="section">
+
+<h2>
+Dati tecnici
+</h2>
+
+<div class="data-grid">
+
+<div class="data-box">
+<span>Marca</span>
+<strong>${escapeHtml(p.brand)}</strong>
+</div>
+
+<div class="data-box">
+<span>Famiglia</span>
+<strong>${escapeHtml(p.family)}</strong>
+</div>
+
+<div class="data-box">
+<span>Modello</span>
+<strong>${escapeHtml(p.model)}</strong>
+</div>
+
+<div class="data-box">
+<span>Categoria</span>
+<strong>${escapeHtml(p.category)}</strong>
+</div>
+
+<div class="data-box">
+<span>Tipologia</span>
+<strong>${escapeHtml(p.type)}</strong>
+</div>
+
+<div class="data-box">
+<span>Periodo</span>
+<strong>${escapeHtml(p.years)}</strong>
+</div>
+
+<div class="data-box">
+<span>Refrigerante</span>
+<strong>${escapeHtml(p.refrigerant)}</strong>
+</div>
+
+<div class="data-box">
+<span>Capacità / gamma</span>
+<strong>${escapeHtml(p.capacity || "Da verificare")}</strong>
+</div>
+
+<div class="data-box">
+<span>Stato</span>
+<strong>
+${p.status==="current"
+?"Attuale"
+:"Archiviato"}
+</strong>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>
+Documentazione
+</h2>
+
+<div class="documents">
+
+${docs.length
+?
+docs.map(d=>`
+
+<a
+class="doc"
+href="${d[2]}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+📄
+</div>
+
+<strong>
+${escapeHtml(d[0])}
+</strong>
+
+<span>
+${escapeHtml(d[1])}
+</span>
+
+</a>
+
+`).join("")
+:
+`
+
+<a
+class="doc"
+href="${p.source}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+🌐
+</div>
+
+<strong>
+Fonte ufficiale
+</strong>
+
+<span>
+Apri documentazione
+</span>
+
+</a>
+
+`
+}
+
+<a
+class="doc"
+href="${p.source}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+🔎
+</div>
+
+<strong>
+Ricerca prodotto
+</strong>
+
+<span>
+Verifica manuali e documenti
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>
+Diagnosi tecnica
+</h2>
+
+<div class="note">
+
+<strong>
+ATTENZIONE TECNICA
+</strong>
+
+<br><br>
+
+Prima di sostituire una scheda,
+compressore, motore o sensore,
+verificare sempre alimentazione,
+cablaggio, connettori, pressioni,
+temperature e condizioni operative
+secondo la procedura del costruttore.
+
+</div>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="section">
+
+<h2>
+Strumenti rapidi
+</h2>
+
+<div class="documents">
+
+<a
+class="doc"
+href="${p.source}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+📚
+</div>
+
+<strong>
+Manuali
+</strong>
+
+<span>
+Documentazione ufficiale
+</span>
+
+</a>
+
+
+<a
+class="doc"
+href="${p.source}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+⚡
+</div>
+
+<strong>
+Schemi
+</strong>
+
+<span>
+Controlla documentazione tecnica
+</span>
+
+</a>
+
+
+<a
+class="doc"
+href="${p.source}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+🧩
+</div>
+
+<strong>
+Ricambi
+</strong>
+
+<span>
+Ricerca componente
+</span>
+
+</a>
+
+
+<a
+class="doc"
+href="${p.source}"
+target="_blank"
+rel="noopener">
+
+<div class="doc-icon">
+🛠️
+</div>
+
+<strong>
+Service
+</strong>
+
+<span>
+Procedure tecniche
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>
+Note
+</h2>
+
+<p style="line-height:1.6;color:#4b5563;">
+
+${escapeHtml(
+p.notes ||
+"Per dati dimensionali, cariche refrigerante, pressioni, parametri e procedure di manutenzione utilizzare il manuale tecnico relativo al codice completo della macchina."
+)}
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+showPage("detailPage");
+
+}
+
+
+/* ============================================================
    ERRORI
-   ========================================================= */
-
-function openErrors(){
-
-    document.getElementById("errorSearch").value="";
-
-    renderErrors();
-
-    showPage("errorsPage");
-
-}
-
+============================================================ */
 
 function renderErrors(){
 
-    const query=
-        document.getElementById("errorSearch")
-        .value
-        .trim()
-        .toLowerCase();
+const search=
+(document.getElementById("errorSearch")?.value || "")
+.toLowerCase()
+.trim();
 
-    const list=ERRORS.filter(error=>{
+const filtered=ERRORS.filter(e=>{
 
-        const text=(
-            error.brand+" "+
-            error.model+" "+
-            error.code+" "+
-            error.title+" "+
-            error.description
-        ).toLowerCase();
+const text=`
 
-        return !query || text.includes(query);
+${e.brand}
+${e.model}
+${e.code}
+${e.title}
+${e.description}
 
-    });
+`.toLowerCase();
 
-    const container=
-        document.getElementById("errorList");
+return !search || text.includes(search);
 
-    if(!list.length){
+});
 
-        container.innerHTML=`
-            <div class="empty">
-                Nessun codice trovato.
-            </div>
-        `;
 
-        return;
-    }
+const list=document.getElementById("errorList");
 
-    container.innerHTML=list.map(error=>`
+if(filtered.length===0){
 
-        <div class="error-item">
+list.innerHTML=`
 
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                gap:10px;
-            ">
+<div class="empty">
 
-                <div>
+<div class="empty-icon">
+🔎
+</div>
 
-                    <div style="
-                        font-size:11px;
-                        color:#ff6b00;
-                        font-weight:bold;
-                    ">
-                        ${error.brand} · ${error.model}
-                    </div>
+<h3>
+Nessun codice trovato
+</h3>
 
-                    <div class="error-code">
-                        ${error.code}
-                    </div>
+<p>
+Prova con un altro codice o una parola chiave.
+</p>
 
-                </div>
+</div>
 
-            </div>
+`;
 
-            <div class="error-title">
-                ${error.title}
-            </div>
-
-            <div class="error-description">
-                ${error.description}
-            </div>
-
-        </div>
-
-    `).join("");
+return;
 
 }
 
 
-/* =========================================================
-   CATEGORIE
-   ========================================================= */
+list.innerHTML=filtered.map(e=>`
 
-function openCategories(){
+<div class="error-card">
 
-    showPage("categoriesPage");
+<div class="error-code">
+${escapeHtml(e.code)}
+</div>
+
+<div class="error-model">
+${escapeHtml(e.brand)}
+ ·
+${escapeHtml(e.model)}
+</div>
+
+<h3 style="margin-bottom:7px;">
+${escapeHtml(e.title)}
+</h3>
+
+<div class="error-description">
+${escapeHtml(e.description)}
+</div>
+
+<br>
+
+<a
+href="${e.source}"
+target="_blank"
+rel="noopener"
+style="font-size:12px;font-weight:bold;color:#2563eb;text-decoration:none;">
+
+Apri fonte ufficiale →
+
+</a>
+
+</div>
+
+`).join("");
 
 }
 
 
-/* =========================================================
-   RICERCA UNIVERSALE
-   ========================================================= */
+/* ============================================================
+   RICERCA GLOBALE
+============================================================ */
 
 function globalSearch(){
 
-    const value=
-        document.getElementById("globalSearch")
-        .value
-        .trim();
+const value=
+document.getElementById("globalSearch")
+.value
+.trim();
 
-    if(!value){
+if(!value)
+return;
 
-        if(document.getElementById("modelsPage").classList.contains("active")){
-            renderModels();
-        }
+document.getElementById("modelSearch").value=value;
 
-        return;
-    }
+showPage("modelsPage");
 
-    document.getElementById("brandFilter").value="";
-    document.getElementById("typeFilter").value="";
-    document.getElementById("modelsTitle").textContent=
-        "Risultati ricerca";
-
-    renderModels();
-
-    showPage("modelsPage");
+renderModels();
 
 }
 
 
-/* =========================================================
+/* ============================================================
+   ESCAPE HTML
+============================================================ */
+
+function escapeHtml(value){
+
+if(value===undefined || value===null)
+return "";
+
+return String(value)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+/* ============================================================
+   STATISTICHE
+============================================================ */
+
+function updateStats(){
+
+document.getElementById("totalModels")
+.textContent=PRODUCTS.length;
+
+document.getElementById("totalErrors")
+.textContent=ERRORS.length;
+
+}
+
+
+/* ============================================================
    AVVIO
-   ========================================================= */
+============================================================ */
+
+updateStats();
 
 renderModels();
+
+renderErrors();
 
 </script>
 
