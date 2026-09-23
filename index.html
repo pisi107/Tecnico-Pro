@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#111827">
+
+<title>TECNICO PRO</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f3f4f6;
+    color:#111827;
+    min-height:100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:#111827;
+    color:white;
+    padding:18px 20px;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 3px 12px rgba(0,0,0,.20);
+}
+
+.header-inner{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:#f97316;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.logo-text h1{
+    font-size:20px;
+    letter-spacing:.5px;
+}
+
+.logo-text span{
+    display:block;
+    font-size:11px;
+    color:#9ca3af;
+    margin-top:2px;
+}
+
+.menu-btn{
+    background:#1f2937;
+    border:1px solid #374151;
+    color:white;
+    border-radius:10px;
+    padding:10px 13px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    max-width:1100px;
+    margin:auto;
+    padding:25px 16px 50px;
+}
+
+.welcome{
+    margin-bottom:22px;
+}
+
+.welcome h2{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.welcome p{
+    color:#6b7280;
+    font-size:15px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-box{
+    background:white;
+    border-radius:18px;
+    padding:16px;
+    box-shadow:0 4px 18px rgba(0,0,0,.08);
+    margin-bottom:25px;
+}
+
+.search-wrapper{
+    position:relative;
+}
+
+.search-icon{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:20px;
+}
+
+#searchInput{
+    width:100%;
+    border:2px solid #e5e7eb;
+    border-radius:13px;
+    padding:15px 15px 15px 48px;
+    font-size:16px;
+    outline:none;
+    transition:.2s;
+}
+
+#searchInput:focus{
+    border-color:#f97316;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:25px 0 13px;
+}
+
+.section-title h3{
+    font-size:18px;
+}
+
+.section-title span{
+    font-size:12px;
+    color:#9ca3af;
+}
+
+/* =========================
+   BRANDS
+========================= */
+
+.brands{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
+
+.brand-card{
+    background:white;
+    border-radius:18px;
+    padding:22px 15px;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+    border:2px solid transparent;
+    transition:.2s;
+    text-align:center;
+}
+
+.brand-card:hover{
+    transform:translateY(-2px);
+    border-color:#f97316;
+}
+
+.brand-logo{
+    width:62px;
+    height:62px;
+    margin:0 auto 12px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f3f4f6;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.brand-card h4{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.brand-card p{
+    font-size:12px;
+    color:#6b7280;
+}
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-actions{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.quick-card{
+    background:white;
+    border-radius:15px;
+    padding:17px 10px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:0 3px 12px rgba(0,0,0,.06);
+    transition:.2s;
+}
+
+.quick-card:hover{
+    transform:translateY(-2px);
+}
+
+.quick-icon{
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.quick-card strong{
+    display:block;
+    font-size:14px;
+}
+
+.quick-card small{
+    display:block;
+    margin-top:4px;
+    color:#9ca3af;
+    font-size:11px;
+}
+
+/* =========================
+   INFO BOX
+========================= */
+
+.info-box{
+    margin-top:25px;
+    background:#111827;
+    color:white;
+    border-radius:18px;
+    padding:22px;
+}
+
+.info-box h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.info-box p{
+    color:#d1d5db;
+    line-height:1.5;
+    font-size:14px;
+}
+
+/* =========================
+   SEARCH RESULTS
+========================= */
+
+#searchResults{
+    display:none;
+    margin-top:15px;
+}
+
+.search-result{
+    background:#f9fafb;
+    border-radius:12px;
+    padding:14px;
+    margin-bottom:8px;
+    cursor:pointer;
+}
+
+.search-result strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.search-result span{
+    font-size:12px;
+    color:#6b7280;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    main{
+        padding:20px 13px 40px;
+    }
+
+    .welcome h2{
+        font-size:24px;
+    }
+
+    .brands{
+        grid-template-columns:1fr;
+    }
+
+    .brand-card{
+        display:flex;
+        align-items:center;
+        text-align:left;
+        gap:15px;
+        padding:15px;
+    }
+
+    .brand-logo{
+        margin:0;
+        flex-shrink:0;
+    }
+
+    .quick-actions{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="header-inner">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🔧
+            </div>
+
+            <div class="logo-text">
+                <h1>TECNICO PRO</h1>
+                <span>Strumenti per tecnici</span>
+            </div>
+
+        </div>
+
+        <button class="menu-btn" onclick="openMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <section class="welcome">
+
+        <h2>Ciao tecnico 👋</h2>
+
+        <p>
+            Trova rapidamente manuali, codici errore,
+            schemi e informazioni tecniche.
+        </p>
+
+    </section>
+
+
+    <!-- RICERCA -->
+
+    <section class="search-box">
+
+        <div class="search-wrapper">
+
+            <span class="search-icon">🔎</span>
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="Cerca modello, codice errore..."
+                autocomplete="off"
+                oninput="searchSite()"
+            >
+
+        </div>
+
+        <div id="searchResults"></div>
+
+    </section>
+
+
+    <!-- MARCHE -->
+
+    <div class="section-title">
+
+        <h3>Marche</h3>
+
+        <span>Seleziona produttore</span>
+
+    </div>
+
+
+    <section class="brands">
+
+        <div class="brand-card" onclick="openBrand('Unical')">
+
+            <div class="brand-logo">
+                U
+            </div>
+
+            <div>
+                <h4>Unical</h4>
+                <p>Caldaie e sistemi termici</p>
+            </div>
+
+        </div>
+
+
+        <div class="brand-card" onclick="openBrand('Daikin')">
+
+            <div class="brand-logo">
+                D
+            </div>
+
+            <div>
+                <h4>Daikin</h4>
+                <p>Pompe di calore e climatizzazione</p>
+            </div>
+
+        </div>
+
+
+        <div class="brand-card" onclick="openBrand('WOLF')">
+
+            <div class="brand-logo">
+                W
+            </div>
+
+            <div>
+                <h4>WOLF</h4>
+                <p>Caldaie e pompe di calore</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACCESSO RAPIDO -->
+
+    <div class="section-title">
+
+        <h3>Accesso rapido</h3>
+
+        <span>Strumenti</span>
+
+    </div>
+
+
+    <section class="quick-actions">
+
+        <div class="quick-card" onclick="openSection('errori')">
+
+            <div class="quick-icon">
+                ⚠️
+            </div>
+
+            <strong>Codici errore</strong>
+
+            <small>Diagnosi</small>
+
+        </div>
+
+
+        <div class="quick-card" onclick="openSection('manuali')">
+
+            <div class="quick-icon">
+                📖
+            </div>
+
+            <strong>Manuali</strong>
+
+            <small>Documentazione</small>
+
+        </div>
+
+
+        <div class="quick-card" onclick="openSection('schemi')">
+
+            <div class="quick-icon">
+                ⚡
+            </div>
+
+            <strong>Schemi</strong>
+
+            <small>Elettrici e tecnici</small>
+
+        </div>
+
+
+        <div class="quick-card" onclick="openSection('strumenti')">
+
+            <div class="quick-icon">
+                🧰
+            </div>
+
+            <strong>Strumenti</strong>
+
+            <small>Calcoli tecnici</small>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFO -->
+
+    <section class="info-box">
+
+        <h3>🛠️ Un unico posto per il tecnico</h3>
+
+        <p>
+            L'obiettivo di TECNICO PRO è ridurre il tempo
+            perso nella ricerca di documentazione tecnica.
+            Manuali, codici errore, schemi, parametri,
+            procedure e strumenti saranno organizzati
+            in modo semplice e veloce.
+        </p>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/* =========================
+   DATABASE INIZIALE
+   (lo riempiremo successivamente)
+========================= */
+
+const database = [
+
+    {
+        marca:"Unical",
+        modello:"Da inserire",
+        tipo:"Caldaia",
+        codice:"",
+        descrizione:"Database Unical in preparazione."
+    },
+
+    {
+        marca:"Daikin",
+        modello:"Da inserire",
+        tipo:"Pompa di calore",
+        codice:"",
+        descrizione:"Database Daikin in preparazione."
+    },
+
+    {
+        marca:"WOLF",
+        modello:"Da inserire",
+        tipo:"Caldaia",
+        codice:"",
+        descrizione:"Database WOLF in preparazione."
+    }
+
+];
+
+
+/* =========================
+   RICERCA
+========================= */
+
+function searchSite(){
+
+    const input =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const results =
+        document.getElementById("searchResults");
+
+    if(!input){
+
+        results.style.display="none";
+        results.innerHTML="";
+        return;
+
+    }
+
+    const matches = database.filter(item =>
+
+        item.marca.toLowerCase().includes(input) ||
+        item.modello.toLowerCase().includes(input) ||
+        item.tipo.toLowerCase().includes(input) ||
+        item.codice.toLowerCase().includes(input) ||
+        item.descrizione.toLowerCase().includes(input)
+
+    );
+
+
+    results.style.display="block";
+
+
+    if(matches.length === 0){
+
+        results.innerHTML = `
+
+            <div class="search-result">
+
+                <strong>Nessun risultato</strong>
+
+                <span>
+                    Prova con un modello o un codice errore diverso.
+                </span>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    results.innerHTML = matches.map(item => `
+
+        <div class="search-result"
+             onclick="openResult('${item.marca}')">
+
+            <strong>
+                ${item.marca} — ${item.modello}
+            </strong>
+
+            <span>
+                ${item.tipo}
+            </span>
+
+        </div>
+
+    `).join("");
+
+}
+
+
+/* =========================
+   MARCA
+========================= */
+
+function openBrand(marca){
+
+    alert(
+        "Sezione " + marca +
+        "\n\nQui inseriremo modelli, manuali, codici errore e documentazione."
+    );
+
+}
+
+
+/* =========================
+   SEZIONI RAPIDE
+========================= */
+
+function openSection(section){
+
+    const names = {
+
+        errori:"Codici errore",
+
+        manuali:"Manuali",
+
+        schemi:"Schemi tecnici",
+
+        strumenti:"Strumenti tecnici"
+
+    };
+
+    alert(
+        names[section] +
+        "\n\nQuesta sezione verrà sviluppata nel prossimo passaggio."
+    );
+
+}
+
+
+/* =========================
+   RISULTATO
+========================= */
+
+function openResult(marca){
+
+    openBrand(marca);
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+function openMenu(){
+
+    alert(
+        "MENU\n\n" +
+        "• Marche\n" +
+        "• Codici errore\n" +
+        "• Manuali\n" +
+        "• Schemi\n" +
+        "• Strumenti"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
