@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
 
 <meta charset="UTF-8">
@@ -10,6 +11,10 @@
 <title>TECNICO PRO</title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
     box-sizing:border-box;
@@ -24,23 +29,31 @@ body{
     min-height:100vh;
 }
 
-/* =========================
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header{
     background:#111827;
     color:white;
-    padding:18px 20px;
     position:sticky;
     top:0;
-    z-index:100;
-    box-shadow:0 3px 12px rgba(0,0,0,.20);
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.20);
 }
 
 .header-inner{
-    max-width:1100px;
+    max-width:1150px;
     margin:auto;
+    padding:16px 18px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -54,14 +67,17 @@ header{
 }
 
 .logo-icon{
-    width:42px;
-    height:42px;
-    border-radius:12px;
+    width:45px;
+    height:45px;
+    border-radius:13px;
+
     background:#f97316;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:23px;
+
+    font-size:24px;
 }
 
 .logo-text h1{
@@ -71,96 +87,153 @@ header{
 
 .logo-text span{
     display:block;
-    font-size:11px;
     color:#9ca3af;
-    margin-top:2px;
+    font-size:11px;
+    margin-top:3px;
 }
 
-.menu-btn{
-    background:#1f2937;
+.header-menu{
     border:1px solid #374151;
+    background:#1f2937;
     color:white;
-    border-radius:10px;
-    padding:10px 13px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:11px;
+
+    font-size:20px;
     cursor:pointer;
-    font-size:18px;
 }
 
-/* =========================
+
+/* =========================================================
    MAIN
-========================= */
+========================================================= */
 
 main{
-    max-width:1100px;
+    max-width:1150px;
     margin:auto;
-    padding:25px 16px 50px;
+    padding:25px 16px 60px;
 }
 
-.welcome{
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
     margin-bottom:22px;
 }
 
-.welcome h2{
-    font-size:28px;
+.hero h2{
+    font-size:29px;
     margin-bottom:7px;
 }
 
-.welcome p{
+.hero p{
     color:#6b7280;
     font-size:15px;
+    line-height:1.5;
 }
 
-/* =========================
+
+/* =========================================================
    SEARCH
-========================= */
+========================================================= */
 
 .search-box{
     background:white;
-    border-radius:18px;
+    border-radius:19px;
     padding:16px;
+
     box-shadow:0 4px 18px rgba(0,0,0,.08);
-    margin-bottom:25px;
+
+    margin-bottom:28px;
 }
 
 .search-wrapper{
     position:relative;
 }
 
-.search-icon{
+.search-wrapper span{
     position:absolute;
     left:15px;
     top:50%;
+
     transform:translateY(-50%);
+
     font-size:20px;
 }
 
 #searchInput{
     width:100%;
+
     border:2px solid #e5e7eb;
     border-radius:13px;
+
     padding:15px 15px 15px 48px;
+
     font-size:16px;
+
     outline:none;
-    transition:.2s;
 }
 
 #searchInput:focus{
     border-color:#f97316;
 }
 
-/* =========================
+
+/* =========================================================
+   SEARCH RESULTS
+========================================================= */
+
+#searchResults{
+    display:none;
+    margin-top:12px;
+}
+
+.search-result{
+    background:#f9fafb;
+    border:1px solid #e5e7eb;
+
+    border-radius:12px;
+
+    padding:13px;
+
+    margin-bottom:8px;
+
+    cursor:pointer;
+}
+
+.search-result:hover{
+    border-color:#f97316;
+}
+
+.search-result strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.search-result small{
+    color:#6b7280;
+}
+
+
+/* =========================================================
    SECTION TITLE
-========================= */
+========================================================= */
 
 .section-title{
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     margin:25px 0 13px;
 }
 
 .section-title h3{
-    font-size:18px;
+    font-size:19px;
 }
 
 .section-title span{
@@ -168,25 +241,30 @@ main{
     color:#9ca3af;
 }
 
-/* =========================
+
+/* =========================================================
    BRANDS
-========================= */
+========================================================= */
 
 .brands{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:14px;
+    gap:15px;
 }
 
 .brand-card{
     background:white;
-    border-radius:18px;
-    padding:22px 15px;
-    cursor:pointer;
-    box-shadow:0 4px 15px rgba(0,0,0,.07);
+
     border:2px solid transparent;
+    border-radius:18px;
+
+    padding:22px;
+
+    cursor:pointer;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.07);
+
     transition:.2s;
-    text-align:center;
 }
 
 .brand-card:hover{
@@ -194,32 +272,62 @@ main{
     border-color:#f97316;
 }
 
+.brand-top{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
 .brand-logo{
     width:62px;
     height:62px;
-    margin:0 auto 12px;
+
+    flex-shrink:0;
+
+    background:#f3f4f6;
+
     border-radius:16px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#f3f4f6;
+
     font-size:28px;
     font-weight:bold;
 }
 
 .brand-card h4{
-    font-size:18px;
+    font-size:19px;
     margin-bottom:5px;
 }
 
 .brand-card p{
-    font-size:12px;
     color:#6b7280;
+    font-size:12px;
 }
 
-/* =========================
+.brand-count{
+    margin-top:16px;
+
+    padding-top:13px;
+
+    border-top:1px solid #e5e7eb;
+
+    display:flex;
+    justify-content:space-between;
+
+    font-size:12px;
+}
+
+.brand-count span:last-child{
+    color:#f97316;
+    font-weight:bold;
+}
+
+
+/* =========================================================
    QUICK ACTIONS
-========================= */
+========================================================= */
 
 .quick-actions{
     display:grid;
@@ -229,11 +337,17 @@ main{
 
 .quick-card{
     background:white;
-    border-radius:15px;
-    padding:17px 10px;
+
+    border-radius:16px;
+
+    padding:18px 12px;
+
     text-align:center;
+
     cursor:pointer;
+
     box-shadow:0 3px 12px rgba(0,0,0,.06);
+
     transition:.2s;
 }
 
@@ -242,7 +356,7 @@ main{
 }
 
 .quick-icon{
-    font-size:25px;
+    font-size:26px;
     margin-bottom:8px;
 }
 
@@ -253,73 +367,353 @@ main{
 
 .quick-card small{
     display:block;
-    margin-top:4px;
+    margin-top:5px;
     color:#9ca3af;
     font-size:11px;
 }
 
-/* =========================
-   INFO BOX
-========================= */
 
-.info-box{
-    margin-top:25px;
+/* =========================================================
+   DATABASE PANEL
+========================================================= */
+
+.database-panel{
+    margin-top:28px;
+
     background:#111827;
+
     color:white;
-    border-radius:18px;
+
+    border-radius:20px;
+
     padding:22px;
 }
 
-.info-box h3{
-    font-size:18px;
-    margin-bottom:8px;
+.database-panel h3{
+    margin-bottom:7px;
+    font-size:19px;
 }
 
-.info-box p{
+.database-panel p{
     color:#d1d5db;
+    font-size:13px;
     line-height:1.5;
-    font-size:14px;
 }
 
-/* =========================
-   SEARCH RESULTS
-========================= */
 
-#searchResults{
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
     display:none;
-    margin-top:15px;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:2000;
+
+    padding:15px;
+
+    overflow:auto;
 }
 
-.search-result{
-    background:#f9fafb;
-    border-radius:12px;
-    padding:14px;
-    margin-bottom:8px;
+.modal-box{
+    width:100%;
+    max-width:800px;
+
+    margin:30px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 50px rgba(0,0,0,.25);
+}
+
+.modal-header{
+    background:#111827;
+    color:white;
+
+    padding:20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.modal-header h2{
+    font-size:21px;
+}
+
+.close-btn{
+    border:0;
+    background:#374151;
+    color:white;
+
+    width:38px;
+    height:38px;
+
+    border-radius:10px;
+
     cursor:pointer;
+
+    font-size:18px;
 }
 
-.search-result strong{
-    display:block;
-    margin-bottom:4px;
+.modal-content{
+    padding:20px;
 }
 
-.search-result span{
+
+/* =========================================================
+   MODEL CARDS
+========================================================= */
+
+.model-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.model-card{
+    border:1px solid #e5e7eb;
+
+    border-radius:15px;
+
+    padding:17px;
+
+    cursor:pointer;
+
+    background:#fff;
+}
+
+.model-card:hover{
+    border-color:#f97316;
+}
+
+.model-card h4{
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.model-card p{
     font-size:12px;
     color:#6b7280;
 }
 
-/* =========================
-   MOBILE
-========================= */
 
-@media(max-width:700px){
+/* =========================================================
+   MODEL DETAIL
+========================================================= */
+
+.model-title{
+    margin-bottom:18px;
+}
+
+.model-title h3{
+    font-size:23px;
+    margin-bottom:5px;
+}
+
+.model-title p{
+    color:#6b7280;
+    font-size:13px;
+}
+
+.detail-buttons{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.detail-btn{
+    border:1px solid #e5e7eb;
+
+    background:#f9fafb;
+
+    padding:15px;
+
+    border-radius:13px;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+.detail-btn:hover{
+    border-color:#f97316;
+}
+
+.detail-btn strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+.detail-btn small{
+    color:#6b7280;
+}
+
+
+/* =========================================================
+   ERROR LIST
+========================================================= */
+
+.error-search{
+    margin-bottom:15px;
+}
+
+.error-search input{
+    width:100%;
+
+    border:1px solid #d1d5db;
+
+    border-radius:11px;
+
+    padding:12px;
+
+    outline:none;
+}
+
+.error-item{
+    border:1px solid #e5e7eb;
+
+    border-radius:14px;
+
+    padding:15px;
+
+    margin-bottom:10px;
+
+    background:#fff;
+}
+
+.error-code{
+    display:inline-block;
+
+    background:#fee2e2;
+    color:#b91c1c;
+
+    border-radius:8px;
+
+    padding:6px 9px;
+
+    font-weight:bold;
+
+    font-size:13px;
+
+    margin-bottom:8px;
+}
+
+.error-item h4{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.error-item p{
+    color:#6b7280;
+    font-size:13px;
+    line-height:1.5;
+}
+
+.error-remedy{
+    margin-top:9px;
+
+    background:#f9fafb;
+
+    border-radius:9px;
+
+    padding:10px;
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.document{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:13px;
+
+    padding:14px;
+
+    margin-bottom:9px;
+}
+
+.document-info{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.document-icon{
+    width:40px;
+    height:40px;
+
+    border-radius:10px;
+
+    background:#fee2e2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.document strong{
+    display:block;
+    font-size:14px;
+}
+
+.document small{
+    display:block;
+    color:#9ca3af;
+    margin-top:3px;
+}
+
+.document-btn{
+    border:0;
+
+    background:#111827;
+
+    color:white;
+
+    border-radius:9px;
+
+    padding:9px 12px;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:750px){
 
     main{
-        padding:20px 13px 40px;
+        padding:20px 13px 50px;
     }
 
-    .welcome h2{
-        font-size:24px;
+    .hero h2{
+        font-size:25px;
     }
 
     .brands{
@@ -327,20 +721,19 @@ main{
     }
 
     .brand-card{
-        display:flex;
-        align-items:center;
-        text-align:left;
-        gap:15px;
-        padding:15px;
-    }
-
-    .brand-logo{
-        margin:0;
-        flex-shrink:0;
+        padding:16px;
     }
 
     .quick-actions{
         grid-template-columns:repeat(2,1fr);
+    }
+
+    .model-grid{
+        grid-template-columns:1fr;
+    }
+
+    .detail-buttons{
+        grid-template-columns:1fr;
     }
 
 }
@@ -349,7 +742,13 @@ main{
 
 </head>
 
+
 <body>
+
+
+<!-- ======================================================
+     HEADER
+======================================================= -->
 
 <header>
 
@@ -362,13 +761,18 @@ main{
             </div>
 
             <div class="logo-text">
+
                 <h1>TECNICO PRO</h1>
-                <span>Strumenti per tecnici</span>
+
+                <span>
+                    Manuali • Diagnosi • Dati tecnici
+                </span>
+
             </div>
 
         </div>
 
-        <button class="menu-btn" onclick="openMenu()">
+        <button class="header-menu" onclick="showMenu()">
             ☰
         </button>
 
@@ -377,227 +781,1236 @@ main{
 </header>
 
 
+
 <main>
 
-    <section class="welcome">
 
-        <h2>Ciao tecnico 👋</h2>
+<!-- ======================================================
+     HERO
+======================================================= -->
 
-        <p>
-            Trova rapidamente manuali, codici errore,
-            schemi e informazioni tecniche.
-        </p>
+<section class="hero">
 
-    </section>
+    <h2>Ciao tecnico 👋</h2>
 
+    <p>
+        Trova rapidamente manuali, codici errore,
+        documentazione e informazioni tecniche.
+    </p>
 
-    <!-- RICERCA -->
-
-    <section class="search-box">
-
-        <div class="search-wrapper">
-
-            <span class="search-icon">🔎</span>
-
-            <input
-                id="searchInput"
-                type="search"
-                placeholder="Cerca modello, codice errore..."
-                autocomplete="off"
-                oninput="searchSite()"
-            >
-
-        </div>
-
-        <div id="searchResults"></div>
-
-    </section>
+</section>
 
 
-    <!-- MARCHE -->
 
-    <div class="section-title">
+<!-- ======================================================
+     SEARCH
+======================================================= -->
 
-        <h3>Marche</h3>
+<section class="search-box">
 
-        <span>Seleziona produttore</span>
+    <div class="search-wrapper">
+
+        <span>🔎</span>
+
+        <input
+            id="searchInput"
+            type="search"
+            placeholder="Cerca modello, errore, componente..."
+            autocomplete="off"
+            oninput="globalSearch()"
+        >
 
     </div>
 
+    <div id="searchResults"></div>
 
-    <section class="brands">
+</section>
 
-        <div class="brand-card" onclick="openBrand('Unical')">
+
+
+<!-- ======================================================
+     BRANDS
+======================================================= -->
+
+<div class="section-title">
+
+    <h3>Marche</h3>
+
+    <span>Database tecnico</span>
+
+</div>
+
+
+<section class="brands">
+
+
+    <!-- UNICAL -->
+
+    <div
+        class="brand-card"
+        onclick="openBrand('Unical')"
+    >
+
+        <div class="brand-top">
 
             <div class="brand-logo">
                 U
             </div>
 
             <div>
+
                 <h4>Unical</h4>
-                <p>Caldaie e sistemi termici</p>
+
+                <p>
+                    Caldaie e sistemi termici
+                </p>
+
             </div>
 
         </div>
 
+        <div class="brand-count">
 
-        <div class="brand-card" onclick="openBrand('Daikin')">
+            <span>
+                Modelli disponibili
+            </span>
+
+            <span>
+                3
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- DAIKIN -->
+
+    <div
+        class="brand-card"
+        onclick="openBrand('Daikin')"
+    >
+
+        <div class="brand-top">
 
             <div class="brand-logo">
                 D
             </div>
 
             <div>
+
                 <h4>Daikin</h4>
-                <p>Pompe di calore e climatizzazione</p>
+
+                <p>
+                    Pompe di calore e climatizzazione
+                </p>
+
             </div>
 
         </div>
 
+        <div class="brand-count">
 
-        <div class="brand-card" onclick="openBrand('WOLF')">
+            <span>
+                Modelli disponibili
+            </span>
+
+            <span>
+                3
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- WOLF -->
+
+    <div
+        class="brand-card"
+        onclick="openBrand('WOLF')"
+    >
+
+        <div class="brand-top">
 
             <div class="brand-logo">
                 W
             </div>
 
             <div>
+
                 <h4>WOLF</h4>
-                <p>Caldaie e pompe di calore</p>
+
+                <p>
+                    Caldaie e pompe di calore
+                </p>
+
             </div>
 
         </div>
 
-    </section>
+        <div class="brand-count">
 
+            <span>
+                Modelli disponibili
+            </span>
 
-    <!-- ACCESSO RAPIDO -->
+            <span>
+                3
+            </span>
 
-    <div class="section-title">
-
-        <h3>Accesso rapido</h3>
-
-        <span>Strumenti</span>
+        </div>
 
     </div>
 
 
-    <section class="quick-actions">
+</section>
 
-        <div class="quick-card" onclick="openSection('errori')">
 
-            <div class="quick-icon">
-                ⚠️
-            </div>
 
-            <strong>Codici errore</strong>
+<!-- ======================================================
+     QUICK ACCESS
+======================================================= -->
 
-            <small>Diagnosi</small>
+<div class="section-title">
 
+    <h3>Accesso rapido</h3>
+
+    <span>Ricerca tecnica</span>
+
+</div>
+
+
+<section class="quick-actions">
+
+
+    <div
+        class="quick-card"
+        onclick="openAllErrors()"
+    >
+
+        <div class="quick-icon">
+            ⚠️
         </div>
 
+        <strong>
+            Codici errore
+        </strong>
 
-        <div class="quick-card" onclick="openSection('manuali')">
+        <small>
+            Diagnosi
+        </small>
 
-            <div class="quick-icon">
-                📖
-            </div>
+    </div>
 
-            <strong>Manuali</strong>
 
-            <small>Documentazione</small>
 
+    <div
+        class="quick-card"
+        onclick="openAllDocuments()"
+    >
+
+        <div class="quick-icon">
+            📖
         </div>
 
+        <strong>
+            Manuali
+        </strong>
 
-        <div class="quick-card" onclick="openSection('schemi')">
+        <small>
+            Documentazione
+        </small>
 
-            <div class="quick-icon">
-                ⚡
-            </div>
+    </div>
 
-            <strong>Schemi</strong>
 
-            <small>Elettrici e tecnici</small>
 
+    <div
+        class="quick-card"
+        onclick="showInfo('Schemi tecnici')"
+    >
+
+        <div class="quick-icon">
+            ⚡
         </div>
 
+        <strong>
+            Schemi
+        </strong>
 
-        <div class="quick-card" onclick="openSection('strumenti')">
+        <small>
+            Elettrici e tecnici
+        </small>
 
-            <div class="quick-icon">
-                🧰
-            </div>
+    </div>
 
-            <strong>Strumenti</strong>
 
-            <small>Calcoli tecnici</small>
 
+    <div
+        class="quick-card"
+        onclick="showInfo('Strumenti tecnici')"
+    >
+
+        <div class="quick-icon">
+            🧰
         </div>
 
-    </section>
+        <strong>
+            Strumenti
+        </strong>
+
+        <small>
+            Calcoli tecnici
+        </small>
+
+    </div>
 
 
-    <!-- INFO -->
+</section>
 
-    <section class="info-box">
 
-        <h3>🛠️ Un unico posto per il tecnico</h3>
 
-        <p>
-            L'obiettivo di TECNICO PRO è ridurre il tempo
-            perso nella ricerca di documentazione tecnica.
-            Manuali, codici errore, schemi, parametri,
-            procedure e strumenti saranno organizzati
-            in modo semplice e veloce.
-        </p>
+<!-- ======================================================
+     INFO
+======================================================= -->
 
-    </section>
+<section class="database-panel">
+
+    <h3>
+        🛠️ Il tuo archivio tecnico
+    </h3>
+
+    <p>
+        Cerca una marca, un modello o un codice errore.
+        Ogni apparecchio avrà la propria scheda con
+        documentazione, codici errore, dati tecnici,
+        componenti e procedure.
+    </p>
+
+</section>
+
 
 </main>
 
 
+
+<!-- ======================================================
+     MODAL
+======================================================= -->
+
+<div
+    class="modal"
+    id="modal"
+    onclick="closeOutside(event)"
+>
+
+    <div
+        class="modal-box"
+        onclick="event.stopPropagation()"
+    >
+
+        <div class="modal-header">
+
+            <h2 id="modalTitle">
+                TECNICO PRO
+            </h2>
+
+            <button
+                class="close-btn"
+                onclick="closeModal()"
+            >
+                ✕
+            </button>
+
+        </div>
+
+        <div
+            class="modal-content"
+            id="modalContent"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
 <script>
 
-/* =========================
-   DATABASE INIZIALE
-   (lo riempiremo successivamente)
-========================= */
+/* =========================================================
+   DATABASE TECNICO
+========================================================= */
+
+
+/*
+   IMPORTANTE:
+
+   La struttura è volutamente separata.
+
+   Ogni modello può avere:
+
+   - marca
+   - famiglia
+   - modello
+   - tipo
+   - manuali
+   - errori
+   - dati tecnici
+   - componenti
+   - schemi
+
+   In questo modo possiamo aggiungere centinaia
+   di apparecchi senza cambiare il sito.
+*/
+
 
 const database = [
 
-    {
-        marca:"Unical",
-        modello:"Da inserire",
-        tipo:"Caldaia",
-        codice:"",
-        descrizione:"Database Unical in preparazione."
-    },
+/* =======================================================
+   UNICAL
+======================================================= */
 
-    {
-        marca:"Daikin",
-        modello:"Da inserire",
-        tipo:"Pompa di calore",
-        codice:"",
-        descrizione:"Database Daikin in preparazione."
-    },
+{
+    marca:"Unical",
 
-    {
-        marca:"WOLF",
-        modello:"Da inserire",
-        tipo:"Caldaia",
-        codice:"",
-        descrizione:"Database WOLF in preparazione."
-    }
+    famiglia:"K",
+
+    modello:"K 28 / K 35",
+
+    tipo:"Caldaia",
+
+    descrizione:
+        "Caldaia Unical K 28 / K 35.",
+
+    manuali:[
+
+        {
+            nome:"Manuale installatore",
+            tipo:"Installazione e manutenzione",
+            url:"https://www.unicalag.it/upload/blocchi/X1634allegatoMANUALE_INSTALLAZIONE1-1X_00335687.pdf"
+        }
+
+    ],
+
+    errori:[
+
+        {
+            codice:"01",
+            titolo:"Termostato limite",
+            descrizione:
+                "Intervento del termostato di sicurezza.",
+            rimedio:
+                "Verificare il termostato, i collegamenti e gli interruttori di sicurezza."
+        },
+
+        {
+            codice:"04",
+            titolo:"Accensione fallita",
+            descrizione:
+                "Mancanza gas o mancata accensione del bruciatore.",
+            rimedio:
+                "Verificare alimentazione gas ed elettrodo di accensione/rilevazione."
+        },
+
+        {
+            codice:"06",
+            titolo:"Surriscaldamento",
+            descrizione:
+                "Temperatura della caldaia troppo elevata.",
+            rimedio:
+                "Verificare il funzionamento del circolatore e lo scambiatore."
+        },
+
+        {
+            codice:"08",
+            titolo:"Bassa pressione acqua",
+            descrizione:
+                "Insufficiente pressione dell'acqua.",
+            rimedio:
+                "Ripristinare la pressione del circuito e verificare il pressostato di minima."
+        },
+
+        {
+            codice:"09",
+            titolo:"Sensore temperatura esterna",
+            descrizione:
+                "Anomalia del sensore di temperatura esterna.",
+            rimedio:
+                "Verificare cablaggio e sonda esterna."
+        },
+
+        {
+            codice:"11",
+            titolo:"Fiamma inattesa",
+            descrizione:
+                "Rilevazione della fiamma prima dell'accensione.",
+            rimedio:
+                "Verificare elettrodo di accensione/rilevazione, cablaggio e presenza di umidità."
+        },
+
+        {
+            codice:"12",
+            titolo:"Sensore temperatura mandata",
+            descrizione:
+                "Avaria al sensore di riscaldamento.",
+            rimedio:
+                "Verificare sensore e collegamenti."
+        },
+
+        {
+            codice:"13",
+            titolo:"Sensore temperatura sanitaria",
+            descrizione:
+                "Anomalia del sensore sanitario.",
+            rimedio:
+                "Verificare sensore e collegamenti."
+        },
+
+        {
+            codice:"14",
+            titolo:"Sensore temperatura ritorno",
+            descrizione:
+                "Sensore di ritorno ausiliario interrotto.",
+            rimedio:
+                "Verificare cablaggio e sensore."
+        },
+
+        {
+            codice:"15",
+            titolo:"Temperatura differenziale",
+            descrizione:
+                "Circolazione acqua insufficiente.",
+            rimedio:
+                "Verificare circolatore, eventuali ostruzioni e scambiatore."
+        }
+
+    ]
+
+},
+
+
+{
+    marca:"Unical",
+
+    famiglia:"KON",
+
+    modello:"KON 100 / 115",
+
+    tipo:"Caldaia",
+
+    descrizione:
+        "Caldaia Unical KON 100 / 115.",
+
+    manuali:[
+
+        {
+            nome:"Manuale installatore",
+            tipo:"Installazione e manutenzione",
+            url:"https://www.unicalag.it/upload/blocchi/X2081allegatoMANUALE_INSTALLAZIONE1-1X_00335810.pdf"
+        }
+
+    ],
+
+    errori:[
+
+        {
+            codice:"01",
+            titolo:"Termostato sicurezza",
+            descrizione:
+                "Intervento del termostato di sicurezza.",
+            rimedio:
+                "Verificare il termostato e i relativi collegamenti."
+        },
+
+        {
+            codice:"02",
+            titolo:"Pressione gas insufficiente",
+            descrizione:
+                "Pressione gas insufficiente.",
+            rimedio:
+                "Verificare la pressione gas e il pressostato gas."
+        }
+
+    ]
+
+},
+
+
+{
+    marca:"Unical",
+
+    famiglia:"Estral",
+
+    modello:"ESTRAL SX 26",
+
+    tipo:"Caldaia",
+
+    descrizione:
+        "Caldaia Unical ESTRAL SX 26.",
+
+    manuali:[
+
+        {
+            nome:"Manuale utente",
+            tipo:"Istruzioni d'uso",
+            url:"https://www.unicalag.it/upload/blocchi/X71allegatoMANUALE_UTENTE2-1X_0771_1_00333446.pdf"
+        }
+
+    ],
+
+    errori:[
+
+        {
+            codice:"E:00",
+            titolo:"Blocco bruciatore",
+            descrizione:
+                "Blocco dovuto, tra le possibili cause, a mancanza gas o presenza di aria nella tubazione.",
+            rimedio:
+                "Verificare la causa del blocco prima del ripristino."
+        },
+
+        {
+            codice:"E:MANCA ACQUA",
+            titolo:"Pressione acqua insufficiente",
+            descrizione:
+                "Scarsa pressione dell'acqua nel circuito di riscaldamento.",
+            rimedio:
+                "Ripristinare la pressione secondo le istruzioni del produttore."
+        }
+
+    ]
+
+},
+
+
+/* =======================================================
+   DAIKIN
+======================================================= */
+
+{
+    marca:"Daikin",
+
+    famiglia:"Altherma",
+
+    modello:"EKHWC-B",
+
+    tipo:"Pompa di calore / ACS",
+
+    descrizione:
+        "Famiglia Daikin Altherma con serbatoio acqua calda sanitaria.",
+
+    manuali:[
+
+        {
+            nome:"Manuale di installazione",
+            tipo:"Installazione e funzionamento",
+            url:"https://www.daikin.it/it_IT/cerca-prodotto/product.html/EKHWC-B.html"
+        }
+
+    ],
+
+    errori:[]
+
+},
+
+
+{
+    marca:"Daikin",
+
+    famiglia:"Altherma",
+
+    modello:"EHVH-C / ERLQ-CW1",
+
+    tipo:"Pompa di calore",
+
+    descrizione:
+        "Daikin Altherma Split a bassa temperatura.",
+
+    manuali:[
+
+        {
+            nome:"Guida / manuale installatore",
+            tipo:"Installazione",
+            url:"https://www.daikin.it/it_IT/cerca-prodotto/product.html/EHVH-C---ERLQ-CW1.html"
+        }
+
+    ],
+
+    errori:[]
+
+},
+
+
+{
+    marca:"Daikin",
+
+    famiglia:"Altherma",
+
+    modello:"EKHWDB-B",
+
+    tipo:"Serbatoio ACS",
+
+    descrizione:
+        "Daikin Altherma EKHWDB-B.",
+
+    manuali:[
+
+        {
+            nome:"Manuale di installazione",
+            tipo:"Installazione e funzionamento",
+            url:"https://www.daikin.it/it_it/cerca-prodotto/product.html/ekhwdb-b.html"
+        }
+
+    ],
+
+    errori:[]
+
+},
+
+
+/* =======================================================
+   WOLF
+======================================================= */
+
+{
+    marca:"WOLF",
+
+    famiglia:"CGB-2",
+
+    modello:"CGB-2",
+
+    tipo:"Caldaia",
+
+    descrizione:
+        "Famiglia WOLF CGB-2.",
+
+    manuali:[],
+
+    errori:[]
+
+},
+
+
+{
+    marca:"WOLF",
+
+    famiglia:"FGB",
+
+    modello:"FGB",
+
+    tipo:"Caldaia",
+
+    descrizione:
+        "Famiglia WOLF FGB.",
+
+    manuali:[],
+
+    errori:[]
+
+},
+
+
+{
+    marca:"WOLF",
+
+    famiglia:"MGK-2",
+
+    modello:"MGK-2",
+
+    tipo:"Caldaia",
+
+    descrizione:
+        "Famiglia WOLF MGK-2.",
+
+    manuali:[],
+
+    errori:[]
+
+}
 
 ];
 
 
-/* =========================
-   RICERCA
-========================= */
 
-function searchSite(){
+/* =========================================================
+   APRI MARCA
+========================================================= */
+
+function openBrand(marca){
+
+    const models =
+        database.filter(
+            item => item.marca === marca
+        );
+
+    document.getElementById("modalTitle").textContent =
+        marca;
+
+    let html = `
+
+        <div class="model-title">
+
+            <h3>${marca}</h3>
+
+            <p>
+                Seleziona il modello o la famiglia
+                dell'apparecchio.
+            </p>
+
+        </div>
+
+        <div class="model-grid">
+
+    `;
+
+
+    models.forEach((model,index)=>{
+
+        html += `
+
+            <div
+                class="model-card"
+                onclick="openModel(${database.indexOf(model)})"
+            >
+
+                <h4>
+                    ${model.modello}
+                </h4>
+
+                <p>
+                    ${model.tipo}
+                </p>
+
+            </div>
+
+        `;
+
+    });
+
+
+    html += `
+        </div>
+    `;
+
+
+    showModal(html);
+
+}
+
+
+
+/* =========================================================
+   APRI MODELLO
+========================================================= */
+
+function openModel(index){
+
+    const model = database[index];
+
+    document.getElementById("modalTitle").textContent =
+        model.marca + " — " + model.modello;
+
+
+    const html = `
+
+        <div class="model-title">
+
+            <h3>
+                ${model.modello}
+            </h3>
+
+            <p>
+                ${model.descrizione}
+            </p>
+
+        </div>
+
+
+        <div class="detail-buttons">
+
+            <button
+                class="detail-btn"
+                onclick="showModelErrors(${index})"
+            >
+
+                <strong>
+                    ⚠️ Codici errore
+                </strong>
+
+                <small>
+                    ${model.errori.length}
+                    codici disponibili
+                </small>
+
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showModelDocuments(${index})"
+            >
+
+                <strong>
+                    📖 Manuali
+                </strong>
+
+                <small>
+                    ${model.manuali.length}
+                    documenti disponibili
+                </small>
+
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showInfo('Dati tecnici')"
+            >
+
+                <strong>
+                    📊 Dati tecnici
+                </strong>
+
+                <small>
+                    Potenze, temperature, pressioni e parametri
+                </small>
+
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showInfo('Componenti')"
+            >
+
+                <strong>
+                    🧩 Componenti
+                </strong>
+
+                <small>
+                    Ricambi e componenti dell'apparecchio
+                </small>
+
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showInfo('Schemi')"
+            >
+
+                <strong>
+                    ⚡ Schemi
+                </strong>
+
+                <small>
+                    Schemi elettrici e collegamenti
+                </small>
+
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showInfo('Diagnosi')"
+            >
+
+                <strong>
+                    🛠️ Diagnosi
+                </strong>
+
+                <small>
+                    Procedure di controllo
+                </small>
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    showModal(html);
+
+}
+
+
+
+/* =========================================================
+   ERRORI MODELLO
+========================================================= */
+
+function showModelErrors(index){
+
+    const model = database[index];
+
+    document.getElementById("modalTitle").textContent =
+        model.modello + " — Errori";
+
+
+    if(model.errori.length === 0){
+
+        showModal(`
+
+            <div class="model-title">
+
+                <h3>
+                    ⚠️ Codici errore
+                </h3>
+
+                <p>
+                    Per questo modello i codici
+                    non sono ancora stati inseriti
+                    nel database.
+                </p>
+
+            </div>
+
+            <div class="database-panel"
+                 style="margin-top:15px">
+
+                <h3>
+                    Database in aggiornamento
+                </h3>
+
+                <p>
+                    Inseriremo i codici direttamente
+                    dalla documentazione tecnica ufficiale
+                    del produttore.
+                </p>
+
+            </div>
+
+        `);
+
+        return;
+    }
+
+
+    let html = `
+
+        <div class="error-search">
+
+            <input
+                id="errorSearch"
+                placeholder="Cerca codice o descrizione..."
+                oninput="filterErrors(${index})"
+            >
+
+        </div>
+
+        <div id="errorList">
+
+    `;
+
+
+    model.errori.forEach(error=>{
+
+        html += errorHTML(error);
+
+    });
+
+
+    html += `
+        </div>
+    `;
+
+
+    showModal(html);
+
+}
+
+
+
+/* =========================================================
+   ERROR HTML
+========================================================= */
+
+function errorHTML(error){
+
+    return `
+
+        <div
+            class="error-item"
+            data-error="${(
+                error.codice +
+                " " +
+                error.titolo +
+                " " +
+                error.descrizione
+            ).toLowerCase()}"
+        >
+
+            <div class="error-code">
+                ${error.codice}
+            </div>
+
+            <h4>
+                ${error.titolo}
+            </h4>
+
+            <p>
+                ${error.descrizione}
+            </p>
+
+            <div class="error-remedy">
+
+                <strong>
+                    🔧 Controlli / rimedio:
+                </strong>
+
+                <br>
+
+                ${error.rimedio}
+
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================================================
+   FILTRO ERRORI
+========================================================= */
+
+function filterErrors(index){
+
+    const search =
+        document
+        .getElementById("errorSearch")
+        .value
+        .toLowerCase()
+        .trim();
+
+    const items =
+        document.querySelectorAll(".error-item");
+
+
+    items.forEach(item=>{
+
+        item.style.display =
+            item.dataset.error.includes(search)
+            ? "block"
+            : "none";
+
+    });
+
+}
+
+
+
+/* =========================================================
+   DOCUMENTI
+========================================================= */
+
+function showModelDocuments(index){
+
+    const model = database[index];
+
+    document.getElementById("modalTitle").textContent =
+        model.modello + " — Manuali";
+
+
+    if(model.manuali.length === 0){
+
+        showModal(`
+
+            <div class="model-title">
+
+                <h3>
+                    📖 Manuali
+                </h3>
+
+                <p>
+                    La documentazione di questo modello
+                    non è ancora stata collegata.
+                </p>
+
+            </div>
+
+        `);
+
+        return;
+    }
+
+
+    let html = "";
+
+
+    model.manuali.forEach(doc=>{
+
+        html += `
+
+            <div class="document">
+
+                <div class="document-info">
+
+                    <div class="document-icon">
+                        📕
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            ${doc.nome}
+                        </strong>
+
+                        <small>
+                            ${doc.tipo}
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="document-btn"
+                    onclick="openDocument('${doc.url}')"
+                >
+                    Apri
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+
+    showModal(html);
+
+}
+
+
+
+/* =========================================================
+   APRI DOCUMENTO
+========================================================= */
+
+function openDocument(url){
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
+
+
+
+/* =========================================================
+   RICERCA GENERALE
+========================================================= */
+
+function globalSearch(){
 
     const input =
         document
@@ -609,39 +2022,68 @@ function searchSite(){
     const results =
         document.getElementById("searchResults");
 
+
     if(!input){
 
         results.style.display="none";
         results.innerHTML="";
+
         return;
 
     }
 
-    const matches = database.filter(item =>
 
-        item.marca.toLowerCase().includes(input) ||
-        item.modello.toLowerCase().includes(input) ||
-        item.tipo.toLowerCase().includes(input) ||
-        item.codice.toLowerCase().includes(input) ||
-        item.descrizione.toLowerCase().includes(input)
+    const matches = database.filter(model=>{
 
-    );
+        const modelText = [
+
+            model.marca,
+            model.famiglia,
+            model.modello,
+            model.tipo,
+            model.descrizione
+
+        ].join(" ").toLowerCase();
+
+
+        const errorsText =
+            model.errori
+            .map(e =>
+                e.codice +
+                " " +
+                e.titolo +
+                " " +
+                e.descrizione
+            )
+            .join(" ")
+            .toLowerCase();
+
+
+        return (
+            modelText.includes(input) ||
+            errorsText.includes(input)
+        );
+
+    });
 
 
     results.style.display="block";
 
 
-    if(matches.length === 0){
+    if(matches.length===0){
 
         results.innerHTML = `
 
             <div class="search-result">
 
-                <strong>Nessun risultato</strong>
+                <strong>
+                    Nessun risultato
+                </strong>
 
-                <span>
-                    Prova con un modello o un codice errore diverso.
-                </span>
+                <small>
+                    Prova con un modello,
+                    una marca o un codice errore.
+                </small>
 
             </div>
 
@@ -652,95 +2094,403 @@ function searchSite(){
     }
 
 
-    results.innerHTML = matches.map(item => `
+    results.innerHTML =
+        matches.map(model=>{
 
-        <div class="search-result"
-             onclick="openResult('${item.marca}')">
+            const index =
+                database.indexOf(model);
 
-            <strong>
-                ${item.marca} — ${item.modello}
-            </strong>
+            return `
 
-            <span>
-                ${item.tipo}
-            </span>
+                <div
+                    class="search-result"
+                    onclick="openModel(${index})"
+                >
+
+                    <strong>
+                        ${model.marca}
+                        — ${model.modello}
+                    </strong>
+
+                    <small>
+                        ${model.tipo}
+                    </small>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+
+/* =========================================================
+   TUTTI GLI ERRORI
+========================================================= */
+
+function openAllErrors(){
+
+    let html = `
+
+        <div class="error-search">
+
+            <input
+                id="globalErrorSearch"
+                placeholder="Cerca codice errore..."
+                oninput="filterGlobalErrors()"
+            >
 
         </div>
 
-    `).join("");
+        <div id="globalErrorList">
+
+    `;
+
+
+    database.forEach(model=>{
+
+        model.errori.forEach(error=>{
+
+            html += `
+
+                <div
+                    class="error-item global-error"
+                    data-search="${(
+                        model.marca +
+                        " " +
+                        model.modello +
+                        " " +
+                        error.codice +
+                        " " +
+                        error.titolo +
+                        " " +
+                        error.descrizione
+                    ).toLowerCase()}"
+                >
+
+                    <div class="error-code">
+                        ${error.codice}
+                    </div>
+
+                    <h4>
+                        ${model.marca}
+                        — ${model.modello}
+                    </h4>
+
+                    <p>
+                        <strong>
+                            ${error.titolo}
+                        </strong>
+                    </p>
+
+                    <p>
+                        ${error.descrizione}
+                    </p>
+
+                    <div class="error-remedy">
+
+                        <strong>
+                            🔧 Controlli:
+                        </strong>
+
+                        <br>
+
+                        ${error.rimedio}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    });
+
+
+    html += `
+        </div>
+    `;
+
+
+    document.getElementById("modalTitle").textContent =
+        "Codici errore";
+
+
+    showModal(html);
 
 }
 
 
-/* =========================
-   MARCA
-========================= */
 
-function openBrand(marca){
+/* =========================================================
+   FILTRO ERRORI GLOBALI
+========================================================= */
 
-    alert(
-        "Sezione " + marca +
-        "\n\nQui inseriremo modelli, manuali, codici errore e documentazione."
-    );
+function filterGlobalErrors(){
 
-}
+    const input =
+        document
+        .getElementById("globalErrorSearch")
+        .value
+        .toLowerCase()
+        .trim();
 
 
-/* =========================
-   SEZIONI RAPIDE
-========================= */
+    document
+    .querySelectorAll(".global-error")
+    .forEach(item=>{
 
-function openSection(section){
+        item.style.display =
+            item.dataset.search.includes(input)
+            ? "block"
+            : "none";
 
-    const names = {
-
-        errori:"Codici errore",
-
-        manuali:"Manuali",
-
-        schemi:"Schemi tecnici",
-
-        strumenti:"Strumenti tecnici"
-
-    };
-
-    alert(
-        names[section] +
-        "\n\nQuesta sezione verrà sviluppata nel prossimo passaggio."
-    );
+    });
 
 }
 
 
-/* =========================
-   RISULTATO
-========================= */
 
-function openResult(marca){
+/* =========================================================
+   TUTTI I MANUALI
+========================================================= */
 
-    openBrand(marca);
+function openAllDocuments(){
+
+    let html = "";
+
+    database.forEach(model=>{
+
+        model.manuali.forEach(doc=>{
+
+            html += `
+
+                <div class="document">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📕
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                ${model.marca}
+                                — ${model.modello}
+                            </strong>
+
+                            <small>
+                                ${doc.nome}
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="document-btn"
+                        onclick="openDocument('${doc.url}')"
+                    >
+                        Apri
+                    </button>
+
+                </div>
+
+            `;
+
+        });
+
+    });
+
+
+    if(!html){
+
+        html = `
+
+            <p>
+                Nessun documento disponibile.
+            </p>
+
+        `;
+
+    }
+
+
+    document.getElementById("modalTitle").textContent =
+        "Manuali e documentazione";
+
+
+    showModal(html);
 
 }
 
 
-/* =========================
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function showModal(content){
+
+    document.getElementById("modalContent").innerHTML =
+        content;
+
+    document.getElementById("modal").style.display =
+        "block";
+
+    document.body.style.overflow =
+        "hidden";
+
+}
+
+
+function closeModal(){
+
+    document.getElementById("modal").style.display =
+        "none";
+
+    document.body.style.overflow =
+        "";
+
+}
+
+
+function closeOutside(event){
+
+    if(event.target.id === "modal"){
+
+        closeModal();
+
+    }
+
+}
+
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+function showInfo(title){
+
+    document.getElementById("modalTitle").textContent =
+        title;
+
+
+    showModal(`
+
+        <div class="model-title">
+
+            <h3>
+                ${title}
+            </h3>
+
+            <p>
+                Questa sezione verrà collegata
+                al database tecnico del modello.
+            </p>
+
+        </div>
+
+        <div class="database-panel">
+
+            <h3>
+                🔧 In sviluppo
+            </h3>
+
+            <p>
+                Qui inseriremo le informazioni
+                specifiche dell'apparecchio:
+                schemi, parametri, componenti,
+                procedure e dati tecnici.
+            </p>
+
+        </div>
+
+    `);
+
+}
+
+
+
+/* =========================================================
    MENU
-========================= */
+========================================================= */
 
-function openMenu(){
+function showMenu(){
 
-    alert(
-        "MENU\n\n" +
-        "• Marche\n" +
-        "• Codici errore\n" +
-        "• Manuali\n" +
-        "• Schemi\n" +
-        "• Strumenti"
-    );
+    document.getElementById("modalTitle").textContent =
+        "TECNICO PRO";
+
+
+    showModal(`
+
+        <div class="detail-buttons">
+
+            <button
+                class="detail-btn"
+                onclick="openAllErrors()"
+            >
+                <strong>
+                    ⚠️ Codici errore
+                </strong>
+                <small>
+                    Ricerca guasti
+                </small>
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="openAllDocuments()"
+            >
+                <strong>
+                    📖 Manuali
+                </strong>
+                <small>
+                    Documentazione
+                </small>
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showInfo('Schemi tecnici')"
+            >
+                <strong>
+                    ⚡ Schemi
+                </strong>
+                <small>
+                    Schemi elettrici
+                </small>
+            </button>
+
+
+            <button
+                class="detail-btn"
+                onclick="showInfo('Strumenti tecnici')"
+            >
+                <strong>
+                    🧰 Strumenti
+                </strong>
+                <small>
+                    Calcoli e diagnostica
+                </small>
+            </button>
+
+        </div>
+
+    `);
 
 }
 
 </script>
 
+
 </body>
+
 </html>
