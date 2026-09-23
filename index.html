@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
 <title>TECNICO PRO</title>
 
-<meta name="theme-color" content="#111827">
-
 <style>
-
 *{
     box-sizing:border-box;
     margin:0;
@@ -18,109 +14,206 @@
 }
 
 :root{
-    --bg:#f3f4f6;
-    --card:#ffffff;
+    --bg:#f5f7fa;
+    --surface:#ffffff;
+    --surface2:#f8fafc;
     --text:#111827;
     --muted:#6b7280;
-    --border:#e5e7eb;
-    --dark:#111827;
-    --dark2:#1f2937;
-    --accent:#ef4444;
+    --line:#e5e7eb;
+    --dark:#101828;
+    --dark2:#1d2939;
     --blue:#2563eb;
+    --blue2:#eff6ff;
+    --red:#dc2626;
     --green:#16a34a;
     --orange:#f59e0b;
     --purple:#7c3aed;
+    --shadow:0 8px 30px rgba(15,23,42,.06);
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
     background:var(--bg);
     color:var(--text);
     min-height:100vh;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* =====================================================
+   APP
+===================================================== */
 
-header{
-    background:linear-gradient(135deg,#111827,#1f2937);
-    color:white;
-    padding:18px 20px;
-    position:sticky;
+.app{
+    min-height:100vh;
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+    position:fixed;
+    left:0;
     top:0;
+    bottom:0;
+    width:245px;
+    background:#0f172a;
+    color:white;
+    padding:20px 14px;
     z-index:100;
-    box-shadow:0 4px 20px rgba(0,0,0,.15);
-}
-
-.header-inner{
-    max-width:1400px;
-    margin:auto;
     display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
+    flex-direction:column;
 }
 
-.logo{
+.brand{
     display:flex;
     align-items:center;
     gap:12px;
-    cursor:pointer;
+    padding:4px 8px 25px;
 }
 
-.logo-icon{
-    width:45px;
-    height:45px;
+.brand-icon{
+    width:42px;
+    height:42px;
     border-radius:12px;
-    background:#ef4444;
+    background:#2563eb;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:23px;
-    font-weight:bold;
-}
-
-.logo-text{
-    font-size:20px;
     font-weight:900;
-    letter-spacing:.5px;
+    font-size:19px;
 }
 
-.logo-sub{
-    font-size:11px;
-    color:#9ca3af;
+.brand-name{
+    font-size:17px;
+    font-weight:900;
+    letter-spacing:.3px;
+}
+
+.brand-sub{
+    font-size:10px;
+    color:#94a3b8;
     margin-top:2px;
 }
 
-.menu{
+.nav-title{
+    color:#64748b;
+    font-size:10px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:10px 12px 8px;
+}
+
+.nav{
     display:flex;
-    gap:8px;
-    flex-wrap:wrap;
+    flex-direction:column;
+    gap:4px;
 }
 
-.menu button{
-    border:1px solid rgba(255,255,255,.15);
-    background:rgba(255,255,255,.07);
-    color:white;
-    padding:10px 13px;
-    border-radius:9px;
+.nav button{
+    width:100%;
+    border:0;
+    background:transparent;
+    color:#cbd5e1;
+    padding:12px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:14px;
+    font-weight:600;
     cursor:pointer;
-    font-weight:bold;
+    text-align:left;
 }
 
-.menu button:hover{
-    background:rgba(255,255,255,.15);
+.nav button:hover{
+    background:#1e293b;
+    color:white;
 }
 
-/* =========================
-   MAIN
-========================= */
+.nav button.active{
+    background:#2563eb;
+    color:white;
+}
+
+.nav-icon{
+    width:20px;
+    text-align:center;
+    font-size:17px;
+}
+
+.sidebar-bottom{
+    margin-top:auto;
+    border-top:1px solid #1e293b;
+    padding-top:15px;
+}
+
+.status-box{
+    background:#111c31;
+    border:1px solid #24324a;
+    border-radius:12px;
+    padding:12px;
+}
+
+.status-dot{
+    display:inline-block;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#22c55e;
+    margin-right:6px;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content{
+    margin-left:245px;
+    min-height:100vh;
+}
+
+.topbar{
+    height:70px;
+    background:rgba(255,255,255,.92);
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 30px;
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter:blur(12px);
+}
+
+.topbar-title{
+    font-size:14px;
+    font-weight:700;
+}
+
+.topbar-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.top-button{
+    border:1px solid var(--line);
+    background:white;
+    border-radius:9px;
+    padding:8px 11px;
+    cursor:pointer;
+}
 
 main{
-    max-width:1400px;
+    max-width:1500px;
     margin:auto;
-    padding:25px 18px 50px;
+    padding:30px;
 }
 
 .page{
@@ -131,374 +224,559 @@ main{
     display:block;
 }
 
-/* =========================
-   HERO
-========================= */
+/* =====================================================
+   DASHBOARD HERO
+===================================================== */
 
-.hero{
-    background:linear-gradient(135deg,#111827,#374151);
+.dashboard-hero{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    border-radius:22px;
+    padding:38px;
     color:white;
-    border-radius:20px;
-    padding:35px 25px;
-    margin-bottom:22px;
+    position:relative;
+    overflow:hidden;
+    margin-bottom:24px;
 }
 
-.hero h1{
-    font-size:34px;
+.dashboard-hero:after{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    border:50px solid rgba(255,255,255,.025);
+    right:-80px;
+    top:-100px;
+}
+
+.hero-small{
+    color:#93c5fd;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
     margin-bottom:10px;
 }
 
-.hero p{
-    color:#d1d5db;
-    max-width:850px;
+.dashboard-hero h1{
+    font-size:36px;
+    letter-spacing:-1px;
+    margin-bottom:10px;
+}
+
+.dashboard-hero p{
+    color:#cbd5e1;
+    max-width:700px;
     line-height:1.6;
+    font-size:15px;
 }
 
-.search-big{
+.main-search{
     margin-top:25px;
+    max-width:900px;
     position:relative;
+    z-index:2;
 }
 
-.search-big input{
+.main-search input{
     width:100%;
-    padding:18px 20px 18px 52px;
+    height:58px;
     border:0;
     border-radius:13px;
-    font-size:17px;
+    padding:0 20px 0 53px;
+    font-size:16px;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
     outline:none;
-    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.search-icon{
+.search-symbol{
     position:absolute;
-    left:18px;
+    left:19px;
     top:50%;
     transform:translateY(-50%);
-    font-size:20px;
-    color:#6b7280;
+    font-size:21px;
+    color:#64748b;
 }
 
-/* =========================
-   CARDS
-========================= */
+/* =====================================================
+   SECTION HEADER
+===================================================== */
 
-.grid{
+.section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:15px;
+    margin:28px 0 14px;
+}
+
+.section-head h2{
+    font-size:19px;
+    letter-spacing:-.3px;
+}
+
+.section-head p{
+    color:var(--muted);
+    font-size:12px;
+    margin-top:4px;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:14px;
 }
 
-.card{
-    background:white;
-    border:1px solid var(--border);
+.stat-card{
+    background:var(--surface);
+    border:1px solid var(--line);
     border-radius:16px;
-    padding:20px;
-    box-shadow:0 2px 10px rgba(0,0,0,.04);
+    padding:18px;
+    box-shadow:var(--shadow);
 }
 
-.card h3{
-    margin-bottom:8px;
+.stat-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
-.card p{
-    color:var(--muted);
-    line-height:1.5;
+.stat-icon{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--blue2);
+    color:var(--blue);
 }
 
-.stat{
-    font-size:31px;
+.stat-number{
+    font-size:28px;
     font-weight:900;
-    margin-bottom:5px;
+    margin-top:13px;
 }
 
 .stat-label{
     color:var(--muted);
-    font-size:13px;
+    font-size:12px;
+    margin-top:3px;
 }
 
-/* =========================
-   BRAND CARDS
-========================= */
+/* =====================================================
+   BRANDS
+===================================================== */
+
+.brands{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+}
 
 .brand-card{
-    min-height:150px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:17px;
+    padding:20px;
     cursor:pointer;
-    transition:.2s;
+    transition:.18s;
     position:relative;
     overflow:hidden;
 }
 
 .brand-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
 }
 
-.brand-logo{
-    width:52px;
-    height:52px;
+.brand-head{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.brand-circle{
+    width:50px;
+    height:50px;
     border-radius:14px;
     display:flex;
     align-items:center;
     justify-content:center;
     color:white;
+    font-size:18px;
     font-weight:900;
-    font-size:17px;
-    margin-bottom:15px;
 }
 
-.unical{
-    background:#dc2626;
-}
-
-.daikin{
+.brand-circle.daikin{
     background:#2563eb;
 }
 
-.wolf{
-    background:#374151;
+.brand-circle.unical{
+    background:#dc2626;
 }
 
-.brand-card small{
-    color:#6b7280;
+.brand-circle.wolf{
+    background:#111827;
 }
 
-/* =========================
-   FILTERS
-========================= */
+.brand-card h3{
+    font-size:17px;
+}
 
-.toolbar{
+.brand-count{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:4px;
+}
+
+.brand-description{
+    color:#64748b;
+    font-size:12px;
+    line-height:1.5;
+    margin-top:16px;
+}
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+}
+
+.category-card{
     background:white;
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:15px;
-    margin-bottom:18px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:17px;
+    cursor:pointer;
+    transition:.18s;
 }
 
-.filters{
+.category-card:hover{
+    border-color:#bfdbfe;
+    background:#fafcff;
+}
+
+.category-icon{
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+.category-card h3{
+    font-size:14px;
+}
+
+.category-card p{
+    color:var(--muted);
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header{
+    margin-bottom:22px;
+}
+
+.page-header h1{
+    font-size:30px;
+    letter-spacing:-.7px;
+}
+
+.page-header p{
+    color:var(--muted);
+    margin-top:6px;
+    font-size:13px;
+}
+
+/* =====================================================
+   FILTER BAR
+===================================================== */
+
+.filter-bar{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px;
+    margin-bottom:18px;
+    box-shadow:var(--shadow);
+}
+
+.filter-grid{
     display:grid;
     grid-template-columns:2fr repeat(5,1fr);
-    gap:10px;
+    gap:9px;
 }
 
 input,
 select{
     width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
+    height:42px;
+    border:1px solid #dbe1e8;
     border-radius:9px;
     background:white;
-    font-size:14px;
+    color:var(--text);
+    padding:0 11px;
+    font-size:13px;
+    outline:none;
 }
 
 input:focus,
 select:focus{
-    outline:2px solid rgba(37,99,235,.15);
-    border-color:#2563eb;
+    border-color:#60a5fa;
+    box-shadow:0 0 0 3px rgba(37,99,235,.08);
 }
 
-/* =========================
-   MODEL GRID
-========================= */
+.results-line{
+    color:var(--muted);
+    font-size:12px;
+    margin:10px 0;
+}
 
-.models-grid{
+/* =====================================================
+   PRODUCT GRID
+===================================================== */
+
+.product-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:15px;
+    gap:14px;
 }
 
-.model-card{
+.product-card{
     background:white;
-    border:1px solid var(--border);
-    border-radius:16px;
+    border:1px solid var(--line);
+    border-radius:17px;
     padding:18px;
     cursor:pointer;
-    transition:.2s;
+    transition:.18s;
 }
 
-.model-card:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+.product-card:hover{
+    transform:translateY(-2px);
+    box-shadow:var(--shadow);
 }
 
-.model-top{
+.product-card-top{
     display:flex;
-    align-items:flex-start;
     justify-content:space-between;
     gap:10px;
-    margin-bottom:12px;
+    margin-bottom:14px;
 }
 
-.model-code{
-    font-size:19px;
+.product-brand{
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight:800;
+    color:#64748b;
+    letter-spacing:.7px;
+}
+
+.product-model{
+    font-size:18px;
     font-weight:900;
+    margin-top:4px;
 }
 
-.badge{
-    display:inline-flex;
-    align-items:center;
+.status{
     padding:5px 8px;
     border-radius:999px;
-    font-size:11px;
-    font-weight:bold;
-    background:#eef2ff;
-    color:#3730a3;
+    font-size:9px;
+    font-weight:900;
+    white-space:nowrap;
 }
 
-.badge.archive{
-    background:#f3f4f6;
-    color:#4b5563;
-}
-
-.badge.current{
+.status.current{
     background:#dcfce7;
     color:#166534;
 }
 
-.model-family{
-    color:#6b7280;
-    margin-bottom:13px;
+.status.archive{
+    background:#f1f5f9;
+    color:#64748b;
 }
 
-.model-info{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:7px;
+.product-family{
+    color:#64748b;
+    font-size:12px;
+    margin-bottom:14px;
+}
+
+.product-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+}
+
+.tag{
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    border-radius:7px;
+    padding:6px 7px;
+    color:#475569;
+    font-size:10px;
+}
+
+.product-footer{
+    border-top:1px solid #eef2f7;
+    margin-top:15px;
+    padding-top:12px;
+    display:flex;
+    justify-content:space-between;
+    color:#64748b;
+    font-size:10px;
+}
+
+/* =====================================================
+   DETAIL
+===================================================== */
+
+.back-button{
+    border:0;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:9px 12px;
+    cursor:pointer;
+    margin-bottom:16px;
+    font-weight:700;
+}
+
+.detail-hero{
+    background:linear-gradient(135deg,#0f172a,#243247);
+    color:white;
+    border-radius:20px;
+    padding:28px;
+    margin-bottom:16px;
+}
+
+.detail-brand{
+    color:#93c5fd;
+    text-transform:uppercase;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.detail-hero h1{
+    font-size:31px;
+    margin:7px 0;
+}
+
+.detail-sub{
+    color:#cbd5e1;
     font-size:13px;
 }
 
-.info-item{
-    background:#f9fafb;
-    padding:8px;
-    border-radius:8px;
-}
-
-.info-item strong{
-    display:block;
-    margin-bottom:2px;
-}
-
-/* =========================
-   DETAIL
-========================= */
-
-.back{
-    margin-bottom:15px;
-}
-
-.back button{
-    border:0;
-    background:white;
-    border:1px solid var(--border);
-    padding:10px 15px;
-    border-radius:9px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.detail-head{
-    background:linear-gradient(135deg,#111827,#374151);
-    color:white;
-    border-radius:18px;
-    padding:25px;
-    margin-bottom:18px;
-}
-
-.detail-head h1{
-    font-size:32px;
-    margin:8px 0;
-}
-
-.detail-head p{
-    color:#d1d5db;
-}
-
-.detail-layout{
+.detail-grid{
     display:grid;
     grid-template-columns:2fr 1fr;
-    gap:18px;
+    gap:16px;
 }
 
-.section{
+.detail-box{
     background:white;
-    border:1px solid var(--border);
-    border-radius:16px;
+    border:1px solid var(--line);
+    border-radius:17px;
     padding:20px;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
-.section h2{
+.detail-box h2{
+    font-size:17px;
     margin-bottom:15px;
-    font-size:20px;
 }
 
 .data-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:10px;
+    gap:9px;
 }
 
-.data-box{
-    background:#f9fafb;
-    padding:13px;
+.data-item{
+    background:#f8fafc;
     border-radius:10px;
+    padding:12px;
 }
 
-.data-box span{
+.data-item span{
     display:block;
-    font-size:11px;
-    color:#6b7280;
+    color:#64748b;
+    font-size:10px;
     margin-bottom:5px;
 }
 
-.data-box strong{
-    font-size:14px;
-}
-
-/* =========================
-   DOCUMENTS
-========================= */
-
-.documents{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.doc{
-    display:block;
-    text-decoration:none;
-    color:var(--text);
-    border:1px solid var(--border);
-    border-radius:11px;
-    padding:14px;
-    background:#fafafa;
-}
-
-.doc:hover{
-    background:#f3f4f6;
-}
-
-.doc-icon{
-    font-size:24px;
-    margin-bottom:7px;
-}
-
-.doc strong{
-    display:block;
-}
-
-.doc span{
-    color:#6b7280;
+.data-item strong{
     font-size:12px;
 }
 
-/* =========================
-   ERRORS
-========================= */
+.tool-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
 
-.error-search{
-    display:flex;
-    gap:10px;
+.tool{
+    text-decoration:none;
+    color:var(--text);
+    background:#f8fafc;
+    border:1px solid #e5e7eb;
+    border-radius:11px;
+    padding:13px;
+    transition:.15s;
+}
+
+.tool:hover{
+    border-color:#bfdbfe;
+    background:#eff6ff;
+}
+
+.tool-icon{
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.tool strong{
+    display:block;
+    font-size:12px;
+}
+
+.tool span{
+    display:block;
+    color:#64748b;
+    font-size:10px;
+    margin-top:3px;
+}
+
+.warning{
+    background:#fffbeb;
+    border:1px solid #fde68a;
+    color:#92400e;
+    border-radius:11px;
+    padding:13px;
+    font-size:12px;
+    line-height:1.5;
+}
+
+/* =====================================================
+   ERROR PAGE
+===================================================== */
+
+.error-search-box{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:14px;
     margin-bottom:15px;
 }
 
@@ -510,175 +788,213 @@ select:focus{
 
 .error-card{
     background:white;
-    border:1px solid var(--border);
-    border-radius:13px;
-    padding:16px;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:17px;
+}
+
+.error-card-top{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
 .error-code{
-    font-size:18px;
-    font-weight:900;
+    min-width:58px;
+    height:38px;
+    border-radius:9px;
+    background:#fef2f2;
     color:#dc2626;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:900;
 }
 
-.error-model{
-    font-size:12px;
-    color:#6b7280;
-    margin:3px 0 8px;
+.error-brand{
+    color:#64748b;
+    font-size:10px;
+    text-transform:uppercase;
+    font-weight:800;
+}
+
+.error-title{
+    font-size:14px;
+    font-weight:800;
+    margin-top:2px;
 }
 
 .error-description{
+    color:#475569;
+    font-size:12px;
     line-height:1.5;
+    margin-top:13px;
 }
 
-/* =========================
-   CATEGORY
-========================= */
-
-.category-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+.error-link{
+    display:inline-block;
+    margin-top:10px;
+    color:#2563eb;
+    font-size:11px;
+    font-weight:800;
+    text-decoration:none;
 }
 
-.category{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:15px;
-    padding:20px;
-    cursor:pointer;
-}
-
-.category:hover{
-    border-color:#9ca3af;
-}
-
-.category-icon{
-    font-size:28px;
-    margin-bottom:10px;
-}
-
-/* =========================
-   NOTES
-========================= */
-
-.note{
-    background:#fffbeb;
-    border:1px solid #fde68a;
-    color:#92400e;
-    border-radius:12px;
-    padding:14px;
-    line-height:1.5;
-}
-
-/* =========================
+/* =====================================================
    EMPTY
-========================= */
+===================================================== */
 
 .empty{
-    text-align:center;
     background:white;
-    border:1px solid var(--border);
+    border:1px solid var(--line);
     border-radius:16px;
-    padding:45px 20px;
-    color:#6b7280;
+    padding:50px 20px;
+    text-align:center;
+    color:#64748b;
+    grid-column:1/-1;
 }
 
 .empty-icon{
-    font-size:45px;
+    font-size:40px;
     margin-bottom:10px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    text-align:center;
-    color:#6b7280;
-    font-size:12px;
-    padding:25px;
+.empty h3{
+    color:#111827;
+    margin-bottom:5px;
 }
 
-/* =========================
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+.mobile-nav{
+    display:none;
+}
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media(max-width:1100px){
 
-    .grid{
+    .stats{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .models-grid{
+    .categories{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .category-grid{
+    .product-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .filters{
-        grid-template-columns:1fr 1fr 1fr;
+    .filter-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .filter-grid input{
+        grid-column:1/-1;
     }
 
 }
 
-@media(max-width:700px){
+@media(max-width:760px){
 
-    header{
-        padding:12px;
+    body{
+        padding-bottom:72px;
     }
 
-    .header-inner{
-        align-items:flex-start;
-    }
-
-    .logo-text{
-        font-size:17px;
-    }
-
-    .logo-sub{
+    .sidebar{
         display:none;
     }
 
-    .menu{
-        justify-content:flex-end;
+    .content{
+        margin-left:0;
     }
 
-    .menu button{
-        padding:8px 9px;
-        font-size:12px;
+    .topbar{
+        height:58px;
+        padding:0 14px;
+    }
+
+    .topbar-title{
+        font-size:13px;
+    }
+
+    .top-button{
+        font-size:11px;
+        padding:7px 9px;
     }
 
     main{
-        padding:15px 10px 40px;
+        padding:15px 12px 30px;
     }
 
-    .hero{
+    .dashboard-hero{
         padding:25px 18px;
-        border-radius:15px;
+        border-radius:17px;
     }
 
-    .hero h1{
-        font-size:27px;
+    .dashboard-hero h1{
+        font-size:28px;
     }
 
-    .grid,
-    .models-grid,
-    .category-grid{
+    .dashboard-hero p{
+        font-size:13px;
+    }
+
+    .main-search input{
+        height:53px;
+        font-size:14px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:9px;
+    }
+
+    .stat-card{
+        padding:14px;
+    }
+
+    .stat-number{
+        font-size:23px;
+    }
+
+    .stat-icon{
+        width:32px;
+        height:32px;
+    }
+
+    .brands{
         grid-template-columns:1fr;
     }
 
-    .filters{
+    .categories{
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+    }
+
+    .category-card{
+        padding:14px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .filter-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .filters input{
+    .filter-grid input{
         grid-column:1/-1;
     }
 
-    .detail-layout{
+    .detail-grid{
         grid-template-columns:1fr;
     }
 
@@ -686,63 +1002,178 @@ footer{
         grid-template-columns:1fr 1fr;
     }
 
-    .documents{
-        grid-template-columns:1fr;
+    .detail-hero{
+        padding:22px 18px;
     }
 
-    .detail-head h1{
+    .detail-hero h1{
         font-size:25px;
+    }
+
+    .detail-box{
+        padding:16px;
+    }
+
+    .tool-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .mobile-nav{
+        position:fixed;
+        left:0;
+        right:0;
+        bottom:0;
+        height:66px;
+        background:rgba(255,255,255,.96);
+        border-top:1px solid var(--line);
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        z-index:200;
+        backdrop-filter:blur(14px);
+        padding-bottom:env(safe-area-inset-bottom);
+    }
+
+    .mobile-nav button{
+        border:0;
+        background:transparent;
+        color:#64748b;
+        font-size:10px;
+        font-weight:700;
+    }
+
+    .mobile-nav button.active{
+        color:#2563eb;
+    }
+
+    .mobile-nav span{
+        display:block;
+        font-size:20px;
+        margin-bottom:3px;
     }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<div class="app">
 
-<div class="header-inner">
+<!-- =====================================================
+SIDEBAR
+===================================================== -->
 
-<div class="logo" onclick="showPage('homePage')">
+<aside class="sidebar">
 
-<div class="logo-icon">
-T
+<div class="brand">
+
+<div class="brand-icon">
+TP
 </div>
 
 <div>
-<div class="logo-text">
+<div class="brand-name">
 TECNICO PRO
 </div>
 
-<div class="logo-sub">
-Archivio tecnico HVAC & Termoidraulica
+<div class="brand-sub">
+ARCHIVIO TECNICO
 </div>
 </div>
 
 </div>
 
-<div class="menu">
 
-<button onclick="showPage('homePage')">
-Home
+<div class="nav-title">
+Menu
+</div>
+
+<nav class="nav">
+
+<button class="active" data-page="homePage" onclick="showPage('homePage')">
+<span class="nav-icon">⌂</span>
+Dashboard
 </button>
 
-<button onclick="showPage('modelsPage')">
-Archivio
+<button data-page="modelsPage" onclick="showPage('modelsPage')">
+<span class="nav-icon">▦</span>
+Archivio prodotti
 </button>
 
-<button onclick="showPage('errorsPage')">
-Errori
+<button data-page="errorsPage" onclick="showPage('errorsPage')">
+<span class="nav-icon">⚠</span>
+Codici errore
 </button>
 
-<button onclick="showPage('categoriesPage')">
+<button data-page="categoriesPage" onclick="showPage('categoriesPage')">
+<span class="nav-icon">◈</span>
 Categorie
 </button>
 
+</nav>
+
+
+<div class="nav-title" style="margin-top:18px;">
+Strumenti
 </div>
+
+<nav class="nav">
+
+<button onclick="showPage('modelsPage');focusSearch()">
+<span class="nav-icon">⌕</span>
+Ricerca tecnica
+</button>
+
+<button onclick="showPage('errorsPage')">
+<span class="nav-icon">⚡</span>
+Diagnosi
+</button>
+
+</nav>
+
+
+<div class="sidebar-bottom">
+
+<div class="status-box">
+
+<div style="font-size:11px;font-weight:800;">
+<span class="status-dot"></span>
+ARCHIVIO ONLINE
+</div>
+
+<div style="font-size:10px;color:#64748b;margin-top:5px;">
+Database tecnico
+</div>
+
+</div>
+
+</div>
+
+</aside>
+
+
+<!-- =====================================================
+CONTENT
+===================================================== -->
+
+<div class="content">
+
+<header class="topbar">
+
+<div class="topbar-title" id="topbarTitle">
+Dashboard
+</div>
+
+<div class="topbar-right">
+
+<button class="top-button" onclick="showPage('errorsPage')">
+⚠ Errori
+</button>
+
+<button class="top-button" onclick="showPage('modelsPage');focusSearch()">
+⌕ Cerca
+</button>
 
 </div>
 
@@ -751,35 +1182,38 @@ Categorie
 
 <main>
 
-<!-- =========================
-HOME
-========================= -->
+<!-- =====================================================
+DASHBOARD
+===================================================== -->
 
 <section id="homePage" class="page active">
 
-<div class="hero">
+<div class="dashboard-hero">
+
+<div class="hero-small">
+Archivio professionale
+</div>
 
 <h1>
-Archivio tecnico professionale
+Tutto quello che serve al tecnico.
 </h1>
 
 <p>
-Trova rapidamente modelli, codici errore, manuali,
-dati tecnici, refrigerante, tipologia di macchina,
-documentazione e informazioni utili per diagnosi,
-installazione e manutenzione.
+Cerca un modello, un codice errore, una famiglia
+o una tipologia di macchina e accedi rapidamente
+alla documentazione tecnica disponibile.
 </p>
 
-<div class="search-big">
 
-<span class="search-icon">
+<div class="main-search">
+
+<span class="search-symbol">
 ⌕
 </span>
 
 <input
 id="globalSearch"
-type="text"
-placeholder="Cerca modello, famiglia, errore, refrigerante..."
+placeholder="Cerca modello, errore, componente..."
 oninput="globalSearch()"
 >
 
@@ -788,52 +1222,105 @@ oninput="globalSearch()"
 </div>
 
 
-<div class="grid" style="margin-bottom:22px;">
+<div class="stats">
 
-<div class="card">
+<div class="stat-card">
 
-<div class="stat" id="totalModels">
+<div class="stat-top">
+
+<div>
+<div class="stat-label">
+PRODOTTI
+</div>
+</div>
+
+<div class="stat-icon">
+▦
+</div>
+
+</div>
+
+<div class="stat-number" id="totalModels">
 0
 </div>
 
 <div class="stat-label">
-Schede archivio
+Schede nell'archivio
 </div>
 
 </div>
 
-<div class="card">
 
-<div class="stat" id="totalBrands">
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div class="stat-label">
+MARCHE
+</div>
+
+<div class="stat-icon">
+◉
+</div>
+
+</div>
+
+<div class="stat-number">
 3
 </div>
 
 <div class="stat-label">
-Marche
+Daikin · Unical · WOLF
 </div>
 
 </div>
 
-<div class="card">
 
-<div class="stat" id="totalErrors">
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div class="stat-label">
+ERRORI
+</div>
+
+<div class="stat-icon">
+⚠
+</div>
+
+</div>
+
+<div class="stat-number" id="totalErrors">
 0
 </div>
 
 <div class="stat-label">
-Codici errore verificati
+Codici presenti
 </div>
 
 </div>
 
-<div class="card">
 
-<div class="stat">
-2015–2026
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div class="stat-label">
+ARCHIVIO
+</div>
+
+<div class="stat-icon">
+◷
+</div>
+
+</div>
+
+<div class="stat-number">
+2015+
 </div>
 
 <div class="stat-label">
-Periodo archivio climatizzazione
+Modelli storici e attuali
 </div>
 
 </div>
@@ -841,224 +1328,184 @@ Periodo archivio climatizzazione
 </div>
 
 
-<h2 style="margin-bottom:12px;">
+<div class="section-head">
+
+<div>
+
+<h2>
 Marche
 </h2>
 
-<div class="grid" style="margin-bottom:25px;">
-
-<div
-class="card brand-card"
-onclick="filterBrand('Unical')"
->
-
-<div class="brand-logo unical">
-U
-</div>
-
-<h3>
-Unical
-</h3>
-
 <p>
-Climatizzazione, pompe di calore,
-sistemi termici e documentazione tecnica.
+Seleziona il costruttore
 </p>
 
 </div>
 
+</div>
 
-<div
-class="card brand-card"
-onclick="filterBrand('Daikin')"
->
 
-<div class="brand-logo daikin">
+<div class="brands">
+
+<div class="brand-card" onclick="filterBrand('Daikin')">
+
+<div class="brand-head">
+
+<div class="brand-circle daikin">
 D
 </div>
+
+<div>
 
 <h3>
 Daikin
 </h3>
 
-<p>
+<div class="brand-count">
+Climatizzazione · VRV · Pompe di calore
+</div>
+
+</div>
+
+</div>
+
+<div class="brand-description">
 Residenziale, monosplit, multisplit,
-Sky Air, VRV e sistemi commerciali.
-</p>
+Sky Air, VRV, cassette, canalizzati
+e sistemi commerciali.
+</div>
 
 </div>
 
 
-<div
-class="card brand-card"
-onclick="filterBrand('WOLF')"
->
+<div class="brand-card" onclick="filterBrand('Unical')">
 
-<div class="brand-logo wolf">
+<div class="brand-head">
+
+<div class="brand-circle unical">
+U
+</div>
+
+<div>
+
+<h3>
+Unical
+</h3>
+
+<div class="brand-count">
+Caldaie · Climatizzazione · Biomassa
+</div>
+
+</div>
+
+</div>
+
+<div class="brand-description">
+Caldaie, climatizzatori monosplit,
+multisplit, cassette, canalizzati,
+pompe di calore e biomassa.
+</div>
+
+</div>
+
+
+<div class="brand-card" onclick="filterBrand('WOLF')">
+
+<div class="brand-head">
+
+<div class="brand-circle wolf">
 W
 </div>
+
+<div>
 
 <h3>
 WOLF
 </h3>
 
-<p>
-Caldaie, pompe di calore,
-ventilazione e sistemi HVAC.
-</p>
-
+<div class="brand-count">
+Caldaie · Pompe di calore · VMC
 </div>
 
 </div>
 
+</div>
 
-<h2 style="margin-bottom:12px;">
-Cerca per categoria
+<div class="brand-description">
+Sistemi termici, caldaie, pompe di
+calore e ventilazione.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section-head">
+
+<div>
+
+<h2>
+Categorie
 </h2>
 
-<div class="category-grid">
-
-<div class="category"
-onclick="filterCategory('Climatizzatore')">
-
-<div class="category-icon">
-❄️
-</div>
-
-<h3>
-Climatizzatori
-</h3>
-
 <p>
-Split, multisplit e sistemi commerciali.
+Vai direttamente alla tipologia di macchina
 </p>
 
 </div>
 
-
-<div class="category"
-onclick="filterCategory('Pompa di calore')">
-
-<div class="category-icon">
-♨️
-</div>
-
-<h3>
-Pompe di calore
-</h3>
-
-<p>
-Aria-aria e aria-acqua.
-</p>
-
 </div>
 
 
-<div class="category"
-onclick="filterCategory('Caldaia')">
+<div class="categories">
 
-<div class="category-icon">
-🔥
+<div class="category-card" onclick="filterCategory('Climatizzatore')">
+<div class="category-icon">❄️</div>
+<h3>Climatizzatori</h3>
+<p>Monosplit e multisplit</p>
 </div>
 
-<h3>
-Caldaie
-</h3>
-
-<p>
-Caldaie murali e sistemi termici.
-</p>
-
+<div class="category-card" onclick="filterCategory('Pompa di calore')">
+<div class="category-icon">♨️</div>
+<h3>Pompe di calore</h3>
+<p>Aria-aria e aria-acqua</p>
 </div>
 
-
-<div class="category"
-onclick="filterCategory('Ventilazione')">
-
-<div class="category-icon">
-💨
+<div class="category-card" onclick="filterCategory('Caldaia')">
+<div class="category-icon">🔥</div>
+<h3>Caldaie</h3>
+<p>Murali e professionali</p>
 </div>
 
-<h3>
-Ventilazione
-</h3>
-
-<p>
-VMC, UTA e trattamento aria.
-</p>
-
+<div class="category-card" onclick="filterCategory('VRV')">
+<div class="category-icon">🏢</div>
+<h3>VRV / VRF</h3>
+<p>Sistemi commerciali</p>
 </div>
 
-
-<div class="category"
-onclick="filterCategory('VRV')">
-
-<div class="category-icon">
-🏢
+<div class="category-card" onclick="filterCategory('Cassette')">
+<div class="category-icon">▦</div>
+<h3>Cassette</h3>
+<p>Controsoffitto</p>
 </div>
 
-<h3>
-VRV / VRF
-</h3>
-
-<p>
-Sistemi commerciali e professionali.
-</p>
-
+<div class="category-card" onclick="filterCategory('Canalizzato')">
+<div class="category-icon">🔧</div>
+<h3>Canalizzati</h3>
+<p>Unità canalizzabili</p>
 </div>
 
-
-<div class="category"
-onclick="filterCategory('Cassette')">
-
-<div class="category-icon">
-⬛
+<div class="category-card" onclick="filterCategory('Ventilazione')">
+<div class="category-icon">💨</div>
+<h3>Ventilazione</h3>
+<p>VMC e trattamento aria</p>
 </div>
 
-<h3>
-Cassette
-</h3>
-
-<p>
-Unità a cassette da controsoffitto.
-</p>
-
-</div>
-
-
-<div class="category"
-onclick="filterCategory('Canalizzato')">
-
-<div class="category-icon">
-🔧
-</div>
-
-<h3>
-Canalizzati
-</h3>
-
-<p>
-Unità canalizzabili e alta prevalenza.
-</p>
-
-</div>
-
-
-<div class="category"
-onclick="filterCategory('Caldaia')">
-
-<div class="category-icon">
-🛠️
-</div>
-
-<h3>
-Termoidraulica
-</h3>
-
-<p>
-Diagnosi e documentazione tecnica.
-</p>
-
+<div class="category-card" onclick="showPage('errorsPage')">
+<div class="category-icon">⚠️</div>
+<h3>Diagnosi</h3>
+<p>Codici e anomalie</p>
 </div>
 
 </div>
@@ -1066,107 +1513,55 @@ Diagnosi e documentazione tecnica.
 </section>
 
 
-<!-- =========================
-MODELS
-========================= -->
+<!-- =====================================================
+ARCHIVIO
+===================================================== -->
 
 <section id="modelsPage" class="page">
 
-<div class="back">
+<div class="page-header">
 
-<button onclick="showPage('homePage')">
-← Torna alla home
-</button>
-
-</div>
-
-<h1 style="margin-bottom:7px;">
+<h1>
 Archivio prodotti
 </h1>
 
-<p style="color:#6b7280;margin-bottom:18px;">
-Ricerca per marca, modello, famiglia, anno,
-categoria o refrigerante.
+<p>
+Cerca e filtra tutte le schede disponibili.
 </p>
 
+</div>
 
-<div class="toolbar">
 
-<div class="filters">
+<div class="filter-bar">
+
+<div class="filter-grid">
 
 <input
 id="modelSearch"
-placeholder="Cerca modello..."
+placeholder="🔎 Cerca modello o famiglia..."
 oninput="renderModels()"
 >
 
-<select id="brandFilter"
-onchange="renderModels()">
-
-<option value="">
-Tutte le marche
-</option>
-
-<option>
-Unical
-</option>
-
-<option>
-Daikin
-</option>
-
-<option>
-WOLF
-</option>
-
+<select id="brandFilter" onchange="renderModels()">
+<option value="">Tutte le marche</option>
+<option>Daikin</option>
+<option>Unical</option>
+<option>WOLF</option>
 </select>
 
-
-<select id="categoryFilter"
-onchange="renderModels()">
-
-<option value="">
-Tutte le categorie
-</option>
-
-<option>
-Climatizzatore
-</option>
-
-<option>
-Pompa di calore
-</option>
-
-<option>
-Caldaia
-</option>
-
-<option>
-Ventilazione
-</option>
-
-<option>
-VRV
-</option>
-
-<option>
-Cassette
-</option>
-
-<option>
-Canalizzato
-</option>
-
+<select id="categoryFilter" onchange="renderModels()">
+<option value="">Tutte le categorie</option>
+<option>Climatizzatore</option>
+<option>Pompa di calore</option>
+<option>Caldaia</option>
+<option>VRV</option>
+<option>Cassette</option>
+<option>Canalizzato</option>
+<option>Ventilazione</option>
 </select>
 
-
-<select id="yearFilter"
-onchange="renderModels()">
-
-<option value="">
-Tutti gli anni
-</option>
-
+<select id="yearFilter" onchange="renderModels()">
+<option value="">Tutti gli anni</option>
 <option>2015</option>
 <option>2016</option>
 <option>2017</option>
@@ -1179,42 +1574,21 @@ Tutti gli anni
 <option>2024</option>
 <option>2025</option>
 <option>2026</option>
-
 </select>
 
-
-<select id="statusFilter"
-onchange="renderModels()">
-
-<option value="">
-Attuali + archiviati
-</option>
-
-<option value="current">
-Attuali
-</option>
-
-<option value="archive">
-Archiviati
-</option>
-
+<select id="statusFilter" onchange="renderModels()">
+<option value="">Attuali + archiviati</option>
+<option value="current">Attuali</option>
+<option value="archive">Archiviati</option>
 </select>
 
-
-<select id="refrigerantFilter"
-onchange="renderModels()">
-
-<option value="">
-Tutti i refrigeranti
-</option>
-
+<select id="refrigerantFilter" onchange="renderModels()">
+<option value="">Tutti i gas</option>
 <option>R32</option>
 <option>R410A</option>
 <option>R407C</option>
 <option>R290</option>
 <option>R454C</option>
-<option>R134a</option>
-
 </select>
 
 </div>
@@ -1222,33 +1596,25 @@ Tutti i refrigeranti
 </div>
 
 
-<div
-id="resultsCount"
-style="margin-bottom:12px;color:#6b7280;font-size:13px;">
+<div class="results-line" id="resultsCount">
 </div>
 
 
-<div
-id="modelsGrid"
-class="models-grid">
+<div class="product-grid" id="modelsGrid">
 </div>
 
 </section>
 
 
-<!-- =========================
-DETAIL
-========================= -->
+<!-- =====================================================
+DETTAGLIO
+===================================================== -->
 
 <section id="detailPage" class="page">
 
-<div class="back">
-
-<button onclick="showPage('modelsPage')">
+<button class="back-button" onclick="showPage('modelsPage')">
 ← Torna all'archivio
 </button>
-
-</div>
 
 <div id="detailContent">
 </div>
@@ -1256,163 +1622,103 @@ DETAIL
 </section>
 
 
-<!-- =========================
-ERRORS
-========================= -->
+<!-- =====================================================
+ERRORI
+===================================================== -->
 
 <section id="errorsPage" class="page">
 
-<div class="back">
+<div class="page-header">
 
-<button onclick="showPage('homePage')">
-← Torna alla home
-</button>
+<h1>
+Codici errore
+</h1>
+
+<p>
+Ricerca rapida delle anomalie presenti nell'archivio.
+</p>
 
 </div>
 
-<h1 style="margin-bottom:7px;">
-Ricerca codici errore
-</h1>
 
-<p style="color:#6b7280;margin-bottom:18px;">
-Cerca un codice errore o una descrizione.
-</p>
-
-<div class="toolbar">
-
-<div class="error-search">
+<div class="error-search-box">
 
 <input
 id="errorSearch"
-placeholder="Esempio: U4, E7, comunicazione..."
+placeholder="🔎 Cerca codice, modello o descrizione..."
 oninput="renderErrors()"
 >
 
 </div>
 
-</div>
 
-<div
-id="errorList"
-class="error-list">
+<div class="error-list" id="errorList">
 </div>
 
 </section>
 
 
-<!-- =========================
-CATEGORIES
-========================= -->
+<!-- =====================================================
+CATEGORIE
+===================================================== -->
 
 <section id="categoriesPage" class="page">
 
-<div class="back">
+<div class="page-header">
 
-<button onclick="showPage('homePage')">
-← Torna alla home
-</button>
-
-</div>
-
-<h1 style="margin-bottom:18px;">
+<h1>
 Categorie tecniche
 </h1>
 
-<div class="category-grid">
+<p>
+Esplora l'archivio per tipologia.
+</p>
 
-<div class="category"
-onclick="filterCategory('Climatizzatore')">
+</div>
 
+
+<div class="categories">
+
+<div class="category-card" onclick="filterCategory('Climatizzatore')">
 <div class="category-icon">❄️</div>
-
 <h3>Climatizzatori</h3>
-
-<p>Monosplit, multisplit e sistemi aria-aria.</p>
-
+<p>Monosplit e multisplit</p>
 </div>
 
-
-<div class="category"
-onclick="filterCategory('VRV')">
-
-<div class="category-icon">🏢</div>
-
-<h3>VRV / VRF</h3>
-
-<p>Sistemi professionali commerciali.</p>
-
-</div>
-
-
-<div class="category"
-onclick="filterCategory('Cassette')">
-
-<div class="category-icon">⬛</div>
-
-<h3>Cassette</h3>
-
-<p>Unità a cassette.</p>
-
-</div>
-
-
-<div class="category"
-onclick="filterCategory('Canalizzato')">
-
-<div class="category-icon">🔧</div>
-
-<h3>Canalizzati</h3>
-
-<p>Unità canalizzabili.</p>
-
-</div>
-
-
-<div class="category"
-onclick="filterCategory('Pompa di calore')">
-
+<div class="category-card" onclick="filterCategory('Pompa di calore')">
 <div class="category-icon">♨️</div>
-
 <h3>Pompe di calore</h3>
-
-<p>Aria-aria e aria-acqua.</p>
-
+<p>Aria-aria e aria-acqua</p>
 </div>
 
-
-<div class="category"
-onclick="filterCategory('Caldaia')">
-
+<div class="category-card" onclick="filterCategory('Caldaia')">
 <div class="category-icon">🔥</div>
-
 <h3>Caldaie</h3>
-
-<p>Caldaie e generatori termici.</p>
-
+<p>Generatori termici</p>
 </div>
 
+<div class="category-card" onclick="filterCategory('VRV')">
+<div class="category-icon">🏢</div>
+<h3>VRV / VRF</h3>
+<p>Sistemi professionali</p>
+</div>
 
-<div class="category"
-onclick="filterCategory('Ventilazione')">
+<div class="category-card" onclick="filterCategory('Cassette')">
+<div class="category-icon">▦</div>
+<h3>Cassette</h3>
+<p>Unità da controsoffitto</p>
+</div>
 
+<div class="category-card" onclick="filterCategory('Canalizzato')">
+<div class="category-icon">🔧</div>
+<h3>Canalizzati</h3>
+<p>Unità canalizzabili</p>
+</div>
+
+<div class="category-card" onclick="filterCategory('Ventilazione')">
 <div class="category-icon">💨</div>
-
 <h3>Ventilazione</h3>
-
-<p>VMC e trattamento aria.</p>
-
-</div>
-
-
-<div class="category"
-onclick="filterCategory('Termoidraulica')">
-
-<div class="category-icon">🛠️</div>
-
-<h3>Diagnosi</h3>
-
-<p>Strumenti per il tecnico.</p>
-
+<p>VMC e trattamento aria</p>
 </div>
 
 </div>
@@ -1421,64 +1727,45 @@ onclick="filterCategory('Termoidraulica')">
 
 </main>
 
+</div>
 
-<footer>
 
-TECNICO PRO © 2026 —
-Archivio tecnico per professionisti
+<!-- =====================================================
+MOBILE NAV
+===================================================== -->
 
-</footer>
+<nav class="mobile-nav">
+
+<button class="active" data-page="homePage" onclick="showPage('homePage')">
+<span>⌂</span>
+Home
+</button>
+
+<button data-page="modelsPage" onclick="showPage('modelsPage')">
+<span>▦</span>
+Archivio
+</button>
+
+<button data-page="errorsPage" onclick="showPage('errorsPage')">
+<span>⚠</span>
+Errori
+</button>
+
+<button data-page="categoriesPage" onclick="showPage('categoriesPage')">
+<span>◈</span>
+Categorie
+</button>
+
+</nav>
 
 
 <script>
 
 /* ============================================================
-   DATABASE PRODOTTI
-
-   Struttura predisposta per essere ampliata senza modificare
-   il resto dell'applicazione.
+   DATABASE
 ============================================================ */
 
 const PRODUCTS = [
-
-/* ============================================================
-   DAIKIN RESIDENZIALE
-============================================================ */
-
-{
-brand:"Daikin",
-family:"Emura",
-model:"FTXJ-MS / RXJ-M",
-category:"Climatizzatore",
-type:"Parete",
-years:"2020-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"2,0–5,0 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Emura","Catalogo ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-],
-notes:"Serie residenziale Daikin Emura. Verificare sempre l'abbinamento interno/esterno specifico."
-},
-
-{
-brand:"Daikin",
-family:"Stylish",
-model:"FTXA-AW / FTXA-BW / FTXA-BT",
-category:"Climatizzatore",
-type:"Parete",
-years:"2019-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"2,0–5,0 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Stylish","Catalogo ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
-},
 
 {
 brand:"Daikin",
@@ -1491,10 +1778,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"2,0–5,0 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Residenziale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1508,10 +1792,35 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"2,0–7,1 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Residenziale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
+
+{
+brand:"Daikin",
+family:"Emura",
+model:"FTXJ-MS / RXJ-M",
+category:"Climatizzatore",
+type:"Parete",
+years:"2020-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
+},
+
+{
+brand:"Daikin",
+family:"Stylish",
+model:"FTXA-A / RXA-A",
+category:"Climatizzatore",
+type:"Parete",
+years:"2019-2026",
+year:2026,
+status:"current",
+refrigerant:"R32",
+capacity:"2,0–5,0 kW",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1525,10 +1834,7 @@ year:2022,
 status:"archive",
 refrigerant:"R32",
 capacity:"2,0–5,0 kW",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Ricerca prodotto","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1542,10 +1848,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"2,0–7,1 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Cataloghi","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1559,27 +1862,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"2,0–7,1 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Sensira","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
-},
-
-{
-brand:"Daikin",
-family:"Sensira",
-model:"FTXF-B / RXF-B",
-category:"Climatizzatore",
-type:"Parete",
-years:"2020-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"2,0–7,1 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Sensira","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1593,10 +1876,7 @@ year:2020,
 status:"archive",
 refrigerant:"R32",
 capacity:"2,5–5,0 kW",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Ricerca prodotto","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1605,49 +1885,12 @@ family:"Floor",
 model:"FVXM-F / RXM",
 category:"Climatizzatore",
 type:"Pavimento",
-years:"2015-2026",
+years:"2019-2026",
 year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"2,0–5,0 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Cataloghi","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
-},
-
-{
-brand:"Daikin",
-family:"Floor",
-model:"FVXG-K / RXG",
-category:"Climatizzatore",
-type:"Pavimento",
-years:"2015-2021",
-year:2021,
-status:"archive",
-refrigerant:"R410A",
-capacity:"2,5–5,0 kW",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Ricerca prodotto","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
-},
-
-{
-brand:"Daikin",
-family:"Siesta",
-model:"ATXF-A / ARXF-A",
-category:"Climatizzatore",
-type:"Parete",
-years:"2018-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"2,0–7,1 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Catalogo Siesta","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1661,10 +1904,7 @@ year:2019,
 status:"archive",
 refrigerant:"R410A",
 capacity:"2,0–6,0 kW",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Archivio prodotti","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1678,32 +1918,8 @@ year:2018,
 status:"archive",
 refrigerant:"R410A",
 capacity:"2,0–6,0 kW",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Archivio prodotti","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"Old Residential",
-model:"FTX-GV / RX-GV",
-category:"Climatizzatore",
-type:"Parete",
-years:"2015-2018",
-year:2018,
-status:"archive",
-refrigerant:"R410A",
-capacity:"2,0–6,0 kW",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Archivio prodotti","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
-},
-
-/* ============================================================
-   DAIKIN MULTISPLIT
-============================================================ */
 
 {
 brand:"Daikin",
@@ -1715,34 +1931,9 @@ years:"2018-2026",
 year:2026,
 status:"current",
 refrigerant:"R32",
-capacity:"Multi",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Tabelle di combinazione","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-],
-notes:"Per il multisplit verificare sempre la tabella di combinazione ufficiale."
+capacity:"Multisplit",
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"Multi+",
-model:"Multi+",
-category:"Climatizzatore",
-type:"Multisplit",
-years:"2022-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Multi",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Leaflet Multi+","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
-},
-
-/* ============================================================
-   DAIKIN SKY AIR
-============================================================ */
 
 {
 brand:"Daikin",
@@ -1755,10 +1946,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"3,5–14 kW",
-source:"https://www.daikin.it/it_IT/sistemi-climatizzazione-aziende/sky-air/daikin-sky-air-serie-a.html",
-docs:[
-["Sky Air R32","Catalogo ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1772,32 +1960,8 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"3,5–14 kW",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Sky Air R32","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"Sky Air",
-model:"RZFC-D",
-category:"Climatizzatore",
-type:"Sky Air",
-years:"2020-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Sky Air","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
-},
-
-/* ============================================================
-   DAIKIN VRV
-============================================================ */
 
 {
 brand:"Daikin",
@@ -1810,10 +1974,7 @@ year:2020,
 status:"archive",
 refrigerant:"R410A",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Archivio Daikin","Archivio ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1827,10 +1988,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo VRV","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1844,49 +2002,8 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Mini VRV 5","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"VRV 5",
-model:"VRV 5 HR",
-category:"VRV",
-type:"VRV",
-years:"2021-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["VRV 5 HR","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
-},
-
-{
-brand:"Daikin",
-family:"VRV 5",
-model:"VRV 5 HP",
-category:"VRV",
-type:"VRV",
-years:"2021-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["VRV 5 HP","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
-},
-
-/* ============================================================
-   DAIKIN CASSETTE
-============================================================ */
 
 {
 brand:"Daikin",
@@ -1899,10 +2016,7 @@ year:2026,
 status:"current",
 refrigerant:"R32/R410A",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1916,32 +2030,8 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"Cassette",
-model:"FFQ-C",
-category:"Cassette",
-type:"Cassetta",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"R32/R410A",
-capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
-},
-
-/* ============================================================
-   DAIKIN CANALIZZATI
-============================================================ */
 
 {
 brand:"Daikin",
@@ -1954,27 +2044,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Residenziale",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Ricerca prodotto","Documentazione ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
-},
-
-{
-brand:"Daikin",
-family:"Duct",
-model:"FDXS-F",
-category:"Canalizzato",
-type:"Canalizzato",
-years:"2015-2021",
-year:2021,
-status:"archive",
-refrigerant:"R410A",
-capacity:"Residenziale",
-source:"https://www.daikin.it/it_IT/cerca-prodotto.html",
-docs:[
-["Archivio prodotti","Documentazione ufficiale","https://www.daikin.it/it_IT/cerca-prodotto.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
@@ -1988,32 +2058,8 @@ year:2026,
 status:"current",
 refrigerant:"R32/R410A",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"Duct",
-model:"FDA-A",
-category:"Canalizzato",
-type:"Canalizzato",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"R32/R410A",
-capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
-},
-
-/* ============================================================
-   DAIKIN PAVIMENTO / SOFFITTO
-============================================================ */
 
 {
 brand:"Daikin",
@@ -2026,32 +2072,8 @@ year:2026,
 status:"current",
 refrigerant:"R32/R410A",
 capacity:"Commerciale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html",
-docs:[
-["Catalogo Commerciale","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-commerciale.html"]
-]
+source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
-
-{
-brand:"Daikin",
-family:"Floor",
-model:"FVXM-F",
-category:"Climatizzatore",
-type:"Pavimento",
-years:"2019-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Residenziale",
-source:"https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html",
-docs:[
-["Cataloghi Residenziali","Documentazione ufficiale","https://www.daikin.it/it_IT/cataloghi-e-app/cataloghi-residenziale.html"]
-]
-},
-
-/* ============================================================
-   UNICAL
-============================================================ */
 
 {
 brand:"Unical",
@@ -2064,11 +2086,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Residenziale",
-source:"https://www.unical.eu/",
-docs:[
-["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
-],
-notes:"Gamma climatizzazione Unical. Consultare sempre la documentazione specifica della versione."
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2082,10 +2100,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Residenziale",
-source:"https://www.unical.eu/",
-docs:[
-["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2099,10 +2114,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Residenziale",
-source:"https://www.unical.eu/",
-docs:[
-["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2116,11 +2128,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"2–5 unità interne",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-],
-notes:"Unità esterne multisplit inverter. Verificare sempre le tabelle di combinazione."
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2134,10 +2142,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Pagina prodotto","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2151,10 +2156,7 @@ year:2020,
 status:"archive",
 refrigerant:"R410A",
 capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2168,11 +2170,7 @@ year:2018,
 status:"archive",
 refrigerant:"R407C",
 capacity:"Multisplit",
-source:"https://www.unical.eu/",
-docs:[
-["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
-],
-notes:"Vecchia generazione multisplit. Verificare la documentazione specifica della macchina."
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2186,10 +2184,7 @@ year:2018,
 status:"archive",
 refrigerant:"R407C",
 capacity:"Colonna",
-source:"https://www.unical.eu/",
-docs:[
-["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2203,10 +2198,7 @@ year:2018,
 status:"archive",
 refrigerant:"R407C",
 capacity:"Colonna",
-source:"https://www.unical.eu/",
-docs:[
-["Archivio Unical","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2220,10 +2212,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2237,10 +2226,7 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2254,66 +2240,8 @@ year:2026,
 status:"current",
 refrigerant:"R32",
 capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
-
-{
-brand:"Unical",
-family:"Cassette",
-model:"CS11 30H",
-category:"Cassette",
-type:"Cassetta",
-years:"2024-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-]
-},
-
-{
-brand:"Unical",
-family:"Cassette",
-model:"CS11 36H",
-category:"Cassette",
-type:"Cassetta",
-years:"2024-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-]
-},
-
-{
-brand:"Unical",
-family:"Cassette",
-model:"CS11 48H",
-category:"Cassette",
-type:"Cassetta",
-years:"2024-2026",
-year:2026,
-status:"current",
-refrigerant:"R32",
-capacity:"Commerciale",
-source:"https://www.unical.eu/",
-docs:[
-["Gamma climatizzatori","Documentazione ufficiale","https://www.unical.eu/"]
-]
-},
-
-/* ============================================================
-   UNICAL CALDAIE
-============================================================ */
 
 {
 brand:"Unical",
@@ -2326,11 +2254,7 @@ year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"Variabile",
-source:"https://www.unical.eu/",
-docs:[
-["Catalogo prodotti","Documentazione ufficiale","https://www.unical.eu/"]
-],
-notes:"Archivio generale caldaie Unical. La scheda modello specifica va selezionata in base al codice completo."
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2344,10 +2268,7 @@ year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"20–34 kW",
-source:"https://www.unical.eu/",
-docs:[
-["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
 
 {
@@ -2361,49 +2282,8 @@ year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"25 kW",
-source:"https://www.unical.eu/",
-docs:[
-["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
-]
+source:"https://www.unical.eu/"
 },
-
-{
-brand:"Unical",
-family:"Biomassa",
-model:"PELLEXIA 5-34",
-category:"Caldaia",
-type:"Pellet",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"5–34 kW",
-source:"https://www.unical.eu/",
-docs:[
-["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
-]
-},
-
-{
-brand:"Unical",
-family:"Biomassa",
-model:"PELLEXIA 116-160",
-category:"Caldaia",
-type:"Pellet",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"116–160 kW",
-source:"https://www.unical.eu/",
-docs:[
-["Catalogo biomassa","Documentazione ufficiale","https://www.unical.eu/"]
-]
-},
-
-/* ============================================================
-   WOLF CALDAIE
-============================================================ */
 
 {
 brand:"WOLF",
@@ -2416,10 +2296,7 @@ year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"24 kW",
-source:"https://www.wolf.eu/",
-docs:[
-["Documentazione WOLF","Fonte ufficiale","https://www.wolf.eu/"]
-]
+source:"https://www.wolf.eu/"
 },
 
 {
@@ -2433,33 +2310,13 @@ year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"24 kW",
-source:"https://www.wolf.eu/",
-docs:[
-["Documentazione WOLF","Fonte ufficiale","https://www.wolf.eu/"]
-]
+source:"https://www.wolf.eu/"
 },
 
 {
 brand:"WOLF",
 family:"FGB",
 model:"FGB 28",
-category:"Caldaia",
-type:"Murale",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"28 kW",
-source:"https://www.wolf.eu/",
-docs:[
-["Documentazione WOLF","Fonte ufficiale","https://www.wolf.eu/"]
-]
-},
-
-{
-brand:"WOLF",
-family:"FGB",
-model:"FGB-K 28",
 category:"Caldaia",
 type:"Murale",
 years:"2015-2026",
@@ -2474,20 +2331,6 @@ source:"https://www.wolf.eu/"
 brand:"WOLF",
 family:"FGB",
 model:"FGB 35",
-category:"Caldaia",
-type:"Murale",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"35 kW",
-source:"https://www.wolf.eu/"
-},
-
-{
-brand:"WOLF",
-family:"FGB",
-model:"FGB-K 35",
 category:"Caldaia",
 type:"Murale",
 years:"2015-2026",
@@ -2542,38 +2385,10 @@ source:"https://www.wolf.eu/"
 
 {
 brand:"WOLF",
-family:"CGB-2K",
-model:"CGB-2K/20",
-category:"Caldaia",
-type:"Murale",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"20 kW",
-source:"https://www.wolf.eu/"
-},
-
-{
-brand:"WOLF",
-family:"CGB-2K",
-model:"CGB-2K/24",
-category:"Caldaia",
-type:"Murale",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"24 kW",
-source:"https://www.wolf.eu/"
-},
-
-{
-brand:"WOLF",
 family:"CGB-2",
 model:"CGB-2/38",
 category:"Caldaia",
-type:"Murale",
+type:"Professionale",
 years:"2015-2026",
 year:2026,
 status:"current",
@@ -2587,54 +2402,12 @@ brand:"WOLF",
 family:"CGB-2",
 model:"CGB-2/55",
 category:"Caldaia",
-type:"Murale",
+type:"Professionale",
 years:"2015-2026",
 year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"55 kW",
-source:"https://www.wolf.eu/"
-},
-
-{
-brand:"WOLF",
-family:"CGS-2L",
-model:"CGS-2L 14/120L",
-category:"Caldaia",
-type:"Sistema",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"14 kW",
-source:"https://www.wolf.eu/"
-},
-
-{
-brand:"WOLF",
-family:"CGS-2L",
-model:"CGS-2L 20/160L",
-category:"Caldaia",
-type:"Sistema",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"20 kW",
-source:"https://www.wolf.eu/"
-},
-
-{
-brand:"WOLF",
-family:"CGS-2L",
-model:"CGS-2L 24/200L",
-category:"Caldaia",
-type:"Sistema",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"24 kW",
 source:"https://www.wolf.eu/"
 },
 
@@ -2654,24 +2427,6 @@ source:"https://www.wolf.eu/"
 
 {
 brand:"WOLF",
-family:"MGK-2",
-model:"MGK-2 390-1000",
-category:"Caldaia",
-type:"Professionale",
-years:"2015-2026",
-year:2026,
-status:"current",
-refrigerant:"N/A",
-capacity:"390–1000 kW",
-source:"https://www.wolf.eu/"
-},
-
-/* ============================================================
-   WOLF POMPE DI CALORE
-============================================================ */
-
-{
-brand:"WOLF",
 family:"Pompe di calore",
 model:"CHA",
 category:"Pompa di calore",
@@ -2681,27 +2436,7 @@ year:2026,
 status:"current",
 refrigerant:"R290",
 capacity:"Variabile",
-source:"https://www.wolf.eu/",
-docs:[
-["Pompe di calore","Documentazione WOLF","https://www.wolf.eu/"]
-]
-},
-
-{
-brand:"WOLF",
-family:"Pompe di calore",
-model:"BWL-1S",
-category:"Pompa di calore",
-type:"Aria-acqua",
-years:"2015-2022",
-year:2022,
-status:"archive",
-refrigerant:"R410A",
-capacity:"Variabile",
-source:"https://www.wolf.eu/",
-docs:[
-["Archivio WOLF","Documentazione ufficiale","https://www.wolf.eu/"]
-]
+source:"https://www.wolf.eu/"
 },
 
 {
@@ -2715,29 +2450,24 @@ year:2026,
 status:"current",
 refrigerant:"N/A",
 capacity:"Variabile",
-source:"https://www.wolf.eu/",
-docs:[
-["Ventilazione","Documentazione WOLF","https://www.wolf.eu/"]
-]
+source:"https://www.wolf.eu/"
 }
 
 ];
 
 
 /* ============================================================
-   CODICI ERRORE
-
-   SOLO CODICI DA INSERIRE DOPO VERIFICA DEL MANUALE SPECIFICO.
+   ERRORI
 ============================================================ */
 
-const ERRORS = [
+const ERRORS=[
 
 {
 brand:"Daikin",
 model:"Serie Daikin",
 code:"U4",
-title:"Errore di comunicazione tra unità interne ed esterne",
-description:"Verificare alimentazione, collegamenti di comunicazione, cablaggio e schede elettroniche. La diagnosi esatta dipende dalla serie e dal modello.",
+title:"Comunicazione tra unità",
+description:"Anomalia di comunicazione tra unità interna ed esterna. Verificare alimentazione, cablaggio, collegamenti e schede secondo il manuale della specifica serie.",
 source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
@@ -2745,8 +2475,8 @@ source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 brand:"Daikin",
 model:"Serie Daikin",
 code:"A1",
-title:"Anomalia scheda elettronica unità interna",
-description:"Il significato e la procedura di diagnosi devono essere verificati sul manuale di servizio della specifica serie.",
+title:"Scheda elettronica unità interna",
+description:"Anomalia associata alla scheda elettronica dell'unità interna. La procedura precisa dipende dal modello.",
 source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
@@ -2754,8 +2484,8 @@ source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 brand:"Daikin",
 model:"Serie Daikin",
 code:"A5",
-title:"Protezione alta/bassa temperatura scambiatore",
-description:"Verificare condizioni operative, filtri, scambiatore, sonde e flusso d'aria secondo il manuale specifico.",
+title:"Protezione temperatura",
+description:"Condizione di protezione legata alla temperatura dello scambiatore. Verificare filtri, scambiatore, sonde e condizioni operative.",
 source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
@@ -2763,8 +2493,8 @@ source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 brand:"Daikin",
 model:"Serie Daikin",
 code:"E7",
-title:"Anomalia motore ventilatore unità esterna",
-description:"Controllare ventilatore, motore, alimentazione e scheda elettronica secondo la procedura del modello.",
+title:"Ventilatore unità esterna",
+description:"Anomalia associata al ventilatore dell'unità esterna. Controllare motore, alimentazione, cablaggio e scheda.",
 source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
@@ -2772,17 +2502,17 @@ source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 brand:"Daikin",
 model:"Serie Daikin",
 code:"F3",
-title:"Protezione temperatura tubo di mandata",
-description:"Verificare circuito frigorifero, condizioni di funzionamento, scambio termico e sensori secondo manuale.",
+title:"Temperatura tubo di mandata",
+description:"Protezione legata alla temperatura di mandata. Verificare circuito frigorifero, scambio termico e sensori.",
 source:"https://www.daikin.it/it_IT/cerca-prodotto.html"
 },
 
 {
 brand:"Unical",
 model:"Climatizzazione",
-code:"AUTO-DIAGNOSI",
+code:"AUTODIAGNOSI",
 title:"Sistema di autodiagnosi",
-description:"Diverse serie Unical dispongono di autodiagnosi. Il codice visualizzato deve essere verificato sul manuale della macchina.",
+description:"Le diverse gamme Unical possono utilizzare sistemi di autodiagnosi differenti. Il codice deve essere interpretato tramite il manuale della specifica macchina.",
 source:"https://www.unical.eu/"
 }
 
@@ -2790,18 +2520,46 @@ source:"https://www.unical.eu/"
 
 
 /* ============================================================
-   NAVIGAZIONE
+   PAGINE
 ============================================================ */
+
+const pageTitles={
+homePage:"Dashboard",
+modelsPage:"Archivio prodotti",
+detailPage:"Scheda tecnica",
+errorsPage:"Codici errore",
+categoriesPage:"Categorie"
+};
 
 function showPage(id){
 
 document.querySelectorAll(".page")
-.forEach(page=>{
-page.classList.remove("active");
+.forEach(p=>p.classList.remove("active"));
+
+const page=document.getElementById(id);
+
+if(page){
+page.classList.add("active");
+}
+
+document.querySelectorAll(".nav button")
+.forEach(btn=>{
+btn.classList.toggle(
+"active",
+btn.dataset.page===id
+);
 });
 
-document.getElementById(id)
-.classList.add("active");
+document.querySelectorAll(".mobile-nav button")
+.forEach(btn=>{
+btn.classList.toggle(
+"active",
+btn.dataset.page===id
+);
+});
+
+document.getElementById("topbarTitle").textContent=
+pageTitles[id] || "TECNICO PRO";
 
 window.scrollTo({
 top:0,
@@ -2833,7 +2591,6 @@ renderModels();
 
 }
 
-
 function filterCategory(category){
 
 document.getElementById("categoryFilter").value=category;
@@ -2844,9 +2601,23 @@ renderModels();
 
 }
 
+function focusSearch(){
+
+setTimeout(()=>{
+
+const input=document.getElementById("modelSearch");
+
+if(input){
+input.focus();
+}
+
+},300);
+
+}
+
 
 /* ============================================================
-   RENDER MODELLI
+   RENDER PRODOTTI
 ============================================================ */
 
 function renderModels(){
@@ -2868,7 +2639,7 @@ document.getElementById("yearFilter")?.value || "";
 const status=
 document.getElementById("statusFilter")?.value || "";
 
-const refrigerant=
+const gas=
 document.getElementById("refrigerantFilter")?.value || "";
 
 
@@ -2895,26 +2666,25 @@ return false;
 if(category && p.category!==category)
 return false;
 
+if(status && p.status!==status)
+return false;
+
+if(gas && !p.refrigerant.includes(gas))
+return false;
+
 if(year){
 
+const parts=p.years.split("-");
+
+const start=parseInt(parts[0]);
+const end=parseInt(parts[1] || parts[0]);
+
 const y=parseInt(year);
-
-const range=p.years.split("-");
-
-const start=parseInt(range[0]);
-const end=parseInt(range[1] || range[0]);
 
 if(y<start || y>end)
 return false;
 
 }
-
-if(status && p.status!==status)
-return false;
-
-if(refrigerant &&
-!p.refrigerant.includes(refrigerant))
-return false;
 
 return true;
 
@@ -2924,21 +2694,21 @@ return true;
 document.getElementById("resultsCount").textContent=
 filtered.length+
 (filtered.length===1
-?" risultato"
-:" risultati");
+?" prodotto trovato"
+:" prodotti trovati");
 
 
 const grid=document.getElementById("modelsGrid");
 
-if(filtered.length===0){
+
+if(!filtered.length){
 
 grid.innerHTML=`
 
-<div class="empty"
-style="grid-column:1/-1;">
+<div class="empty">
 
 <div class="empty-icon">
-🔎
+⌕
 </div>
 
 <h3>
@@ -2946,7 +2716,7 @@ Nessun prodotto trovato
 </h3>
 
 <p>
-Prova a modificare i filtri oppure cerca
+Prova a cambiare i filtri o utilizzare
 il codice completo del modello.
 </p>
 
@@ -2959,34 +2729,30 @@ return;
 }
 
 
-grid.innerHTML=filtered
-.map((p,index)=>{
+grid.innerHTML=filtered.map(p=>{
 
-const originalIndex=
-PRODUCTS.indexOf(p);
+const index=PRODUCTS.indexOf(p);
 
 return `
 
-<div
-class="model-card"
-onclick="openProduct(${originalIndex})">
+<div class="product-card"
+onclick="openProduct(${index})">
 
-<div class="model-top">
+<div class="product-card-top">
 
 <div>
 
-<div class="model-code">
+<div class="product-brand">
+${escapeHtml(p.brand)}
+</div>
+
+<div class="product-model">
 ${escapeHtml(p.model)}
 </div>
 
-<div class="model-family">
-${escapeHtml(p.brand)} ·
-${escapeHtml(p.family)}
 </div>
 
-</div>
-
-<span class="badge ${p.status}">
+<span class="status ${p.status}">
 ${p.status==="current"
 ?"ATTUALE"
 :"ARCHIVIATO"}
@@ -2995,50 +2761,37 @@ ${p.status==="current"
 </div>
 
 
-<div class="model-info">
+<div class="product-family">
+${escapeHtml(p.family)}
+</div>
 
-<div class="info-item">
 
-<strong>
-Categoria
-</strong>
+<div class="product-tags">
 
+<span class="tag">
 ${escapeHtml(p.category)}
+</span>
 
-</div>
-
-
-<div class="info-item">
-
-<strong>
-Tipo
-</strong>
-
+<span class="tag">
 ${escapeHtml(p.type)}
+</span>
 
-</div>
-
-
-<div class="info-item">
-
-<strong>
-Periodo
-</strong>
-
-${escapeHtml(p.years)}
-
-</div>
-
-
-<div class="info-item">
-
-<strong>
-Refrigerante
-</strong>
-
+<span class="tag">
 ${escapeHtml(p.refrigerant)}
+</span>
 
 </div>
+
+
+<div class="product-footer">
+
+<span>
+${escapeHtml(p.years)}
+</span>
+
+<span>
+Apri scheda →
+</span>
 
 </div>
 
@@ -3046,8 +2799,7 @@ ${escapeHtml(p.refrigerant)}
 
 `;
 
-})
-.join("");
+}).join("");
 
 }
 
@@ -3063,38 +2815,34 @@ const p=PRODUCTS[index];
 if(!p)
 return;
 
-const docs=p.docs || [];
-
 document.getElementById("detailContent").innerHTML=`
 
-<div class="detail-head">
+<div class="detail-hero">
 
-<span class="badge ${p.status}">
-${p.status==="current"
-?"PRODOTTO ATTUALE"
-:"PRODOTTO ARCHIVIATO"}
-</span>
+<div class="detail-brand">
+${escapeHtml(p.brand)} · ${escapeHtml(p.family)}
+</div>
 
 <h1>
 ${escapeHtml(p.model)}
 </h1>
 
-<p>
-${escapeHtml(p.brand)}
- ·
-${escapeHtml(p.family)}
- ·
+<div class="detail-sub">
 ${escapeHtml(p.type)}
-</p>
+ ·
+${escapeHtml(p.category)}
+ ·
+${escapeHtml(p.years)}
+</div>
 
 </div>
 
 
-<div class="detail-layout">
+<div class="detail-grid">
 
 <div>
 
-<div class="section">
+<div class="detail-box">
 
 <h2>
 Dati tecnici
@@ -3102,48 +2850,48 @@ Dati tecnici
 
 <div class="data-grid">
 
-<div class="data-box">
-<span>Marca</span>
+<div class="data-item">
+<span>MARCA</span>
 <strong>${escapeHtml(p.brand)}</strong>
 </div>
 
-<div class="data-box">
-<span>Famiglia</span>
+<div class="data-item">
+<span>FAMIGLIA</span>
 <strong>${escapeHtml(p.family)}</strong>
 </div>
 
-<div class="data-box">
-<span>Modello</span>
+<div class="data-item">
+<span>MODELLO</span>
 <strong>${escapeHtml(p.model)}</strong>
 </div>
 
-<div class="data-box">
-<span>Categoria</span>
-<strong>${escapeHtml(p.category)}</strong>
-</div>
-
-<div class="data-box">
-<span>Tipologia</span>
+<div class="data-item">
+<span>TIPO</span>
 <strong>${escapeHtml(p.type)}</strong>
 </div>
 
-<div class="data-box">
-<span>Periodo</span>
+<div class="data-item">
+<span>CATEGORIA</span>
+<strong>${escapeHtml(p.category)}</strong>
+</div>
+
+<div class="data-item">
+<span>PERIODO</span>
 <strong>${escapeHtml(p.years)}</strong>
 </div>
 
-<div class="data-box">
-<span>Refrigerante</span>
+<div class="data-item">
+<span>REFRIGERANTE</span>
 <strong>${escapeHtml(p.refrigerant)}</strong>
 </div>
 
-<div class="data-box">
-<span>Capacità / gamma</span>
-<strong>${escapeHtml(p.capacity || "Da verificare")}</strong>
+<div class="data-item">
+<span>POTENZA / GAMMA</span>
+<strong>${escapeHtml(p.capacity)}</strong>
 </div>
 
-<div class="data-box">
-<span>Stato</span>
+<div class="data-item">
+<span>STATO</span>
 <strong>
 ${p.status==="current"
 ?"Attuale"
@@ -3156,111 +2904,38 @@ ${p.status==="current"
 </div>
 
 
-<div class="section">
+<div class="detail-box">
 
 <h2>
-Documentazione
+Diagnosi
 </h2>
 
-<div class="documents">
-
-${docs.length
-?
-docs.map(d=>`
-
-<a
-class="doc"
-href="${d[2]}"
-target="_blank"
-rel="noopener">
-
-<div class="doc-icon">
-📄
-</div>
+<div class="warning">
 
 <strong>
-${escapeHtml(d[0])}
-</strong>
-
-<span>
-${escapeHtml(d[1])}
-</span>
-
-</a>
-
-`).join("")
-:
-`
-
-<a
-class="doc"
-href="${p.source}"
-target="_blank"
-rel="noopener">
-
-<div class="doc-icon">
-🌐
-</div>
-
-<strong>
-Fonte ufficiale
-</strong>
-
-<span>
-Apri documentazione
-</span>
-
-</a>
-
-`
-}
-
-<a
-class="doc"
-href="${p.source}"
-target="_blank"
-rel="noopener">
-
-<div class="doc-icon">
-🔎
-</div>
-
-<strong>
-Ricerca prodotto
-</strong>
-
-<span>
-Verifica manuali e documenti
-</span>
-
-</a>
-
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>
-Diagnosi tecnica
-</h2>
-
-<div class="note">
-
-<strong>
-ATTENZIONE TECNICA
+Prima della sostituzione di un componente
 </strong>
 
 <br><br>
 
-Prima di sostituire una scheda,
-compressore, motore o sensore,
-verificare sempre alimentazione,
-cablaggio, connettori, pressioni,
-temperature e condizioni operative
-secondo la procedura del costruttore.
+Controllare sempre alimentazione,
+cablaggi, connettori, sonde,
+temperature, pressioni e condizioni
+operative seguendo la procedura prevista
+dal costruttore per il modello esatto.
 
+</div>
+
+</div>
+
+
+<div class="detail-box">
+
+<h2>
+Codici errore collegati
+</h2>
+
+<div id="relatedErrors">
 </div>
 
 </div>
@@ -3270,22 +2945,21 @@ secondo la procedura del costruttore.
 
 <div>
 
-<div class="section">
+<div class="detail-box">
 
 <h2>
-Strumenti rapidi
+Documentazione
 </h2>
 
-<div class="documents">
+<div class="tool-grid">
 
-<a
-class="doc"
+<a class="tool"
 href="${p.source}"
 target="_blank"
 rel="noopener">
 
-<div class="doc-icon">
-📚
+<div class="tool-icon">
+📕
 </div>
 
 <strong>
@@ -3299,13 +2973,12 @@ Documentazione ufficiale
 </a>
 
 
-<a
-class="doc"
+<a class="tool"
 href="${p.source}"
 target="_blank"
 rel="noopener">
 
-<div class="doc-icon">
+<div class="tool-icon">
 ⚡
 </div>
 
@@ -3314,19 +2987,18 @@ Schemi
 </strong>
 
 <span>
-Controlla documentazione tecnica
+Schemi e documenti tecnici
 </span>
 
 </a>
 
 
-<a
-class="doc"
+<a class="tool"
 href="${p.source}"
 target="_blank"
 rel="noopener">
 
-<div class="doc-icon">
+<div class="tool-icon">
 🧩
 </div>
 
@@ -3341,14 +3013,13 @@ Ricerca componente
 </a>
 
 
-<a
-class="doc"
+<a class="tool"
 href="${p.source}"
 target="_blank"
 rel="noopener">
 
-<div class="doc-icon">
-🛠️
+<div class="tool-icon">
+🔧
 </div>
 
 <strong>
@@ -3356,7 +3027,7 @@ Service
 </strong>
 
 <span>
-Procedure tecniche
+Documentazione tecnica
 </span>
 
 </a>
@@ -3366,20 +3037,31 @@ Procedure tecniche
 </div>
 
 
-<div class="section">
+<div class="detail-box">
 
 <h2>
-Note
+Fonte ufficiale
 </h2>
 
-<p style="line-height:1.6;color:#4b5563;">
+<a class="tool"
+href="${p.source}"
+target="_blank"
+rel="noopener"
+style="display:block;">
 
-${escapeHtml(
-p.notes ||
-"Per dati dimensionali, cariche refrigerante, pressioni, parametri e procedure di manutenzione utilizzare il manuale tecnico relativo al codice completo della macchina."
-)}
+<div class="tool-icon">
+🌐
+</div>
 
-</p>
+<strong>
+Apri archivio del produttore
+</strong>
+
+<span>
+Verifica la documentazione aggiornata
+</span>
+
+</a>
 
 </div>
 
@@ -3389,7 +3071,70 @@ p.notes ||
 
 `;
 
+renderRelatedErrors(p);
+
 showPage("detailPage");
+
+}
+
+
+/* ============================================================
+   ERRORI COLLEGATI
+============================================================ */
+
+function renderRelatedErrors(product){
+
+const box=document.getElementById("relatedErrors");
+
+const related=ERRORS.filter(e=>
+e.brand===product.brand
+);
+
+if(!related.length){
+
+box.innerHTML=`
+
+<p style="color:#64748b;font-size:12px;">
+Nessun codice specifico collegato a questa scheda.
+Consulta il manuale della serie.
+</p>
+
+`;
+
+return;
+
+}
+
+box.innerHTML=related.map(e=>`
+
+<div style="
+padding:11px 0;
+border-bottom:1px solid #eef2f7;
+">
+
+<div style="
+font-weight:900;
+color:#dc2626;
+font-size:13px;
+">
+
+${escapeHtml(e.code)}
+
+</div>
+
+<div style="
+font-size:12px;
+font-weight:700;
+margin-top:3px;
+">
+
+${escapeHtml(e.title)}
+
+</div>
+
+</div>
+
+`).join("");
 
 }
 
@@ -3424,22 +3169,22 @@ return !search || text.includes(search);
 
 const list=document.getElementById("errorList");
 
-if(filtered.length===0){
+if(!filtered.length){
 
 list.innerHTML=`
 
 <div class="empty">
 
 <div class="empty-icon">
-🔎
+⚠
 </div>
 
 <h3>
-Nessun codice trovato
+Nessun errore trovato
 </h3>
 
 <p>
-Prova con un altro codice o una parola chiave.
+Prova un altro codice o una parola chiave.
 </p>
 
 </div>
@@ -3455,33 +3200,37 @@ list.innerHTML=filtered.map(e=>`
 
 <div class="error-card">
 
+<div class="error-card-top">
+
 <div class="error-code">
 ${escapeHtml(e.code)}
 </div>
 
-<div class="error-model">
-${escapeHtml(e.brand)}
- ·
-${escapeHtml(e.model)}
+<div>
+
+<div class="error-brand">
+${escapeHtml(e.brand)} · ${escapeHtml(e.model)}
 </div>
 
-<h3 style="margin-bottom:7px;">
+<div class="error-title">
 ${escapeHtml(e.title)}
-</h3>
+</div>
+
+</div>
+
+</div>
 
 <div class="error-description">
 ${escapeHtml(e.description)}
 </div>
 
-<br>
-
 <a
+class="error-link"
 href="${e.source}"
 target="_blank"
-rel="noopener"
-style="font-size:12px;font-weight:bold;color:#2563eb;text-decoration:none;">
+rel="noopener">
 
-Apri fonte ufficiale →
+Apri documentazione ufficiale →
 
 </a>
 
@@ -3516,7 +3265,22 @@ renderModels();
 
 
 /* ============================================================
-   ESCAPE HTML
+   STATS
+============================================================ */
+
+function updateStats(){
+
+document.getElementById("totalModels")
+.textContent=PRODUCTS.length;
+
+document.getElementById("totalErrors")
+.textContent=ERRORS.length;
+
+}
+
+
+/* ============================================================
+   SICUREZZA HTML
 ============================================================ */
 
 function escapeHtml(value){
@@ -3535,28 +3299,11 @@ return String(value)
 
 
 /* ============================================================
-   STATISTICHE
-============================================================ */
-
-function updateStats(){
-
-document.getElementById("totalModels")
-.textContent=PRODUCTS.length;
-
-document.getElementById("totalErrors")
-.textContent=ERRORS.length;
-
-}
-
-
-/* ============================================================
-   AVVIO
+   START
 ============================================================ */
 
 updateStats();
-
 renderModels();
-
 renderErrors();
 
 </script>
