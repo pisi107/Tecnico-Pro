@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
-<title>TECNICO PRO</title>
+<title>CLIMA GROUP - Archivio Tecnico</title>
 
 <style>
 *{
@@ -20,9 +20,10 @@
     --text:#111827;
     --muted:#6b7280;
     --line:#e5e7eb;
-    --dark:#101828;
+    --dark:#0f172a;
     --dark2:#1d2939;
-    --blue:#2563eb;
+    --primary-blue:#00aeff;
+    --primary-yellow:#ffcc00;
     --blue2:#eff6ff;
     --red:#dc2626;
     --green:#16a34a;
@@ -72,25 +73,28 @@ body{
     display:flex;
     align-items:center;
     gap:12px;
-    padding:4px 8px 25px;
+    padding:4px 4px 25px;
 }
 
 .brand-icon{
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
     border-radius:12px;
-    background:#2563eb;
+    background:linear-gradient(135deg, var(--primary-yellow) 50%, var(--primary-blue) 50%);
     display:flex;
     align-items:center;
     justify-content:center;
     font-weight:900;
-    font-size:19px;
+    font-size:18px;
+    color:#0f172a;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
 .brand-name{
-    font-size:17px;
+    font-size:16px;
     font-weight:900;
     letter-spacing:.3px;
+    color:#fff;
 }
 
 .brand-sub{
@@ -128,6 +132,7 @@ body{
     font-weight:600;
     cursor:pointer;
     text-align:left;
+    transition:background .2s, color .2s;
 }
 
 .nav button:hover{
@@ -136,8 +141,9 @@ body{
 }
 
 .nav button.active{
-    background:#2563eb;
-    color:white;
+    background:var(--primary-blue);
+    color:#0f172a;
+    font-weight:800;
 }
 
 .nav-icon{
@@ -236,6 +242,7 @@ main{
     position:relative;
     overflow:hidden;
     margin-bottom:24px;
+    border-bottom:4px solid var(--primary-blue);
 }
 
 .dashboard-hero:after{
@@ -244,13 +251,13 @@ main{
     width:300px;
     height:300px;
     border-radius:50%;
-    border:50px solid rgba(255,255,255,.025);
+    border:50px solid rgba(0,174,239,.05);
     right:-80px;
     top:-100px;
 }
 
 .hero-small{
-    color:#93c5fd;
+    color:var(--primary-yellow);
     font-size:12px;
     font-weight:800;
     text-transform:uppercase;
@@ -353,7 +360,7 @@ main{
     align-items:center;
     justify-content:center;
     background:var(--blue2);
-    color:var(--blue);
+    color:var(--primary-blue);
 }
 
 .stat-number{
@@ -392,6 +399,7 @@ main{
 .brand-card:hover{
     transform:translateY(-2px);
     box-shadow:var(--shadow);
+    border-color:var(--primary-blue);
 }
 
 .brand-head{
@@ -442,7 +450,7 @@ main{
 }
 
 /* =====================================================
-   CATEGORIES
+   CATEGories
 ===================================================== */
 
 .categories{
@@ -461,7 +469,7 @@ main{
 }
 
 .category-card:hover{
-    border-color:#bfdbfe;
+    border-color:var(--primary-blue);
     background:#fafcff;
 }
 
@@ -533,8 +541,8 @@ select{
 
 input:focus,
 select:focus{
-    border-color:#60a5fa;
-    box-shadow:0 0 0 3px rgba(37,99,235,.08);
+    border-color:var(--primary-blue);
+    box-shadow:0 0 0 3px rgba(0,174,239,.12);
 }
 
 .results-line{
@@ -565,6 +573,7 @@ select:focus{
 .product-card:hover{
     transform:translateY(-2px);
     box-shadow:var(--shadow);
+    border-color:var(--primary-blue);
 }
 
 .product-card-top{
@@ -658,10 +667,11 @@ select:focus{
     border-radius:20px;
     padding:28px;
     margin-bottom:16px;
+    border-left:5px solid var(--primary-blue);
 }
 
 .detail-brand{
-    color:#93c5fd;
+    color:var(--primary-yellow);
     text-transform:uppercase;
     font-size:10px;
     font-weight:900;
@@ -737,7 +747,7 @@ select:focus{
 }
 
 .tool:hover{
-    border-color:#bfdbfe;
+    border-color:var(--primary-blue);
     background:#eff6ff;
 }
 
@@ -835,7 +845,7 @@ select:focus{
 .error-link{
     display:inline-block;
     margin-top:10px;
-    color:#2563eb;
+    color:var(--primary-blue);
     font-size:11px;
     font-weight:800;
     text-decoration:none;
@@ -1042,7 +1052,7 @@ select:focus{
     }
 
     .mobile-nav button.active{
-        color:#2563eb;
+        color:var(--primary-blue);
     }
 
     .mobile-nav span{
@@ -1069,12 +1079,12 @@ SIDEBAR
 <div class="brand">
 
 <div class="brand-icon">
-TP
+CG
 </div>
 
 <div>
 <div class="brand-name">
-TECNICO PRO
+CLIMA GROUP
 </div>
 
 <div class="brand-sub">
@@ -1137,13 +1147,13 @@ Diagnosi
 
 <div class="status-box">
 
-<div style="font-size:11px;font-weight:800;">
+<div style="font-size:11px;font-weight:800;color:#fff;">
 <span class="status-dot"></span>
-ARCHIVIO ONLINE
+ONLINE
 </div>
 
 <div style="font-size:10px;color:#64748b;margin-top:5px;">
-Database tecnico
+Clima Group Database
 </div>
 
 </div>
@@ -1191,7 +1201,7 @@ DASHBOARD
 <div class="dashboard-hero">
 
 <div class="hero-small">
-Archivio professionale
+Clima Group • Assistenza e Tecnica
 </div>
 
 <h1>
@@ -2755,7 +2765,7 @@ btn.dataset.page===id
 });
 
 document.getElementById("topbarTitle").textContent=
-pageTitles[id] || "TECNICO PRO";
+pageTitles[id] || "CLIMA GROUP";
 
 window.scrollTo({
 top:0,
@@ -3417,7 +3427,7 @@ ${escapeHtml(e.title)}
 </div>
 
 <div class="error-description">
-${escapeHtml(e.description}
+${escapeHtml(e.description)}
 </div>
 
 <a
