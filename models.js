@@ -5,19 +5,24 @@ var tpCatalog={
       {code:'FTXA20/25/35/42/50 A2V1B',name:'Stylish',year:'attuale',docs:[['Manuale installazione','https://www.daikin.eu/content/dam/document-library/installation-manuals/ac/split/CTXA-AW_AS_BS_AT_BT_BB_FTXA-AW_AS_BS_AT_BT_BB_Installation%20manual_3PIT697375-1_Italian.pdf'],['Guida installatore','https://www.daikin.eu/content/dam/document-library/Installer-reference-guide/ac/split/CTXA-AW_AS_BS_AT_BT_BB_FTXA-AW_AS_BS_AT_BT_BB_Installer%20reference%20guide_4PIT518023-3K_Italian.pdf'],['Manuale operativo','https://www.daikin.eu/content/dam/document-library/operation-manuals/ac/split/CTXA-AWAS,BS,AT,BT,BB,FTXA-AWAS,BS,AT,BT,BB_3PIT485919-7S_Operation%20manual_Italian.pdf']]},
       {code:'2AMXM-M',name:'Multi Split 2M',year:'attuale',page:'https://www.daikin.eu/en_us/products/product.html/2AMXM-M.html'},
       {code:'4MWXM-A',name:'Multi Split 4M',year:'attuale',page:'https://www.daikin.eu/en_us/products/product.html/4MWXM-A.html'}
+      ,{code:'FTXJ / RXJ',name:'Emura',year:'attuale'},{code:'FTXM · CTXM · ATXM / RXM',name:'Perfera',year:'attuale'},{code:'FTXTM / RXTM',name:'Perfera All Seasons',year:'attuale'},{code:'FTXP / RXP',name:'Comfora',year:'attuale'},{code:'FTXF / RXF',name:'Sensira',year:'attuale'}
     ]},
+    {title:'Multisplit',icon:'fa-code-branch',models:[{code:'FTXJ · FTXA · FTXM · FTXP / 2MXM · 3MXM · 4MXM · 5MXM',name:'Multisplit',year:'attuale'},{code:'Unità residenziali / 4MWXM · 5MWXM',name:'Multisplit Multi+',year:'attuale'},{code:'Sensira compatibili / 2MXF · 3MXF',name:'Multisplit Sensira',year:'attuale'}]},
     {title:'Sky Air commerciale',icon:'fa-building',models:[
       {code:'FCAG35~140BVEB',name:'Cassetta Sky Air FCAG-B',year:'2025',docs:[['Guida installatore e utente','https://www.daikin.eu/content/dam/document-library/Installer-reference-guide/ac/sky-air/fcag-b/FCAG-B_Installer.User%20reference%20guide_4PIT561448-1C_Italian.pdf']]},
       {code:'FCAG-B / RZAG-A',name:'Sky Air Alpha',year:'attuale',page:'https://www.daikin.eu/en_us/products/product.html/FCAG-B---RZAG-A.html'}
+      ,{code:'FAA-A / RZAG-A',name:'Sky Air parete',year:'attuale'},{code:'FBA-A · FBA-A9 / RZAG-A',name:'Sky Air canalizzato',year:'attuale'}
     ]},
     {title:'Pompe di calore Altherma',icon:'fa-temperature-arrow-up',models:[
-      {code:'EHFZ-D3V / ERLA-DV',name:'Daikin Altherma 3 R',year:'attuale',page:'https://www.daikin.eu/en_us/products/product.html/EHFZ-D3V---ERLA-DV.html'},
+      {code:'EHBX · EHFZ / ERGA · ERLA',name:'Daikin Altherma 3 R',year:'attuale'},
       {code:'E-CARE',name:'e-Care / e-Doctor',year:'attuale',page:'https://www.daikin.it/it_it/privati/services/apps-and-connectivity.html'}
+      ,{code:'EHVH · EKHBRD / ERLQ',name:'Altherma Split',year:'archivio e attuale'},{code:'— / EDHQ-BB6W1',name:'Altherma Monobloc',year:'archivio'},{code:'EHSX-D / unità esterna abbinata',name:'Altherma ECH2O',year:'archivio e attuale'},{code:'EHYKOMB-AA / EVLQ abbinata',name:'Altherma ibrida',year:'archivio e attuale'}
     ]},
     {title:'VRV / VRF',icon:'fa-industry',models:[
       {code:'RXYSCQ-TV1',name:'VRV-S',year:'attuale',page:'https://www.daikin.eu/en_us/products/product.html/RXYSCQ-TV1.html'},
       {code:'RXYQ-UD',name:'VRV IV+',year:'archivio',page:'https://www.daikin.eu/en_us/products/product.html/RXYQ-UD.html'},
       {code:'RYMQ-U',name:'VRV IV',year:'archivio',page:'https://www.daikin.eu/en_us/products/product.html/RYMQ-U.html'}
+      ,{code:'FX interne / RXYSQ-TV1',name:'VRV IV S',year:'archivio'},{code:'FX interne / RXYQQ8–20T7Y1B',name:'VRV IV',year:'archivio'}
     ]},
     {title:'Ventilazione e unità interne',icon:'fa-wind',models:[
       {code:'FXHA-A',name:'Unità interna canalizzabile VRV',year:'attuale',page:'https://www.daikin.eu/en_us/products/product.html/FXHA-A.html'},
